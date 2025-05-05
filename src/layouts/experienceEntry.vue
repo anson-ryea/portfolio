@@ -13,7 +13,7 @@
         </div>
         <div class="md:pl-4 space-y-2 flex-1">
             <div class="rounded-full bg-gray-100 p-2 w-fit"><img
-                    :src="getAsset(`about/education/${experience.pathToLogo}`)" class="h-12 w-12" /></div>
+                    :src="getAsset(`about/experiences/${experience.pathToLogo}`)" class="h-12 w-12" /></div>
             <div>
                 <h6 class="font-semibold">{{ experience.title }}</h6>
                 <p>{{ experience.company }}</p>
