@@ -15,13 +15,13 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { nextTick, onUnmounted, ref, unref } from 'vue';
 import { createPopper } from '@popperjs/core';
 
 const props = defineProps({
     modifiers: {
-        type: Array,
+        type: Array<any>,
         default: [],
     },
 });
@@ -37,9 +37,9 @@ function close() {
     isActive.value = false;
 }
 
-const elReference = ref(null);
-const elTooltip = ref(null);
-let popperInstance = null;
+const elReference = ref();
+const elTooltip = ref();
+let popperInstance: any | null = null;
 
 const createPopperInstance = () => {
     popperInstance = createPopper(unref(elReference), unref(elTooltip), {
