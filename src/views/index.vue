@@ -17,7 +17,7 @@
                 <div class="space-y-4 sm:space-y-8 lg:space-y-12">
                   <div class="space-y-2">
                     <h1>{{ $t('index.greeting') }}</h1>
-                    <h3 class="text-gray-300 font-serif">Nothing more than an ordinary human.</h3>
+                    <h3 class="text-gray-400 font-serif">Nothing more than an ordinary human.</h3>
                   </div>
                   <SeeThroughBox>
                     <p><span class="text-black">{{ $t('info.fullName') }}</span> {{ $t('index.intro') }}</p>
@@ -51,9 +51,16 @@
         </IndexSection>
         <IndexSection>
           <ConsoleLikePane paneName="current-status.md">
-            <div>
-              <h2>Current Status</h2>
-              <h3 class="text-gray-300 font-serif">What am I doing currently?</h3>
+            <div class="space-y-4">
+              <div>
+                <h2>Current Status</h2>
+                <h3 class="text-gray-400 font-serif">What am I doing currently?</h3>
+              </div>
+              <div class="divide-y divide-gray-300 flex-1 max-md:divide-dashed">
+                <EducationEntry v-for="ed in presentEducation" :education="ed" class="py-4 first:pt-0!" />
+                <ExperienceEntry v-for="experience in presentExperiences" :experience="experience"
+                  class="py-4 first:pt-0!" />
+              </div>
             </div>
           </ConsoleLikePane>
         </IndexSection>
@@ -67,7 +74,12 @@ import ConsoleLikePane from '@Layouts/consoleLikePane.vue';
 import SeeThroughBox from '@Components/seeThroughBox.vue';
 import IndexSection from '@Layouts/indexSection.vue';
 import Polaroid from '@Components/polaroid.vue';
+import ExperienceEntry from '@Layouts/experienceEntry.vue';
+import EducationEntry from '@Layouts/educationEntry.vue';
 import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { storeToRefs } from 'pinia';
+import { useExperiencesStore } from '@Stores/experiences';
+import { useEducationStore } from '@Stores/education';
 
 const currentDate = ref<Date | null>();
 let dateUpdateIntervalId: number | undefined;
@@ -98,4 +110,7 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(dateUpdateIntervalId);
 });
+
+const { presentExperiences } = storeToRefs(useExperiencesStore())
+const { presentEducation } = storeToRefs(useEducationStore())
 </script>
