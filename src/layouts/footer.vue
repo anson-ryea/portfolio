@@ -26,7 +26,9 @@
             <FooterSection
                 class="flex flex-col md:flex-row md:items-end md:justify-between text-gray-600 font-mono text-sm text-center pb-12">
                 <p class="md:text-left">All rights reserved © {{ year }} an5on.co</p>
-                <p class="md:text-right">Made with <span class="text-emerald-700">Vue.js</span> <br /> Designed and
+                <p class="md:text-right">Iteration 2 Version 0<br />Made with <span
+                        class="text-emerald-700">Vue.js</span> <br />
+                    Designed and
                     engineered by
                     Anson Ng
                 </p>
