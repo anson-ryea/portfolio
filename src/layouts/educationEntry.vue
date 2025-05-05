@@ -13,7 +13,7 @@
         </div>
         <div class="md:pl-4 space-y-2 flex-1">
             <div class="rounded-full bg-gray-100 p-2 w-fit"><img
-                    :src="`src/assets/about/education/${education.pathToLogo}`" class="h-12 w-12" /></div>
+                    :src="getAsset(`about/education/${education.pathToLogo}`)" class="h-12 w-12" /></div>
             <div>
                 <h6 class="font-semibold">{{ education.degree }}</h6>
                 <p>{{ education.school }}</p>
@@ -31,6 +31,7 @@ import Tag from '@Components/tag.vue';
 import { Education } from '@/stores/education';
 import { computed } from 'vue';
 import { useEducationStore } from '@/stores/education';
+import getAsset from '@/utils/url';
 
 const { isPresent } = useEducationStore()
 

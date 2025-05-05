@@ -21,7 +21,7 @@
             </FooterSection>
             <FooterSection>
                 <img class="mx-auto h-24 sm:h-36 md:h-56 invert brightness-10 mix-blend-multiply "
-                    src="/src/assets/index/signature.svg" />
+                    :src="getAsset('index/signature.svg')" />
             </FooterSection>
             <FooterSection
                 class="flex flex-col md:flex-row md:items-end md:justify-between text-gray-600 font-mono text-sm text-center pb-12">
@@ -42,6 +42,7 @@ import { ref } from 'vue';
 import FooterSection from '@Layouts/footerSection.vue';
 import Tooltip from '@Components/tooltip.vue';
 import { SendOne } from '@icon-park/vue-next';
+import getAsset from '@/utils/url';
 
 const year = ref(new Date().getFullYear())
 </script>

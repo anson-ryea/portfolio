@@ -6,7 +6,6 @@ const About = () => import('@Views/about.vue')
 const routes = [
     { path: '/', name: "Index", component: Index },
     { path: '/about', name: "About", component: About },
-    { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 
 const router = createRouter({
