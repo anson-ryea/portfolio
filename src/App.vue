@@ -1,6 +1,6 @@
 <template>
     <Suspense>
-        <router-view class="h-full w-full max-w-screen" />
+        <RouterView class="h-full w-full max-w-screen" />
     </Suspense>
     <Footer />
 </template>

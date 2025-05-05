@@ -1,13 +1,16 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
-const Index = () => import('@/views/index.vue')
+const Index = () => import('@Views/index.vue')
+const About = () => import('@Views/about.vue')
 
 const routes = [
-    { path: '/', component: Index },
+    { path: '/', name: "Index", component: Index },
+    { path: '/about', name: "About", component: About },
+    { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 
 const router = createRouter({
-    history: createMemoryHistory(),
+    history: createWebHistory(),
     routes,
 })
 
