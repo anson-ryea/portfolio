@@ -23,6 +23,9 @@
       "@Locales/*": [
         "./src/locales/*"
       ],
+      "@Stores/*": [
+        "./src/stores/*"
+      ],
       "@Views/*": [
         "./src/views/*"
       ],

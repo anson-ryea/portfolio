@@ -2,20 +2,14 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from './routes/router'
-import { createI18n } from 'vue-i18n'
-import messages from '@Locales/messages'
+import { createPinia } from 'pinia'
+import i18n from '@Locales/index'
 
-const i18n = createI18n({
-    legacy: false,
-    globalInjection: true,
-    locale: 'en',
-    fallbackLocale: 'en',
-    messages: messages
-})
-
+const pinia = createPinia()
 
 const app = createApp(App)
 
 app.use(router)
+app.use(pinia)
 app.use(i18n)
 app.mount('#app')
