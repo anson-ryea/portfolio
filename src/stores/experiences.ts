@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { computed, ref, type Ref } from 'vue'
-import expereinceEntries from '@/entries/experiences.json'
+import experienceEntries from '@/entries/experiences.json'
 import i18n from '@Locales/index'
 const { locale } = i18n.global
 
@@ -29,7 +29,7 @@ export class Experience {
 
 export const useExperiencesStore = defineStore('experiences', () => {
     const experiences: Ref<Experience[]> = ref(
-        (expereinceEntries as any[]).map(entry => new Experience(
+        (experienceEntries as any[]).map(entry => new Experience(
             new Date(entry.startDate.year, entry.startDate.month - 1),
             entry.endDate === 'present'
                 ? 'present'
