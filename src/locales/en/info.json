@@ -5,5 +5,5 @@
     "lastName": "Ng",
     "name": "@:info.firstName @:info.lastName",
     "fullName": "@:info.firstName @:info.middleName @:info.lastName",
-    "emailAddress": "914anson5{'@'}gmail.com"
+    "emailAddress": "hej{'@'}an5on.com"
 }
