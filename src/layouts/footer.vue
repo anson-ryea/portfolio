@@ -27,7 +27,7 @@
                 class="flex flex-col md:flex-row md:items-end md:justify-between text-gray-600 font-mono text-sm text-center pb-12">
                 <p class="md:text-left">Iteration {{ iteration }} Patch {{ minor }} <br />All rights reserved © {{ year
                 }}
-                    an5on.co</p>
+                    {{ $t("info.url") }}</p>
                 <p class="md:text-right">Made with <span class="text-emerald-700">Vue.js</span> <br />
                     Designed and
                     engineered by
