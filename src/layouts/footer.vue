@@ -25,9 +25,10 @@
             </FooterSection>
             <FooterSection
                 class="flex flex-col md:flex-row md:items-end md:justify-between text-gray-600 font-mono text-sm text-center pb-12">
-                <p class="md:text-left">All rights reserved © {{ year }} an5on.co</p>
-                <p class="md:text-right">Iteration 2 Version 0<br />Made with <span
-                        class="text-emerald-700">Vue.js</span> <br />
+                <p class="md:text-left">Iteration {{ iteration }} Patch {{ minor }} <br />All rights reserved © {{ year
+                }}
+                    an5on.co</p>
+                <p class="md:text-right">Made with <span class="text-emerald-700">Vue.js</span> <br />
                     Designed and
                     engineered by
                     Anson Ng
@@ -44,5 +45,8 @@ import Tooltip from '@Components/tooltip.vue';
 import { SendOne } from '@icon-park/vue-next';
 import getAsset from '@/utils/url';
 
+const version = __APP_VERSION__.split('.')
+const iteration = version[0]
+const minor = version.slice(1, 3).join('.')
 const year = ref(new Date().getFullYear())
 </script>
