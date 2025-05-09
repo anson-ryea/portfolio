@@ -78,15 +78,11 @@ const startDateString = computed(() => {
 });
 
 const endDateString = computed(() => {
-    const dateString = new Date(education.value.endDate).toLocaleDateString(
-        "en-US",
-        {
-            month: "short",
-            year: "numeric",
-        },
-    );
-    return education.value.endDate > new Date()
-        ? `Expected ${dateString}`
-        : dateString;
+    const date = new Date(education.value.endDate);
+    const dateString = date.toLocaleDateString("en-US", {
+        month: "short",
+        year: "numeric",
+    });
+    return date > new Date() ? `Expected ${dateString}` : dateString;
 });
 </script>
