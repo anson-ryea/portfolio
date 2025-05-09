@@ -85,7 +85,7 @@ const endDateString = computed(() => {
             year: "numeric",
         },
     );
-    return props.education.endDate > new Date()
+    return education.value.endDate > new Date()
         ? `Expected ${dateString}`
         : dateString;
 });
