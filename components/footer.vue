@@ -8,17 +8,17 @@
                     <h6 class="font-semibold">Get in touch</h6>
                     <p class="font-medium text-gray-500">Send me an email.</p>
                 </div>
-                <!-- <Tooltip>
-                    <template #reference>
-                        <a
-                            :href="`mailto:${$t('info.emailAddress')}`"
-                            class="flex btn-light items-center gap-2"
-                        >
-                            {{ $t("info.emailAddress") }}
-                        </a>
-                    </template>
-                    <template #tooltip> Click to copy </template>
-                </Tooltip> -->
+                <NuxtLink
+                    :to="`mailto:${$t('info.emailAddress')}`"
+                    external
+                    class="flex btn-light items-center gap-2"
+                >
+                    <Icon
+                        name="solar:map-arrow-right-bold-duotone"
+                        class="h-4 w-4 bg-gray-600"
+                    />
+                    {{ $t("info.emailAddress") }}
+                </NuxtLink>
             </FooterSection>
             <FooterSection>
                 <NuxtImg
