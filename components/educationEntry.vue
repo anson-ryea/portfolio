@@ -17,7 +17,9 @@
                 </h6>
             </div>
             <div class="flex flex-wrap gap-1">
-                <!-- <Tag v-show="" class="bg-blue-100! text-blue-950!">Present</Tag> -->
+                <Tag v-show="isPresent" class="bg-blue-100! text-blue-950!"
+                    >Present</Tag
+                >
                 <Tag v-for="tag in education.tags[locale]" :key="tag">{{
                     tag
                 }}</Tag>
@@ -59,6 +61,14 @@ const props = defineProps<{
 }>();
 
 const { education } = toRefs(props);
+
+const isPresent = computed(() => {
+    const currentDate = new Date();
+    return (
+        new Date(education.value.endDate) > currentDate &&
+        new Date(education.value.startDate) < currentDate
+    );
+});
 
 const startDateString = computed(() => {
     return new Date(education.value.startDate).toLocaleDateString("en-US", {

@@ -17,11 +17,9 @@
                 </h6>
             </div>
             <div class="flex flex-wrap gap-1">
-                <!-- <Tag
-                    v-show="isPresent(experience)"
-                    class="bg-blue-100! text-blue-950!"
+                <Tag v-show="isPresent" class="bg-blue-100! text-blue-950!"
                     >Present</Tag
-                > -->
+                >
                 <Tag v-for="tag in experience.tags[locale]" :key="tag">{{
                     tag
                 }}</Tag>
@@ -65,13 +63,28 @@ const props = defineProps<{
 
 const { experience } = toRefs(props);
 
+const isPresent = computed(() => {
+    const currentDate = new Date();
+    return (
+        experience.value.endDate === "present" ||
+        (new Date(experience.value.endDate) > currentDate &&
+            new Date(experience.value.startDate) < currentDate)
+    );
+});
+
 const startDateString = computed(() => {
-    return experience.value.startDate;
+    return new Date(experience.value.startDate).toLocaleDateString("en-US", {
+        month: "short",
+        year: "numeric",
+    });
 });
 
 const endDateString = computed(() => {
     return experience.value.endDate === "present"
         ? "Present"
-        : experience.value.endDate;
+        : new Date(experience.value.endDate).toLocaleDateString("en-US", {
+              month: "short",
+              year: "numeric",
+          });
 });
 </script>
