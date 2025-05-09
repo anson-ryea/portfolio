@@ -21,10 +21,10 @@
                 </Tooltip> -->
             </FooterSection>
             <FooterSection>
-                <!-- <img
+                <NuxtImg
                     class="mx-auto h-24 sm:h-36 md:h-56 invert brightness-10 mix-blend-multiply"
-                    :src="getAsset('index/signature.svg')"
-                /> -->
+                    src="info/signature.svg"
+                />
             </FooterSection>
             <FooterSection
                 class="flex flex-col md:flex-row md:items-end md:justify-between text-gray-600 font-mono text-sm text-center pb-12"
