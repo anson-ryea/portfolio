@@ -10,14 +10,15 @@ export default defineNuxtConfig({
             title: "Anson Ng",
             link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
         },
+        pageTransition: { name: "page", mode: "out-in" },
     },
     css: ["~/assets/css/main.css"],
     modules: [
         "@nuxt/icon",
-        "@nuxtjs/i18n",
         "@nuxt/image",
         "@nuxt/content",
         "@nuxt/fonts",
+        "@nuxtjs/i18n",
     ],
     vite: {
         plugins: [tailwindcss()],
@@ -53,5 +54,9 @@ export default defineNuxtConfig({
                 provider: "google",
             },
         ],
+    },
+    icon: {
+        mode: "css",
+        cssLayer: "base",
     },
 });
