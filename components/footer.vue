@@ -34,7 +34,8 @@
                     reserved © {{ year }} {{ $t("info.url") }}
                 </p>
                 <p class="md:text-right">
-                    Made with <span class="text-emerald-700">Vue.js</span>
+                    Made with <span class="text-green-400">Nuxt</span> and
+                    <span class="text-sky-400">Tailwind CSS</span>
                     <br />
                     Designed and engineered by Anson Ng
                 </p>
