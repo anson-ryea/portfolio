@@ -15,7 +15,6 @@
         "@nuxt/fonts": "^0.11.2",
         "@nuxt/icon": "^1.12.0",
         "@nuxt/image": "^1.10.0",
-        "@nuxthq/studio": "^2.2.1",
         "@nuxtjs/i18n": "^9.5.4",
         "@tailwindcss/vite": "^4.1.5",
         "@vercel/analytics": "^1.5.0",
