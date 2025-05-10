@@ -59,4 +59,9 @@ export default defineNuxtConfig({
         mode: "css",
         cssLayer: "base",
     },
+    content: {
+        preview: {
+            api: 'https://api.nuxt.studio'
+        }
+    }
 });
