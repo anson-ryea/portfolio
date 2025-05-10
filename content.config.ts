@@ -24,7 +24,7 @@ export default defineContentConfig({
                 description: localeString,
                 highlights: localeStringArray,
                 pathToLogo: z.string().nullable(),
-                tags: localeString,
+                tags: localeStringArray,
             }),
         }),
         education: defineCollection({
@@ -40,7 +40,7 @@ export default defineContentConfig({
                 description: localeString,
                 highlights: localeStringArray,
                 pathToLogo: z.string().nullable(),
-                tags: localeString,
+                tags: localeStringArray,
             }),
         }),
     },
