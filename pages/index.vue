@@ -46,7 +46,18 @@
                                 </div>
                             </template>
                             <template #right-info>
-                                <p>HKT {{ currentDateString }}</p>
+                                HKT
+                                <NuxtTime
+                                    :datetime="currentDate"
+                                    time-zone="Asia/Hong_Kong"
+                                    year="numeric"
+                                    month="2-digit"
+                                    day="2-digit"
+                                    hour="2-digit"
+                                    minute="2-digit"
+                                    second="2-digit"
+                                    :hour12="false"
+                                />
                             </template>
                         </ConsoleLikePane>
                         <ConsoleLikePane paneName="portrait.png" class="">
@@ -120,35 +131,17 @@
 </template>
 
 <script setup lang="ts">
-const currentDate = ref<Date | null>();
-let dateUpdateIntervalId: NodeJS.Timeout | undefined;
-
-const currentDateString = computed(() => {
-    return currentDate.value
-        ? currentDate.value.toLocaleString("en-HK", {
-              timeZone: "Asia/Hong_Kong",
-              year: "numeric",
-              month: "2-digit",
-              day: "2-digit",
-              hour: "2-digit",
-              minute: "2-digit",
-              second: "2-digit",
-              hour12: false,
-          })
-        : "";
-});
-
-function updateDate() {
-    currentDate.value = new Date();
-}
+const currentDate = ref(new Date());
+let intervalId: number;
 
 onMounted(() => {
-    updateDate();
-    dateUpdateIntervalId = setInterval(updateDate, 1000);
+    intervalId = window.setInterval(() => {
+        currentDate.value = new Date();
+    }, 1000);
 });
 
 onUnmounted(() => {
-    clearInterval(dateUpdateIntervalId);
+    clearInterval(intervalId);
 });
 
 const { data: presentExperiences } = await useAsyncData(
