@@ -14,11 +14,12 @@ export default defineNuxtConfig({
     },
     css: ["~/assets/css/main.css"],
     modules: [
-        "@nuxt/icon",
-        "@nuxt/image",
-        "@nuxt/content",
-        "@nuxt/fonts",
-        "@nuxtjs/i18n",
+      "@nuxt/icon",
+      "@nuxt/image",
+      "@nuxt/content",
+      "@nuxt/fonts",
+      "@nuxtjs/i18n",
+      "@nuxthq/studio",
     ],
     vite: {
         plugins: [tailwindcss()],
