@@ -1,0 +1,18 @@
+{
+    "locale": "en",
+    "startDate": "2023-08-01",
+    "endDate": "2027-07-01",
+    "location": "Hong Kong",
+    "school": "The Chinese University of Hong Kong",
+    "degree": "Bachelor of Science in Computer Science",
+    "gpa": 3.88,
+    "description": "Bachelor of Science in Computer Science",
+    "highlights": [
+        "Dean's List Recipient | 2023 - 2024 | GPA: 3.88",
+        "Received 7 Scholarships"
+    ],
+    "pathToLogo": "cuhk.svg",
+    "tags": [
+        "Bachelor"
+    ]
+}

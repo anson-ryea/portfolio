@@ -1,0 +1,16 @@
+{
+    "locale": "en",
+    "startDate": "2026-01-01",
+    "endDate": "2026-06-01",
+    "location": "Stockholm, Sweden",
+    "school": "KTH Royal Institute of Technology",
+    "degree": "Exchange Program",
+    "description": "Bachelor of Science in Computer Science",
+    "highlights": [
+        "Participated in the Exchange Program at KTH Royal Institute of Technology"
+    ],
+    "pathToLogo": "kth.svg",
+    "tags": [
+        "Exchange"
+    ]
+}

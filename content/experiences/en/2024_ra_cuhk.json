@@ -1,0 +1,19 @@
+{
+    "locale": "en",
+    "startDate": "2024-04-01",
+    "endDate": "2100-01-01",
+    "location": "Hong Kong",
+    "company": "The Chinese University of Hong Kong",
+    "title": "Research Assistant",
+    "description": "Research Assistant",
+    "highlights": [
+        "Optimizing batch sizes and intermediate node buffer sizes to enhance transmission efficiency under the batched sparse codes (BATS) scheme.",
+        "Leading a team to develop a Python simulator to replicate wireless communication in multi-hop networks with BATS Codes as transmission method.",
+        "Employing the simulator to measure maximum packet reception rates over time at the destination node in Line network scenarios with packet-loss."
+    ],
+    "pathToLogo": "cuhk.svg",
+    "tags": [
+        "Python",
+        "BATS Codes"
+    ]
+}

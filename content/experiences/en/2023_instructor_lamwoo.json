@@ -1,0 +1,19 @@
+{
+    "locale": "en",
+    "startDate": "2023-07-01",
+    "endDate": "2023-12-01",
+    "location": "Hong Kong",
+    "company": "SKH Lam Woo Memorial Secondary School",
+    "title": "Instructor",
+    "description": "Instructor",
+    "highlights": [
+        "Instructed 15 Form 3 to 5 students in 2 enrichment courses: Advanced Programming (Python), and Data Structure and Algorithms (Kotlin), enhancing their coding proficiency.",
+        "Developed lesson materials and coding exercises, deepening students' mastery of object-oriented programming, algorithmic concepts while utilizing Git to submit their course works.",
+        "Mentored students for the Hong Kong Olympiad in Informatics Competition through targeted coaching, resulting in 3 advancing to the Finalist stage."
+    ],
+    "pathToLogo": "lamwoo.png",
+    "tags": [
+        "Python",
+        "Kotlin"
+    ]
+}
