@@ -79,8 +79,7 @@ export default defineNuxtConfig({
     // enable preview causes parse error on Nuxt Studio
     content: {
         preview: {
-            api: 'https://api.nuxt.studio',
-            dev: true
+            api: 'https://api.nuxt.studio'
         }
     }
 });
