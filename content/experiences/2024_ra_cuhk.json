@@ -1,6 +1,6 @@
 {
     "startDate": "2024-04-01",
-    "endDate": "present",
+    "endDate": "2024-09-01",
     "location": "Hong Kong",
     "company": "The Chinese University of Hong Kong",
     "title": "Research Assistant",
@@ -16,6 +16,9 @@
     },
     "pathToLogo": "cuhk.svg",
     "tags": {
-        "en": ["Python", "BATS Codes"]
+        "en": [
+            "Python",
+            "BATS Codes"
+        ]
     }
 }

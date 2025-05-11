@@ -17,7 +17,7 @@ export default defineContentConfig({
             source: "experiences/*.json",
             schema: z.object({
                 startDate: z.date(),
-                endDate: z.union([z.date(), z.literal("present")]),
+                endDate: z.date(),
                 location: z.string(),
                 company: z.string(),
                 title: z.string(),
