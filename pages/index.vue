@@ -26,7 +26,7 @@
                                         <p>
                                             <span class="text-black">{{
                                                 $t("info.fullName")
-                                                }}</span>
+                                            }}</span>
                                             {{ $t("index.intro") }}
                                         </p>
                                     </SeeThroughBox>
@@ -95,6 +95,8 @@
 </template>
 
 <script setup lang="ts">
+const { locale } = useI18n();
+
 const currentDate = ref(Date.now());
 let intervalId: number;
 
@@ -113,14 +115,11 @@ const { data: presentExperiences } = await useAsyncData(
     "presentExperiences",
     () => {
         return queryCollection("experiences")
-            .orWhere((query) =>
+            .where("locale", "=", locale.value)
+            .andWhere((query) =>
                 query
-                    .where("endDate", "=", "present")
-                    .andWhere((query) =>
-                        query
-                            .where("endDate", ">", new Date().toISOString())
-                            .where("startDate", "<", new Date().toISOString()),
-                    ),
+                    .where("endDate", ">", new Date().toISOString())
+                    .where("startDate", "<", new Date().toISOString()),
             )
             .order("endDate", "DESC")
             .all();
@@ -131,6 +130,7 @@ const { data: presentEducation } = await useAsyncData(
     "presentEducation",
     () => {
         return queryCollection("education")
+            .where("locale", "=", locale.value)
             .andWhere((query) =>
                 query
                     .where("endDate", ">", new Date().toISOString())

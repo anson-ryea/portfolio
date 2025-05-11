@@ -38,8 +38,6 @@
 <script setup lang="ts">
 import type { EducationCollectionItem } from "@nuxt/content";
 
-const { locale } = useI18n();
-
 const props = defineProps<{
     education: EducationCollectionItem;
 }>();
