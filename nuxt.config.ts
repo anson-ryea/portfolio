@@ -55,10 +55,12 @@ export default defineNuxtConfig({
             {
                 name: "DM Sans",
                 provider: "google",
+                weights: [400, 500, 600, 700],
             },
             {
                 name: "Fraunces",
                 provider: "google",
+                weights: [400, 700],
             },
             {
                 name: "Geist Mono",
