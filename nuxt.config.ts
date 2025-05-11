@@ -74,6 +74,7 @@ export default defineNuxtConfig({
         mode: "css",
         cssLayer: "base",
     },
+    // enable preview causes parse error on Nuxt Studio
     // content: {
     //     preview: {
     //         api: 'https://api.nuxt.studio'

@@ -21,19 +21,10 @@ export default defineContentConfig({
                 location: z.string(),
                 company: z.string(),
                 title: z.string(),
-                description: z.object({
-                    en: z.string().nullable(),
-                    sv: z.string().nullable(),
-                }),
-                highlights: z.object({
-                    en: z.array(z.string()).nullable(),
-                    sv: z.array(z.string()).nullable(),
-                }),
+                description: localeString,
+                highlights: localeStringArray,
                 pathToLogo: z.string().nullable(),
-                tags: z.object({
-                    en: z.array(z.string()).nullable(),
-                    sv: z.array(z.string()).nullable(),
-                }),
+                tags: localeStringArray,
             }),
         }),
         education: defineCollection({
@@ -46,19 +37,10 @@ export default defineContentConfig({
                 school: z.string(),
                 degree: z.string(),
                 gpa: z.number().nullable(),
-                description: z.object({
-                    en: z.string().nullable(),
-                    sv: z.string().nullable(),
-                }),
-                highlights: z.object({
-                    en: z.array(z.string()).nullable(),
-                    sv: z.array(z.string()).nullable(),
-                }),
+                description: localeString,
+                highlights: localeStringArray,
                 pathToLogo: z.string().nullable(),
-                tags: z.object({
-                    en: z.array(z.string()).nullable(),
-                    sv: z.array(z.string()).nullable(),
-                }),
+                tags: localeStringArray,
             }),
         }),
     },
