@@ -1,13 +1,13 @@
 import { defineContentConfig, defineCollection, z } from "@nuxt/content";
 
 const localeString = z.object({
-    en: z.string().nullable(),
-    sv: z.string().nullable(),
+    en: z.string(),
+    sv: z.string(),
 });
 
 const localeStringArray = z.object({
-    en: z.array(z.string()).nullable(),
-    sv: z.array(z.string()).nullable(),
+    en: z.array(z.string()),
+    sv: z.array(z.string()),
 });
 
 export default defineContentConfig({
@@ -21,10 +21,10 @@ export default defineContentConfig({
                 location: z.string(),
                 company: z.string(),
                 title: z.string(),
-                description: z.string().nullable(),
-                highlights: z.array(z.string()).nullable(),
-                pathToLogo: z.string().nullable(),
-                tags: z.array(z.string()).nullable(),
+                description: z.string(),
+                highlights: z.array(z.string()),
+                pathToLogo: z.string(),
+                tags: z.array(z.string()),
             }),
         }),
         education: defineCollection({
@@ -36,11 +36,11 @@ export default defineContentConfig({
                 location: z.string(),
                 school: z.string(),
                 degree: z.string(),
-                gpa: z.number().nullable(),
-                description: z.string().nullable(),
-                highlights: z.array(z.string()).nullable(),
-                pathToLogo: z.string().nullable(),
-                tags: z.array(z.string()).nullable(),
+                gpa: z.number(),
+                description: z.string(),
+                highlights: z.array(z.string()),
+                pathToLogo: z.string(),
+                tags: z.array(z.string()),
             }),
         }),
     },
