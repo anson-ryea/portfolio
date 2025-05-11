@@ -8,11 +8,22 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: "Anson Ng",
-            link: [{ rel: "icon", type: "image/png", href: "/favicon-96x96.png", sizes: "96x96" },
-            { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-            { rel: "shortcut icon", href: "/favicon.ico" },
-            { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
-            { rel: "manifest", href: "/site.webmanifest" }],
+            link: [
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    href: "/favicon-96x96.png",
+                    sizes: "96x96",
+                },
+                { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+                { rel: "shortcut icon", href: "/favicon.ico" },
+                {
+                    rel: "apple-touch-icon",
+                    sizes: "180x180",
+                    href: "/apple-touch-icon.png",
+                },
+                { rel: "manifest", href: "/site.webmanifest" },
+            ],
         },
         pageTransition: { name: "page", mode: "out-in" },
     },
@@ -63,9 +74,9 @@ export default defineNuxtConfig({
         mode: "css",
         cssLayer: "base",
     },
-    content: {
-        preview: {
-            api: 'https://api.nuxt.studio'
-        }
-    }
+    // content: {
+    //     preview: {
+    //         api: 'https://api.nuxt.studio'
+    //     }
+    // }
 });
