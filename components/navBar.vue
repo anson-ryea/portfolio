@@ -43,7 +43,7 @@
                     visible: currentRouteName?.toString().startsWith('about'),
                 }" />
             </div>
-            <button class="flex flex-col items-center" @click="isContactExpanded = !isContactExpanded">
+            <button class="flex flex-col items-center" @click="isContactExpanded = !isContactExpanded" :aria-expanded="isContactExpanded">
                 <span>Contact</span>
                 <div class="h-0.5 w-4 bg-blue-600 rounded invisible transition" :class="{
                     visible: isContactExpanded
