@@ -65,6 +65,7 @@ export default defineNuxtConfig({
             {
                 name: "Geist Mono",
                 provider: "google",
+                weights: [400, 500],
             },
             {
                 name: "Reenie Beanie",
