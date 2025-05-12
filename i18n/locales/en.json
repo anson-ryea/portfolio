@@ -13,6 +13,9 @@
         "name": "@:info.firstName @:info.lastName",
         "fullName": "@:info.firstName @:info.middleName @:info.lastName",
         "emailAddress": "hej{'@'}an5on.com",
-        "url": "an5on.com"
+        "url": "an5on.com",
+        "githubUrl": "https://github.com/anson-ryea",
+        "instagramUrl": "https://www.instagram.com/anson_ryea/",
+        "linkedinUrl": "https://www.linkedin.com/in/an5on/"
     }
 }
