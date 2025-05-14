@@ -43,6 +43,10 @@
     p {
         @apply text-gray-600;
     }
+
+    button {
+        @apply cursor-pointer;
+    }
 }
 
 @layer components {
