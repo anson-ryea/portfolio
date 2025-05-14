@@ -3,7 +3,7 @@
         <transition name="slide-up">
             <div class="space-y-2 border border-gray-300 rounded-t bg-gray-100/60 backdrop-blur-sm shadow px-2 py-2 font-medium"
                 v-if="isContactExpanded">
-                <transition-group tag="div" class="grid grid-cols-6 font-mono text-sm text-gray-600 gap-1" name="fade">
+                <div class="grid grid-cols-6 font-mono text-sm text-gray-600 gap-1" name="fade">
                     <NuxtLink :to="`mailto:${$t('info.emailAddress')}`" external
                         class="flex items-center gap-2 col-span-3 w-full justify-center btn-light px-2 py-1"
                         key="email">
@@ -23,7 +23,7 @@
                         <Icon name="simple-icons:linkedin"
                             class="h-4 w-4 bg-gray-600 group-hover:bg-white transition" />
                     </NuxtLink>
-                </transition-group>
+                </div>
             </div>
         </transition>
         <div class="flex items-center max-sm:justify-between border border-gray-300 rounded bg-gray-100/60 backdrop-blur-sm shadow px-4 font-medium text-sm space-x-8 font-mono text-gray-600 p-1 h-8"
@@ -33,28 +33,30 @@
             </NuxtLink>
             <div class="flex flex-col items-center">
                 <NuxtLink to="/">Home</NuxtLink>
-                <div class="h-0.5 w-4 bg-blue-600 rounded invisible transition" :class="{
-                    visible: currentRouteName?.toString().startsWith('index'),
-                }" />
+                <transition name="slide-up">
+                    <div class="h-0.5 w-4 bg-blue-600 rounded"
+                        v-show="currentRouteName?.toString().startsWith('index')" />
+                </transition>
             </div>
             <div class="flex flex-col items-center">
                 <NuxtLink to="/about">About</NuxtLink>
-                <div class="h-0.5 w-4 bg-blue-600 rounded invisible transition" :class="{
-                    visible: currentRouteName?.toString().startsWith('about'),
-                }" />
+                <transition name="slide-up">
+                    <div class="h-0.5 w-4 bg-blue-600 rounded"
+                        v-show="currentRouteName?.toString().startsWith('about')" />
+                </transition>
             </div>
-            <button class="flex flex-col items-center" @click="isContactExpanded = !isContactExpanded" :aria-expanded="isContactExpanded">
+            <button class="flex flex-col items-center" @click="isContactExpanded = !isContactExpanded"
+                :aria-expanded="isContactExpanded">
                 <span>Contact</span>
-                <div class="h-0.5 w-4 bg-blue-600 rounded invisible transition" :class="{
-                    visible: isContactExpanded
-                }" />
+                <transition name="slide-up">
+                    <div class="h-0.5 w-4 bg-blue-600 rounded" v-show="isContactExpanded" />
+                </transition>
             </button>
             <div class="flex flex-col items-center">
                 <NuxtLink to="/cv/resume.pdf" external class="flex items-center gap-1">
                     CV
                     <Icon name="solar:import-broken" class="h-4 w-4 bg-gray-600" />
                 </NuxtLink>
-                <div class="h-0.5 w-4 bg-blue-600 rounded invisible transition" />
             </div>
         </div>
     </div>
