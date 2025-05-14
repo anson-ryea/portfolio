@@ -54,22 +54,19 @@ export default defineNuxtConfig({
         families: [
             {
                 name: "DM Sans",
-                provider: "google",
-                weights: [400, 500, 600, 700],
+                provider: "local",
             },
             {
                 name: "Fraunces",
-                provider: "google",
-                weights: [400, 700],
+                provider: "local",
             },
             {
                 name: "Geist Mono",
-                provider: "google",
-                weights: [400, 500],
+                provider: "local",
             },
             {
                 name: "Reenie Beanie",
-                provider: "google",
+                provider: "local",
             },
         ],
     },
@@ -80,7 +77,7 @@ export default defineNuxtConfig({
     // enable preview causes parse error on Nuxt Studio
     content: {
         preview: {
-            api: 'https://api.nuxt.studio'
-        }
-    }
+            api: "https://api.nuxt.studio",
+        },
+    },
 });
