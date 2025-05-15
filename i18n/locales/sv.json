@@ -1,1 +1,6 @@
-{}
+{
+    "locales": {
+        "en": "engelska",
+        "sv": "svenska"
+    }
+}

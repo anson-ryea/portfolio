@@ -10,7 +10,7 @@
                 <NuxtLink :to="`mailto:${$t('info.emailAddress')}`" external class="flex btn-light items-center gap-2">
 
                     {{ $t("info.emailAddress") }}
-                    <Icon name="solar:map-arrow-right-bold-duotone" class="h-4 w-4 bg-gray-600" />
+                    <Icon name="solar:plain-2-broken" class="h-4 w-4 bg-gray-600" />
                 </NuxtLink>
             </FooterSection>
             <FooterSection>
