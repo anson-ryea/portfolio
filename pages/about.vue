@@ -138,4 +138,8 @@ const { data: experiences } = await useAsyncData("experiences", () => {
 const { data: education } = await useAsyncData("education", () => {
     return queryCollection("education").where("locale", "=", locale.value).order("endDate", "DESC").all();
 });
+
+watch(locale, async () => {
+    refreshNuxtData(["experiences", "education"]);
+});
 </script>

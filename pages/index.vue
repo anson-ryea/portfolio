@@ -26,7 +26,7 @@
                                         <p>
                                             <span class="text-black">{{
                                                 $t("info.fullName")
-                                            }}</span>
+                                                }}</span>
                                             {{ $t("index.greeting.intro.paragraph") }}
                                         </p>
                                     </SeeThroughBox>
@@ -141,4 +141,8 @@ const { data: presentEducation } = await useAsyncData(
             .all();
     },
 );
+
+watch(locale, async () => {
+    refreshNuxtData(["presentExperiences", "presentEducation"]);
+});
 </script>
