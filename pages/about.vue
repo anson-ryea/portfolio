@@ -131,15 +131,17 @@
 <script setup lang="ts">
 const { locale } = useI18n();
 
-const { data: experiences } = await useAsyncData("experiences", () => {
+const { data: experiences } = await useAsyncData(`experiences-${locale.value}`, () => {
     return queryCollection("experiences").where("locale", "=", locale.value).order("endDate", "DESC").all();
-});
+}, {
+    watch: [locale]
+}
+);
 
-const { data: education } = await useAsyncData("education", () => {
+const { data: education } = await useAsyncData(`education-${locale.value}`, () => {
     return queryCollection("education").where("locale", "=", locale.value).order("endDate", "DESC").all();
-});
-
-watch(locale, async () => {
-    refreshNuxtData(["experiences", "education"]);
-});
+}, {
+    watch: [locale]
+}
+);
 </script>

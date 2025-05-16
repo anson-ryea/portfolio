@@ -113,7 +113,7 @@ onUnmounted(() => {
 });
 
 const { data: presentExperiences } = await useAsyncData(
-    "presentExperiences",
+    `presentExperiences-${locale.value}`,
     () => {
         return queryCollection("experiences")
             .where("locale", "=", locale.value)
@@ -125,10 +125,13 @@ const { data: presentExperiences } = await useAsyncData(
             .order("endDate", "DESC")
             .all();
     },
+    {
+        watch: [locale]
+    }
 );
 
 const { data: presentEducation } = await useAsyncData(
-    "presentEducation",
+    `presentEducation-${locale.value}`,
     () => {
         return queryCollection("education")
             .where("locale", "=", locale.value)
@@ -140,9 +143,8 @@ const { data: presentEducation } = await useAsyncData(
             .order("endDate", "DESC")
             .all();
     },
+    {
+        watch: [locale]
+    }
 );
-
-watch(locale, async () => {
-    refreshNuxtData(["presentExperiences", "presentEducation"]);
-});
 </script>
