@@ -48,6 +48,8 @@
 const route = useRoute();
 const currentRouteName = computed(() => route.name);
 
+const { locale } = useI18n();
+
 const isExpanded: Record<string, boolean> = reactive({
     contact: false,
     locale: false,
@@ -84,4 +86,8 @@ const currentExpandedComponent = computed(() => {
     }
     return null;
 });
+
+watch(locale, async () => {
+    contractAll();
+})
 </script>
