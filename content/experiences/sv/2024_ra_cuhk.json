@@ -1,19 +1,19 @@
 {
-    "locale": "sv",
-    "startDate": "2024-04-01",
-    "endDate": "2100-01-01",
-    "location": "Hongkong",
-    "company": "Kinesiska universitetet i Hongkong",
-    "title": "Forskningsassistent",
-    "description": "Forskningsassistent",
-    "highlights": [
-        "Optimerar batchstorlekar och buffertstorlekar för mellanliggande noder för att förbättra överföringseffektiviteten under schemat för batched sparse codes (BATS).",
-        "Ledde ett team för att utveckla en Python-simulator för att replikera trådlös kommunikation i multi-hop-nätverk med BATS-koder som överföringsmetod.",
-        "Använde simulatorn för att mäta maximala paketmottagningshastigheter över tid vid destinationsnoden i linjenätverksscenarier med paketförlust."
-    ],
-    "pathToLogo": "cuhk.svg",
-    "tags": [
-        "Python",
-        "Nätverk"
-    ]
+  "locale": "sv",
+  "startDate": "2024-04-01",
+  "endDate": "2100-01-01",
+  "location": "Hongkong",
+  "company": "The Chinese University of Hong Kong",
+  "title": "Forskningsassistent",
+  "description": "Forskningsassistent",
+  "highlights": [
+    "Optimerar batchstorlekar och buffertstorlekar för mellanliggande noder för att förbättra överföringseffektiviteten under schemat för batched sparse codes (BATS).",
+    "Ledde ett team för att utveckla en Python-simulator för att replikera trådlös kommunikation i multi-hop-nätverk med BATS-koder som överföringsmetod.",
+    "Använde simulatorn för att mäta maximala paketmottagningshastigheter över tid vid destinationsnoden i linjenätverksscenarier med paketförlust."
+  ],
+  "pathToLogo": "cuhk.svg",
+  "tags": [
+    "Python",
+    "Nätverk"
+  ]
 }
