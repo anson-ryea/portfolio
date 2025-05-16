@@ -38,6 +38,8 @@
 <script setup lang="ts">
 import type { ExperiencesCollectionItem } from "@nuxt/content";
 
+const { t, locale } = useI18n();
+
 const props = defineProps<{
     experience: ExperiencesCollectionItem;
 }>();
@@ -53,7 +55,7 @@ const isPresent = computed(() => {
 });
 
 const startDateString = computed(() => {
-    return new Date(experience.value.startDate).toLocaleDateString("en-US", {
+    return new Date(experience.value.startDate).toLocaleDateString(locale.value, {
         month: "short",
         year: "numeric",
     });
@@ -61,8 +63,8 @@ const startDateString = computed(() => {
 
 const endDateString = computed(() => {
     return new Date(experience.value.endDate).getDate() === new Date("2100-01-01").getDate()
-        ? "Present"
-        : new Date(experience.value.endDate).toLocaleDateString("en-US", {
+        ? t("dictionary.present")
+        : new Date(experience.value.endDate).toLocaleDateString(locale.value, {
             month: "short",
             year: "numeric",
         });

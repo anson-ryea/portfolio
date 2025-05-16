@@ -66,6 +66,8 @@
         }
     },
     "dictionary": {
-        "and": "and"
+        "and": "and",
+        "expected": "expected",
+        "present": "present"
     }
 }

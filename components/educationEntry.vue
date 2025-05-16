@@ -12,7 +12,7 @@
                 <Tag v-show="isPresent" class="bg-blue-100! text-blue-950!">Present</Tag>
                 <Tag v-for="tag in education.tags" :key="tag">{{
                     tag
-                }}</Tag>
+                    }}</Tag>
             </div>
         </div>
         <div class="md:pl-4 space-y-2 flex-1">
@@ -38,6 +38,8 @@
 <script setup lang="ts">
 import type { EducationCollectionItem } from "@nuxt/content";
 
+const { t, locale } = useI18n();
+
 const props = defineProps<{
     education: EducationCollectionItem;
 }>();
@@ -53,7 +55,7 @@ const isPresent = computed(() => {
 });
 
 const startDateString = computed(() => {
-    return new Date(education.value.startDate).toLocaleDateString("en-US", {
+    return new Date(education.value.startDate).toLocaleDateString(locale.value, {
         month: "short",
         year: "numeric",
     });
@@ -61,10 +63,10 @@ const startDateString = computed(() => {
 
 const endDateString = computed(() => {
     const date = new Date(education.value.endDate);
-    const dateString = date.toLocaleDateString("en-US", {
+    const dateString = date.toLocaleDateString(locale.value, {
         month: "short",
         year: "numeric",
     });
-    return date > new Date() ? `Expected ${dateString}` : dateString;
+    return date > new Date() ? `${t("dictionary.expected")} ${dateString}` : dateString;
 });
 </script>

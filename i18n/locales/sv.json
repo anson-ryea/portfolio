@@ -66,6 +66,8 @@
         }
     },
     "dictionary": {
-        "and": "och"
+        "and": "och",
+        "expected": "förväntad",
+        "present": "nutid"
     }
 }
