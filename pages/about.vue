@@ -5,13 +5,12 @@
             <div class="h-16 w-full bg-linear-to-t from-blue-100/20" />
             <IndexSection class="bg-linear-to-b from-blue-100/20 space-y-8">
                 <div>
-                    <h3 class="text-gray-400">About me</h3>
+                    <h3 class="text-gray-400">{{ $t("about.title") }}</h3>
                     <h1 class="font-serif">
-                        I am a computer science student with a fervent passion
-                        for software engineering and UI/UX design.
+                        {{ $t("about.description") }}
                     </h1>
                 </div>
-                <ConsoleLikePane paneName="biography.md">
+                <ConsoleLikePane :paneName="`${$t('about.biography')}.md`">
                     <div class="md:columns-2 space-y-8 font-serif">
                         <p>
                             Born and raised in Hong Kong, I am the first to
@@ -105,9 +104,9 @@
                 </ConsoleLikePane>
             </IndexSection>
             <IndexSection>
-                <ConsoleLikePane paneName="education.db">
+                <ConsoleLikePane :paneName="`${$t('about.education')}.db`">
                     <div class="space-y-4 md:flex md:justify-between md:space-x-16">
-                        <h2>Education</h2>
+                        <h2 class="capitalize">{{ $t("about.education") }}</h2>
                         <div class="divide-y divide-gray-300 flex-1">
                             <EducationEntry v-for="ed in education" :education="ed" class="py-4 first:pt-0!" />
                         </div>
@@ -115,9 +114,9 @@
                 </ConsoleLikePane>
             </IndexSection>
             <IndexSection>
-                <ConsoleLikePane paneName="experiences.db">
+                <ConsoleLikePane :paneName="`${$t('about.experiences')}.db`">
                     <div class="space-y-4 md:flex md:justify-between md:space-x-16">
-                        <h2>Experiences</h2>
+                        <h2 class="capitalize">{{ $t("about.experiences") }}</h2>
                         <div class="divide-y divide-gray-300 flex-1 max-md:divide-dashed">
                             <ExperienceEntry v-for="experience in experiences" :experience="experience"
                                 class="py-4 first:pt-0!" />
@@ -138,5 +137,9 @@ const { data: experiences } = await useAsyncData("experiences", () => {
 
 const { data: education } = await useAsyncData("education", () => {
     return queryCollection("education").where("locale", "=", locale.value).order("endDate", "DESC").all();
+});
+
+watch(locale, async () => {
+    refreshNuxtData(["experiences", "education"]);
 });
 </script>

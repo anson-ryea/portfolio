@@ -1,6 +1,73 @@
 {
+    "info": {
+        "role": "Datavetenskapsstudent / UI-designer",
+        "firstName": "Anson",
+        "middleName": "Cheuk-nam",
+        "lastName": "Ng",
+        "name": "@:info.firstName @:info.lastName",
+        "fullName": "@:info.firstName @:info.middleName @:info.lastName",
+        "emailAddress": "hej{'@'}an5on.com",
+        "url": "an5on.com",
+        "githubUrl": "https://github.com/anson-ryea",
+        "instagramUrl": "https://www.instagram.com/anson_ryea/",
+        "linkedinUrl": "https://www.linkedin.com/in/an5on/"
+    },
+    "nav": {
+        "home": "hem",
+        "about": "om",
+        "contact": "kontakt",
+        "cv": "cv"
+    },
     "locales": {
         "en": "engelska",
         "sv": "svenska"
+    },
+    "index": {
+        "greeting": {
+            "title": "Hej, jag är @:info.firstName{'.'}",
+            "description": "Inget mer än en vanlig människa.",
+            "intro": {
+                "label": "introduktion",
+                "paragraph": "är en engagerad student i kandidatexamen i datavetenskap vid Chinese University of Hong Kong, med en passion för att leverera enastående användarupplevelse (UX)-design. Drivs av ett starkt intresse för mjukvaruutveckling och UX-design, är jag engagerad i att skapa innovativa och användarcentrerade lösningar. För närvarande är jag öppen för nya möjligheter att tillämpa mina färdigheter och bidra till betydelsefulla projekt."
+            }
+        },
+        "portrait": {
+            "label": "porträtt",
+            "alt": "Ett nyligen taget slumpmässigt foto på gymmet.",
+            "caption": "Detta är jag!"
+        },
+        "polaroids": "polaroider",
+        "currentStatus": {
+            "label": "nuvarande-status",
+            "title": "Nuvarande status",
+            "description": "Vad gör jag för närvarande?"
+        }
+    },
+    "about": {
+        "title": "Om mig",
+        "description": "Jag är en datavetenskapsstudent med en brinnande passion för mjukvaruutveckling och UI/UX-design.",
+        "biography": "biografi",
+        "education": "utbildning",
+        "experiences": "erfarenheter"
+    },
+    "footer": {
+        "contact": {
+            "title": "Kontakta mig",
+            "description": "Skicka mig ett e-postmeddelande."
+        },
+        "version": {
+            "majorLabel": "iteration",
+            "patchLabel": "uppdatering"
+        },
+        "copyright": {
+            "description": "Alla rättigheter förbehållna ©",
+            "madeWith": "Skapad med",
+            "credit": "Designad och utvecklad av @:info.name"
+        }
+    },
+    "dictionary": {
+        "and": "och",
+        "expected": "förväntad",
+        "present": "nutid"
     }
 }

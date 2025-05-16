@@ -13,21 +13,21 @@
                 <div class="h-16 w-full bg-linear-to-t from-blue-100/20" />
                 <IndexSection class="bg-linear-to-b from-blue-100/20">
                     <div class="flex flex-col space-y-12 lg:flex-row lg:space-x-12 lg:space-y-0">
-                        <ConsoleLikePane paneName="intro.md" class="flex-1">
+                        <ConsoleLikePane :paneName="`${$t('index.greeting.intro.label')}.md`" class="flex-1">
                             <template #default>
                                 <div class="space-y-4 sm:space-y-8 lg:space-y-12">
                                     <div class="space-y-2">
-                                        <h1>{{ $t("index.greeting") }}</h1>
+                                        <h1>{{ $t("index.greeting.title") }}</h1>
                                         <h3 class="text-gray-400 font-serif">
-                                            Nothing more than an ordinary human.
+                                            {{ $t("index.greeting.description") }}
                                         </h3>
                                     </div>
                                     <SeeThroughBox>
                                         <p>
                                             <span class="text-black">{{
                                                 $t("info.fullName")
-                                            }}</span>
-                                            {{ $t("index.intro") }}
+                                                }}</span>
+                                            {{ $t("index.greeting.intro.paragraph") }}
                                         </p>
                                     </SeeThroughBox>
                                 </div>
@@ -41,16 +41,17 @@
                                 </ClientOnly>
                             </template>
                         </ConsoleLikePane>
-                        <ConsoleLikePane paneName="portrait.png" class="">
-                            <Polaroid :src="'index/portrait.jpg'" :caption="$t('index.portraitCaption')"
-                                :alt="$t('index.portraitAlt')" class="aspect-3/4 max-w-88" img-class="object-top!" />
+                        <ConsoleLikePane :paneName="`${$t('index.portrait.label')}.png`" class="">
+                            <Polaroid :src="'index/portrait.jpg'" :caption="$t('index.portrait.caption')"
+                                :alt="$t('index.portrait.alt')" class="aspect-3/4 max-w-88" img-class="object-top!" />
                         </ConsoleLikePane>
                     </div>
                 </IndexSection>
                 <IndexSection>
-                    <ConsoleLikePane paneName="polaroids">
-                        <div
-                            class="flex space-x-4 max-w-full md:max-xl:grid md:grid-cols-2 md:gap-8 justify-between justify-items-center overflow-x-auto md:overflow-visible">
+                    <ConsoleLikePane :paneName="$t('index.polaroids')">
+                        <div class="flex space-x-4 max-w-full md:max-xl:grid md:grid-cols-2 md:gap-8 justify-between
+                            justify-items-center
+                            overflow-x-auto md:overflow-visible">
                             <Polaroid :src="'/index/polaroids/salford.png'" caption="Salford, UK"
                                 class="aspect-3/4 w-48 md:w-60 xl:max-w-88 xl:h-fit xl:w-full" />
                             <!-- <Polaroid
@@ -72,16 +73,16 @@
                     </ConsoleLikePane>
                 </IndexSection>
                 <IndexSection>
-                    <ConsoleLikePane paneName="current-status.md">
+                    <ConsoleLikePane :paneName="`${$t('index.currentStatus.label')}.md`">
                         <div class="space-y-4">
                             <div>
-                                <h2>Current Status</h2>
+                                <h2>{{ $t("index.currentStatus.title") }}</h2>
                                 <h3 class="text-gray-400 font-serif">
-                                    What am I doing currently?
+                                    {{ $t("index.currentStatus.description") }}
                                 </h3>
                             </div>
                             <div class="divide-y divide-gray-300 flex-1 max-md:divide-dashed">
-                                <EducationEntry v-for="ed in presentEducation" :education="ed"
+                                <EducationEntry v-for="education in presentEducation" :education="education"
                                     class="py-4 first:pt-0!" />
                                 <ExperienceEntry v-for="experience in presentExperiences" :experience="experience"
                                     class="py-4 first:pt-0!" />
@@ -140,4 +141,8 @@ const { data: presentEducation } = await useAsyncData(
             .all();
     },
 );
+
+watch(locale, async () => {
+    refreshNuxtData(["presentExperiences", "presentEducation"]);
+});
 </script>

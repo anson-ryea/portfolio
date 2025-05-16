@@ -1,10 +1,4 @@
 {
-    "index": {
-        "greeting": "Hej! I'm @:info.firstName{'.'}",
-        "intro": "is a dedicated BSc Computer Science student at the Chinese University of Hong Kong, with a passion for delivering exceptional user experience (UX) design. Driven by a strong interest in software engineering and UX design, I am committed to creating innovative and user-centric solutions. Currently, I am open to new opportunities to apply my skills and contribute to impactful projects.",
-        "portraitAlt": "A recent random photo taken at gym.",
-        "portraitCaption": "This is Me!"
-    },
     "info": {
         "role": "Computer Science Student / UI Designer",
         "firstName": "Anson",
@@ -18,8 +12,62 @@
         "instagramUrl": "https://www.instagram.com/anson_ryea/",
         "linkedinUrl": "https://www.linkedin.com/in/an5on/"
     },
+    "nav": {
+        "home": "home",
+        "about": "about",
+        "contact": "contact",
+        "cv": "cv"
+    },
     "locales": {
         "en": "english",
         "sv": "swedish"
+    },
+    "index": {
+        "greeting": {
+            "title": "Hello, I'm @:info.firstName{'.'}",
+            "description": "Nothing more than an ordinary human.",
+            "intro": {
+                "label": "intro",
+                "paragraph": "is a dedicated BSc Computer Science student at the Chinese University of Hong Kong, with a passion for delivering exceptional user experience (UX) design. Driven by a strong interest in software engineering and UX design, I am committed to creating innovative and user-centric solutions. Currently, I am open to new opportunities to apply my skills and contribute to impactful projects."
+            }
+        },
+        "portrait": {
+            "label": "portrait",
+            "alt": "A recent random photo taken at gym.",
+            "caption": "This is Me!"
+        },
+        "polaroids": "polaroids",
+        "currentStatus": {
+            "label": "current-status",
+            "title": "Current Status",
+            "description": "What am I doing currently?"
+        }
+    },
+    "about": {
+        "title": "About me",
+        "description": "I am a computer science student with a fervent passion for software engineering and UI/UX design.",
+        "biography": "biography",
+        "education": "education",
+        "experiences": "experiences"
+    },
+    "footer": {
+        "contact": {
+            "title": "Get in touch",
+            "description": "Send me an email."
+        },
+        "version": {
+            "majorLabel": "iteration",
+            "patchLabel": "patch"
+        },
+        "copyright": {
+            "description": "All rights reserved ©",
+            "madeWith": "Made with",
+            "credit": "Designed and engineered by @:info.name"
+        }
+    },
+    "dictionary": {
+        "and": "and",
+        "expected": "expected",
+        "present": "present"
     }
 }
