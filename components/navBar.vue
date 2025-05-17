@@ -3,9 +3,9 @@
         <transition name="slide-up">
             <component :is="currentExpandedComponent" v-if="currentExpandedComponent" />
         </transition>
-        <div class="flex items-center max-sm:justify-between border border-gray-300 rounded bg-gray-100/60 backdrop-blur-sm shadow px-4 font-medium text-sm space-x-8 font-mono text-gray-600 p-1 h-8"
+        <div class="flex items-center max-md:justify-between md:space-x-8 border border-gray-300 rounded bg-gray-100/60 backdrop-blur-sm shadow px-4 font-medium text-sm font-mono text-gray-600 py-1 h-8"
             :class="{ 'border-t-0! rounded-t-none!': isExpanded.contact || isExpanded.locale }">
-            <NuxtLink to="/">
+            <NuxtLink to="/" class="max-md:min-w-fit">
                 <NuxtImg src="/favicon.svg" alt="Logo" class="h-10 w-10 items-center hover:invert transition" />
             </NuxtLink>
             <div class="flex flex-col items-center">
@@ -34,7 +34,7 @@
                     <Icon name="solar:import-broken" class="h-4 w-4 bg-gray-600" />
                 </NuxtLink>
             </div>
-            <button class="flex flex-col items-center gap-0.5" @click="toggleLocale" :aria-expanded="isExpanded.locale">
+            <button class="flex items-center gap-0.5" @click="toggleLocale" :aria-expanded="isExpanded.locale">
                 <Icon name="solar:earth-line-duotone" class="h-4 w-4 bg-gray-600" />
                 <transition name="slide-up">
                     <div class="h-0.5 w-4 bg-blue-600 rounded" v-show="isExpanded.locale" />
