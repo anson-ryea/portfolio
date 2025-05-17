@@ -35,5 +35,11 @@ export default defineContentConfig({
                 pathToLogo: z.string(),
             }),
         }),
+        biography: defineCollection({
+            type: "page",
+            source: "biography/*/*.md",
+            schema: z.object({
+            })
+        })
     },
 });
