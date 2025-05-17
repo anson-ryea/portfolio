@@ -34,7 +34,7 @@
                     <Icon name="solar:import-broken" class="h-4 w-4 bg-gray-600" />
                 </NuxtLink>
             </div>
-            <button class="flex items-center gap-0.5" @click="toggleLocale" :aria-expanded="isExpanded.locale">
+            <button class="flex flex-col items-center gap-0.5" @click="toggleLocale" :aria-expanded="isExpanded.locale">
                 <Icon name="solar:earth-line-duotone" class="h-4 w-4 bg-gray-600" />
                 <transition name="slide-up">
                     <div class="h-0.5 w-4 bg-blue-600 rounded" v-show="isExpanded.locale" />
