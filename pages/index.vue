@@ -23,12 +23,7 @@
                                         </h3>
                                     </div>
                                     <SeeThroughBox>
-                                        <p>
-                                            <span class="text-black">{{
-                                                $t("info.fullName")
-                                                }}</span>
-                                            {{ $t("index.greeting.intro.paragraph") }}
-                                        </p>
+                                        <ContentRenderer :value="intro" class="font-serif" :data="introVars" />
                                     </SeeThroughBox>
                                 </div>
                             </template>
@@ -96,7 +91,7 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 
 const currentDate = ref(Date.now());
 let intervalId: number;
@@ -147,4 +142,12 @@ const { data: presentEducation } = await useAsyncData(
         watch: [locale]
     }
 );
+
+const { data: intro } = await useAsyncData(`biography-intro-${locale.value}`, () => {
+    return queryCollection("biography").path(`/biography/${locale.value}/intro`).first()
+}, {
+    watch: [locale]
+})
+
+const introVars = ref({ fullName: t("info.fullName") });
 </script>

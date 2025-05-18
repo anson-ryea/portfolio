@@ -15,7 +15,7 @@ export default defineContentConfig({
                 description: z.string(),
                 highlights: z.array(z.string()),
                 tags: z.array(z.string()),
-                pathToLogo: z.string(),
+                pathToLogo: z.string().editor({ input: "media" }),
             }),
         }),
         education: defineCollection({
@@ -32,8 +32,13 @@ export default defineContentConfig({
                 description: z.string(),
                 highlights: z.array(z.string()),
                 tags: z.array(z.string()),
-                pathToLogo: z.string(),
+                pathToLogo: z.string().editor({ input: "media" }),
             }),
         }),
+        biography: defineCollection({
+            type: "page",
+            source: "biography/*/*.md",
+            schema: z.object({})
+        })
     },
 });
