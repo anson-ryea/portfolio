@@ -14,5 +14,19 @@
     "pathToLogo": "cuhk.svg",
     "tags": [
         "Bachelor"
+    ],
+    "scholarships": [
+        {
+            "name": "Woo Sau Wing Scholarships",
+            "date": "2024-08-15"
+        },
+        {
+            "name": "Professor Omar Wing Memorial Scholarship",
+            "date": "2024-09-05"
+        },
+        {
+            "name": "Yu To Sang Memorial Scholarship",
+            "date": "2025-05-07"
+        }
     ]
 }

@@ -33,6 +33,10 @@ export default defineContentConfig({
                 highlights: z.array(z.string()),
                 tags: z.array(z.string()),
                 pathToLogo: z.string().editor({ input: "media" }),
+                scholarships: z.array(z.object({
+                    name: z.string(),
+                    date: z.date()
+                }))
             }),
         }),
         biography: defineCollection({

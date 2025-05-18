@@ -16,7 +16,7 @@
             </IndexSection>
             <IndexSection>
                 <ConsoleLikePane :paneName="`${$t('about.education')}.db`">
-                    <div class="space-y-4 md:flex md:justify-between md:space-x-16">
+                    <div class="space-y-4 lg:flex lg:justify-between lg:space-x-16">
                         <h2 class="capitalize">{{ $t("about.education") }}</h2>
                         <div class="divide-y divide-gray-300 flex-1">
                             <EducationEntry v-for="ed in education" :education="ed" class="py-4 first:pt-0!" />
@@ -26,7 +26,7 @@
             </IndexSection>
             <IndexSection>
                 <ConsoleLikePane :paneName="`${$t('about.experiences')}.db`">
-                    <div class="space-y-4 md:flex md:justify-between md:space-x-16">
+                    <div class="space-y-4 lg:flex lg:justify-between lg:space-x-16">
                         <h2 class="capitalize">{{ $t("about.experiences") }}</h2>
                         <div class="divide-y divide-gray-300 flex-1 max-md:divide-dashed">
                             <ExperienceEntry v-for="experience in experiences" :experience="experience"

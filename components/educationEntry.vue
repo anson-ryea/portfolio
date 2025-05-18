@@ -31,6 +31,22 @@
                     {{ highlight }}
                 </li>
             </ul>
+            <div v-if="education.scholarships"
+                class="relative bg-gray-50 p-4 space-y-2 rounded border border-gray-100 from-blue-100/20 bg-linear-to-b overflow-hidden">
+                <div class="absolute bg-ys mask-b-to-30% w-full h-full top-0 left-0"></div>
+                <h5 class="font-sans font-semibold text-blue-950">Scholarships</h5>
+                <ul class="text-gray-600 list-inside font-serif divide-y divide-gray-300">
+                    <li v-for="(scholarships, year) in scholarshipsGroupByYear" :key="year"
+                        class="flex divide-x divide-gray-300">
+                        <p class="pr-4 py-2 font-mono text-sm">{{ year }}</p>
+                        <ul class="flex-1 divide-y divide-gray-300 pl-4">
+                            <li v-for="scholarship in scholarships" :key="scholarship.name" class="py-2">
+                                {{ scholarship.name }}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -69,4 +85,10 @@ const endDateString = computed(() => {
     });
     return date > new Date() ? `${t("dictionary.expected")} ${dateString}` : dateString;
 });
+
+const scholarshipsGroupByYear = computed(() => {
+    return education.value.scholarships ? Object.groupBy(education.value.scholarships, (scholarship) => {
+        return new Date(scholarship.date).getFullYear();
+    }) : null;
+})
 </script>
