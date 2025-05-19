@@ -13,34 +13,36 @@
                 <Tag v-for="tag in education.tags" :key="tag">{{ tag }}</Tag>
             </div>
         </div>
-        <div class="md:pl-4 space-y-2 flex-1">
-            <div class="rounded-full bg-gray-100 p-2 w-fit">
-                <NuxtImg :src="`content/education/${education.pathToLogo}`" class="h-12 w-12" />
+        <div class="md:pl-4 space-y-4 flex-1">
+            <div class="space-y-2">
+                <div class="rounded-full bg-gray-100 p-2 w-fit">
+                    <NuxtImg :src="`content/education/${education.pathToLogo}`" class="h-12 w-12" />
+                </div>
+                <div>
+                    <h6 class="font-medium">{{ education.degree }}</h6>
+                    <p>{{ education.school }}</p>
+                </div>
+                <p class="text-gray-600 font-serif">
+                    {{ education.description }}
+                </p>
+                <ul class="text-gray-600 list-disc list-inside font-serif">
+                    <li v-for="highlight in education.highlights" :key="highlight">
+                        {{ highlight }}
+                    </li>
+                </ul>
             </div>
-            <div>
-                <h6 class="font-medium">{{ education.degree }}</h6>
-                <p>{{ education.school }}</p>
-            </div>
-            <p class="text-gray-600 font-serif">
-                {{ education.description }}
-            </p>
-            <ul class="text-gray-600 list-disc list-inside font-serif">
-                <li v-for="highlight in education.highlights" :key="highlight">
-                    {{ highlight }}
-                </li>
-            </ul>
-            <div class="relative group">
+            <div class="relative group" v-if="education.scholarships">
                 <div
                     class="absolute w-full h-full bg-gray-100 rounded group-hover:-translate-x-2 group-hover:-translate-y-2 transition invisible group-hover:visible" />
-                <div v-if="education.scholarships"
+                <div
                     class="relative bg-gray-50 rounded border border-gray-300 from-blue-100/20 bg-linear-to-b overflow-hidden group-hover:shadow-lg transition group-hover:border-blue-400">
-                    <div class="absolute bg-[url('/bg/ys.svg')] mask-b-to-15% w-full h-full top-0 left-0" />
-                    <div class="space-y-2 p-4">
-                        <h5 class="font-sans text-blue-950 capitalize">
+                    <div class="absolute bg-[url('/bg/geometric.svg')] mask-b-to-20% w-full h-full top-0 left-0" />
+                    <div class="relative space-y-2 p-4 z-10">
+                        <h5 class="font-sans text-blue-950 capitalize font-medium">
                             {{ $t("about.education.scholarships") }}
-                            <span class="text-gray-400 text-base font-mono tracking-wide">
+                            <em class="text-gray-400 font-serif font-light tracking-wide">
                                 {{ scholarshipsCountString }}
-                            </span>
+                            </em>
                         </h5>
                         <ul class="text-gray-600 list-inside font-serif divide-y divide-gray-300">
                             <li v-for="year in scholarshipsGroupByYear?.keys()" :key="year"
