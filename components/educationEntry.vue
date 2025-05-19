@@ -47,7 +47,7 @@
                         <ul class="text-gray-600 list-inside font-serif divide-y divide-gray-300">
                             <li v-for="year in scholarshipsGroupByYear?.keys()" :key="year"
                                 class="flex divide-x divide-dashed divide-gray-300">
-                                <span class="pr-4 py-2 font-mono text-gray-400 text-right">
+                                <span class="pr-4 py-2 font-mono text-gray-400">
                                     {{ year }}
                                 </span>
                                 <ul class="flex-1 divide-y divide-gray-300 pl-4">
