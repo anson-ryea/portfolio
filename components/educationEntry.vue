@@ -1,23 +1,34 @@
 <template>
-    <div class="max-md:space-y-2 md:flex md:divide-x md:divide-gray-300 md:divide-dashed">
-        <div class="flex flex-col max-md:space-y-2 md:justify-between md:w-36 lg:w-48 xl:w-64 md:pr-4">
+    <div
+        class="max-md:space-y-2 md:flex md:divide-x md:divide-gray-300 md:divide-dashed"
+    >
+        <div
+            class="flex flex-col max-md:space-y-2 md:justify-between md:w-36 lg:w-48 xl:w-64 md:pr-4"
+        >
             <div class="max-md:flex text-balance">
-                <span class="font-mono text-xs text-gray-600">{{ startDateString }} ~ {{ endDateString }}</span>
-                <span class="font-mono text-xs text-gray-600 md:hidden">&nbsp·&nbsp</span>
+                <span class="font-mono text-xs text-gray-600"
+                    >{{ startDateString }} ~ {{ endDateString }}</span
+                >
+                <span class="font-mono text-xs text-gray-600 md:hidden"
+                    >&nbsp·&nbsp</span
+                >
                 <h6 class="max-md:text-xs font-mono">
                     {{ education.location }}
                 </h6>
             </div>
             <div class="flex flex-wrap gap-1">
-                <Tag v-show="isPresent" class="bg-blue-100! text-blue-950!">Present</Tag>
-                <Tag v-for="tag in education.tags" :key="tag">{{
-                    tag
-                    }}</Tag>
+                <Tag v-show="isPresent" class="bg-blue-100! text-blue-950!"
+                    >Present</Tag
+                >
+                <Tag v-for="tag in education.tags" :key="tag">{{ tag }}</Tag>
             </div>
         </div>
         <div class="md:pl-4 space-y-2 flex-1">
             <div class="rounded-full bg-gray-100 p-2 w-fit">
-                <NuxtImg :src="`content/education/${education.pathToLogo}`" class="h-12 w-12" />
+                <NuxtImg
+                    :src="`content/education/${education.pathToLogo}`"
+                    class="h-12 w-12"
+                />
             </div>
             <div>
                 <h6 class="font-semibold">{{ education.degree }}</h6>
@@ -31,21 +42,52 @@
                     {{ highlight }}
                 </li>
             </ul>
-            <div v-if="education.scholarships"
-                class="relative bg-gray-50 p-4 space-y-2 rounded border border-gray-100 from-blue-100/20 bg-linear-to-b overflow-hidden">
-                <div class="absolute bg-ys mask-b-to-30% w-full h-full top-0 left-0"></div>
-                <h5 class="font-sans font-semibold text-blue-950">Scholarships</h5>
-                <ul class="text-gray-600 list-inside font-serif divide-y divide-gray-300">
-                    <li v-for="(scholarships, year) in scholarshipsGroupByYear" :key="year"
-                        class="flex divide-x divide-gray-300">
-                        <p class="pr-4 py-2 font-mono text-sm">{{ year }}</p>
-                        <ul class="flex-1 divide-y divide-gray-300 pl-4">
-                            <li v-for="scholarship in scholarships" :key="scholarship.name" class="py-2">
-                                {{ scholarship.name }}
+            <div class="relative group">
+                <div
+                    class="absolute w-full h-full bg-gray-100 rounded group-hover:-translate-x-2 group-hover:-translate-y-2 transition invisible group-hover:visible"
+                />
+                <div
+                    v-if="education.scholarships"
+                    class="relative bg-gray-50 rounded border border-gray-100 from-blue-100/20 bg-linear-to-b overflow-hidden group-hover:shadow-lg transition group-hover:border-blue-400"
+                >
+                    <div
+                        class="absolute bg-[url('/bg/ys.svg')] mask-b-to-15% w-full h-full top-0 left-0"
+                    />
+                    <div class="space-y-2 p-4">
+                        <h5 class="font-sans text-blue-950 capitalize">
+                            {{ $t("about.education.scholarships") }}
+                            <span class="text-gray-400 text-base font-mono">
+                                {{ scholarshipsCountString }}
+                            </span>
+                        </h5>
+                        <ul
+                            class="text-gray-600 list-inside font-serif divide-y divide-gray-300"
+                        >
+                            <li
+                                v-for="year in scholarshipsGroupByYear?.keys()"
+                                :key="year"
+                                class="flex divide-x divide-dashed divide-gray-300"
+                            >
+                                <p class="pr-4 py-2 font-mono text-sm">
+                                    {{ year }}
+                                </p>
+                                <ul
+                                    class="flex-1 divide-y divide-gray-300 pl-4"
+                                >
+                                    <li
+                                        v-for="scholarship in scholarshipsGroupByYear?.get(
+                                            year,
+                                        )"
+                                        :key="scholarship.name"
+                                        class="py-2"
+                                    >
+                                        {{ scholarship.name }}
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -71,10 +113,13 @@ const isPresent = computed(() => {
 });
 
 const startDateString = computed(() => {
-    return new Date(education.value.startDate).toLocaleDateString(locale.value, {
-        month: "short",
-        year: "numeric",
-    });
+    return new Date(education.value.startDate).toLocaleDateString(
+        locale.value,
+        {
+            month: "short",
+            year: "numeric",
+        },
+    );
 });
 
 const endDateString = computed(() => {
@@ -83,12 +128,27 @@ const endDateString = computed(() => {
         month: "short",
         year: "numeric",
     });
-    return date > new Date() ? `${t("dictionary.expected")} ${dateString}` : dateString;
+    return date > new Date()
+        ? `${t("dictionary.expected")} ${dateString}`
+        : dateString;
+});
+
+const scholarshipsCountString = computed(() => {
+    return education.value.scholarships.length.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+    });
 });
 
 const scholarshipsGroupByYear = computed(() => {
-    return education.value.scholarships ? Object.groupBy(education.value.scholarships, (scholarship) => {
-        return new Date(scholarship.date).getFullYear();
-    }) : null;
-})
+    return education.value.scholarships
+        ? new Map(
+              Array.from(
+                  Map.groupBy(education.value.scholarships, (scholarship) => {
+                      return new Date(scholarship.date).getFullYear();
+                  }).entries(),
+              ).sort((a, b) => b[0] - a[0]),
+          )
+        : null;
+});
 </script>

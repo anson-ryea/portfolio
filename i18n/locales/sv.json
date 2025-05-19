@@ -46,7 +46,10 @@
         "title": "Om mig",
         "description": "Jag är en datavetenskapsstudent med en brinnande passion för mjukvaruutveckling och UI/UX-design.",
         "biography": "biografi",
-        "education": "utbildning",
+        "education": {
+            "label": "utbildning",
+            "scholarships": "stipendier"
+        },
         "experiences": "erfarenheter"
     },
     "footer": {
