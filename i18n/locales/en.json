@@ -46,7 +46,10 @@
         "title": "About me",
         "description": "I am a computer science student with a fervent passion for software engineering and UI/UX design.",
         "biography": "biography",
-        "education": "education",
+        "education": {
+            "label": "education",
+            "scholarships": "scholarships"
+        },
         "experiences": "experiences"
     },
     "footer": {

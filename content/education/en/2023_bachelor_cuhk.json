@@ -8,11 +8,44 @@
     "gpa": 3.88,
     "description": "Bachelor of Science in Computer Science",
     "highlights": [
-        "Dean's List Recipient | 2023 - 2024 | GPA: 3.88",
-        "Received 7 Scholarships"
+        "Dean's List Recipient | 2023 - 2024 | GPA: 3.88"
     ],
     "pathToLogo": "cuhk.svg",
     "tags": [
         "Bachelor"
+    ],
+    "scholarships": [
+        {
+            "name": "CUHK Admission Scholarship",
+            "date": "2023-08-15"
+        },
+        {
+            "name": "Dean's Award",
+            "date": "2023-08-15"
+        },
+        {
+            "name": "Scholarship Scheme for ELITE Stream Students",
+            "date": "2024-07-01"
+        },
+        {
+            "name": "Woo Sau Wing Scholarships",
+            "date": "2024-08-15"
+        },
+        {
+            "name": "Professor Omar Wing Memorial Scholarship",
+            "date": "2024-09-05"
+        },
+        {
+            "name": "CW Chu College Scholarship for Education",
+            "date": "2025-03-29"
+        },
+        {
+            "name": "The KY Young & CK Ma Memorial Scholarship",
+            "date": "2025-03-29"
+        },
+        {
+            "name": "Yu To Sang Memorial Scholarship",
+            "date": "2025-05-07"
+        }
     ]
 }
