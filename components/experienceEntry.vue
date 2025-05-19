@@ -12,7 +12,7 @@
                 <Tag v-show="isPresent" class="bg-blue-100! text-blue-950!">Present</Tag>
                 <Tag v-for="tag in experience.tags" :key="tag">{{
                     tag
-                    }}</Tag>
+                }}</Tag>
             </div>
         </div>
         <div class="md:pl-4 space-y-2 flex-1">
@@ -20,7 +20,7 @@
                 <NuxtImg :src="`content/experiences/${experience.pathToLogo}`" class="h-12 w-12" />
             </div>
             <div>
-                <h6 class="font-semibold">{{ experience.title }}</h6>
+                <h6 class="font-medium">{{ experience.title }}</h6>
                 <p>{{ experience.company }}</p>
             </div>
             <p class="text-gray-600 font-serif">

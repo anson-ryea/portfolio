@@ -8,11 +8,12 @@
     "gpa": 3.88,
     "description": "Kandidatexamen i datavetenskap",
     "highlights": [
-        "Mottagare av dekanens lista | 2023 - 2024 | GPA: 3.88",
-        "Erhöll 7 stipendier"
+        "Mottagare av dekanens lista | 2023 - 2024 | GPA: 3.88"
     ],
     "pathToLogo": "cuhk.svg",
-    "tags": ["Kandidat"],
+    "tags": [
+        "Kandidat"
+    ],
     "scholarships": [
         {
             "name": "CUHK Admission Scholarship",
