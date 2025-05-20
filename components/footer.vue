@@ -4,7 +4,7 @@
             class="flex flex-col md:mx-8 lg:mx-12 xl:mx-20 flex-1 bg-white border-x border-gray-300 border-dashed hover:border-solid divide-y divide-gray-300 divide-dashed">
             <FooterSection class="flex justify-between items-center">
                 <div>
-                    <h6 class="font-semibold">{{ $t("footer.contact.title") }}</h6>
+                    <h6 class="font-medium">{{ $t("footer.contact.title") }}</h6>
                     <p class="font-medium text-gray-500">{{ $t("footer.contact.description") }}</p>
                 </div>
                 <NuxtLink :to="`mailto:${$t('info.emailAddress')}`" external class="flex btn-light items-center gap-2">

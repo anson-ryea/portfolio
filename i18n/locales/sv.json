@@ -24,7 +24,7 @@
     },
     "index": {
         "greeting": {
-            "title": "Hej, jag är @:info.firstName{'.'}",
+            "title": "Hej, jag heter @:info.firstName{'.'}",
             "description": "Inget mer än en vanlig människa.",
             "intro": {
                 "label": "intro"
