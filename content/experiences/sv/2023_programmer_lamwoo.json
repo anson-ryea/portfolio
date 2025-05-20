@@ -1,18 +1,18 @@
 {
-    "locale": "sv",
-    "startDate": "2023-07-01",
-    "endDate": "2023-12-01",
-    "location": "Hongkong",
-    "company": "SKH Lam Woo Memorial Secondary School",
-    "title": "Programmerare",
-    "description": "Programmerare",
-    "highlights": [
-        "Omvandlade ett pappersbaserat disciplinärt system till en papperslös lösning med Google Suite, vilket löste problem med att sammanfoga register från olika avdelningar och minskade manuell datainmatning.",
-        "Utvecklade arbetsflöden med JavaScript-baserade Google Apps Script, integrerade med befintliga FoxPro-baserade administrativa system, för att hämta och uppdatera elevdata samt generera rapporter."
-    ],
-    "pathToLogo": "content/experiences/lamwoo.png",
-    "tags": [
-        "JavaScript",
-        "Apps Script"
-    ]
+  "locale": "sv",
+  "startDate": "2023-07-01",
+  "endDate": "2023-12-01",
+  "location": "Hongkong",
+  "company": "SKH Lam Woo Memorial Secondary School",
+  "title": "Programmerare",
+  "description": "Programmerare",
+  "highlights": [
+    "Omvandlade ett pappersbaserat disciplinärt system till en papperslös lösning med Google Suite, vilket löste problem med att sammanfoga register från olika avdelningar och minskade manuell datainmatning.",
+    "Utvecklade arbetsflöden med JavaScript-baserade Google Apps Script, integrerade med befintliga FoxPro-baserade administrativa system, för att hämta och uppdatera elevdata samt generera rapporter."
+  ],
+  "pathToLogo": "/content/experiences/lamwoo.png",
+  "tags": [
+    "JavaScript",
+    "Apps Script"
+  ]
 }

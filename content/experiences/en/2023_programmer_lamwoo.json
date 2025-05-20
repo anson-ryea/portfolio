@@ -1,18 +1,18 @@
 {
-    "locale": "en",
-    "startDate": "2023-07-01",
-    "endDate": "2023-12-01",
-    "location": "Hong Kong",
-    "company": "SKH Lam Woo Memorial Secondary School",
-    "title": "Programmer",
-    "description": "Programmer",
-    "highlights": [
-        "Converted a paper-based disciplinary system to a paperless solution using Google Suite, resolving issues with merging records from different departments and reducing manual data entry.",
-        "Developed workflows with JavaScript-based Google Apps Script, integrating with existing FoxPro-based administrative systems, to retrieve and update student data and generate reports."
-    ],
-    "pathToLogo": "content/experiences/lamwoo.png",
-    "tags": [
-        "JavaScript",
-        "Apps Script"
-    ]
+  "locale": "en",
+  "startDate": "2023-07-01",
+  "endDate": "2023-12-01",
+  "location": "Hong Kong",
+  "company": "SKH Lam Woo Memorial Secondary School",
+  "title": "Programmer",
+  "description": "Programmer",
+  "highlights": [
+    "Converted a paper-based disciplinary system to a paperless solution using Google Suite, resolving issues with merging records from different departments and reducing manual data entry.",
+    "Developed workflows with JavaScript-based Google Apps Script, integrating with existing FoxPro-based administrative systems, to retrieve and update student data and generate reports."
+  ],
+  "pathToLogo": "/content/experiences/lamwoo.png",
+  "tags": [
+    "JavaScript",
+    "Apps Script"
+  ]
 }

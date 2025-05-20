@@ -11,7 +11,7 @@
     "Ledde ett team för att utveckla en Python-simulator för att replikera trådlös kommunikation i multi-hop-nätverk med BATS-koder som överföringsmetod.",
     "Använde simulatorn för att mäta maximala paketmottagningshastigheter över tid vid destinationsnoden i linjenätverksscenarier med paketförlust."
   ],
-  "pathToLogo": "content/experiences/cuhk.svg",
+  "pathToLogo": "/content/experiences/cuhk.svg",
   "tags": [
     "Python",
     "Nätverk"

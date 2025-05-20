@@ -1,16 +1,16 @@
 {
-    "locale": "sv",
-    "startDate": "2026-01-01",
-    "endDate": "2026-06-01",
-    "location": "Stockholm, Sverige",
-    "school": "Kungliga Tekniska Högskolan",
-    "degree": "Utbytesprogram",
-    "description": "Kandidatexamen i datavetenskap",
-    "highlights": [
-        "Deltog i utbytesprogrammet vid KTH Kungliga Tekniska högskolan"
-    ],
-    "pathToLogo": "content/education/kth.svg",
-    "tags": [
-        "Utbyte"
-    ]
+  "locale": "sv",
+  "startDate": "2026-01-01",
+  "endDate": "2026-06-01",
+  "location": "Stockholm, Sverige",
+  "school": "Kungliga Tekniska Högskolan",
+  "degree": "Utbytesprogram",
+  "description": "Kandidatexamen i datavetenskap",
+  "highlights": [
+    "Deltog i utbytesprogrammet vid KTH Kungliga Tekniska högskolan"
+  ],
+  "pathToLogo": "/content/education/kth.svg",
+  "tags": [
+    "Utbyte"
+  ]
 }
