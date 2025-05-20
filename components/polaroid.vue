@@ -1,5 +1,5 @@
 <template>
-    <div class="group relative flex flex-col justify-around items-center rounded border border-dashed border-gray-300 font-serif bg-seethrough cursor-pointer"
+    <div class="group relative bg-gray-50 bg-[url('/bg/contour.svg')] flex flex-col justify-around items-center rounded border border-dashed border-gray-300 font-serif cursor-pointer"
         @click="isFlipped = !isFlipped">
         <div class="grid grid-rows-1 group-hover:grid-rows-5 group-hover:p-2 group-hover:shadow-xl bg-gray-100 absolute rounded shadow-lg h-full w-full transition-all border border-gray-300 overflow-hidden"
             :class="{ 'rotate-y-180! opacity-0': isFlipped }" :style="{
