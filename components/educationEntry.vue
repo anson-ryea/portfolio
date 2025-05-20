@@ -33,21 +33,25 @@
             </div>
             <div class="relative group" v-if="education.scholarships">
                 <div
-                    class="absolute w-full h-full bg-gray-100 rounded group-hover:-translate-x-2 group-hover:-translate-y-2 transition invisible group-hover:visible" />
+                    class="absolute w-full h-full bg-stone-100 rounded group-hover:-translate-x-2 group-hover:-translate-y-2 transition invisible group-hover:visible" />
                 <div
-                    class="relative bg-gray-50 rounded border border-gray-300 from-blue-100/20 bg-linear-to-b overflow-hidden group-hover:shadow-lg transition group-hover:border-blue-400">
-                    <div class="absolute bg-[url('/bg/geometric.svg')] mask-b-to-20% w-full h-full top-0 left-0" />
+                    class="absolute w-full h-full bg-stone-100 rounded group-hover:translate-x-2 group-hover:translate-y-2 transition invisible group-hover:visible" />
+                <div
+                    class="relative bg-stone-50 rounded border border-gray-300 from-blue-100/20 bg-linear-to-b overflow-hidden group-hover:shadow-lg transition group-hover:border-yellow-700">
+                    <div
+                        class="absolute bg-[url('/bg/geometric.svg')] mask-b-to-20% w-full h-full top-0 left-0 group-hover:scale-102 transition" />
                     <div class="relative space-y-2 p-4 z-10">
-                        <h5 class="font-sans text-blue-950 capitalize font-medium">
+                        <h5 class="font-sans text-yellow-900 capitalize font-medium">
                             {{ $t("about.education.scholarships") }}
                             <em class="text-gray-400 font-serif font-light tracking-wide">
                                 {{ scholarshipsCountString }}
                             </em>
                         </h5>
-                        <ul class="text-gray-600 list-inside font-serif divide-y divide-gray-300">
+                        <ul
+                            class="text-gray-600 list-inside font-serif divide-y divide-gray-300 group-hover:divide-yellow-700 transition">
                             <li v-for="year in scholarshipsGroupByYear?.keys()" :key="year"
-                                class="flex divide-x divide-dashed divide-gray-300">
-                                <span class="pr-4 py-2 font-mono text-gray-400">
+                                class="flex divide-x divide-dashed divide-gray-300 group-hover:divide-yellow-700 transition">
+                                <span class="pr-4 py-2 font-mono text-gray-400 group-hover:text-yellow-700 transition">
                                     {{ year }}
                                 </span>
                                 <ul class="flex-1 divide-y divide-gray-300 pl-4">
