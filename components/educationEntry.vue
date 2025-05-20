@@ -16,7 +16,7 @@
         <div class="md:pl-4 space-y-4 flex-1">
             <div class="space-y-2">
                 <div class="rounded-full bg-gray-100 p-2 w-fit">
-                    <NuxtImg :src="`content/education/${education.pathToLogo}`" class="h-12 w-12" />
+                    <NuxtImg :src="education.pathToLogo" class="h-12 w-12" />
                 </div>
                 <div>
                     <h6 class="font-medium">{{ education.degree }}</h6>

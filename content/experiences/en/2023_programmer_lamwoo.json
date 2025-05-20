@@ -10,7 +10,7 @@
         "Converted a paper-based disciplinary system to a paperless solution using Google Suite, resolving issues with merging records from different departments and reducing manual data entry.",
         "Developed workflows with JavaScript-based Google Apps Script, integrating with existing FoxPro-based administrative systems, to retrieve and update student data and generate reports."
     ],
-    "pathToLogo": "lamwoo.png",
+    "pathToLogo": "content/experiences/lamwoo.png",
     "tags": [
         "JavaScript",
         "Apps Script"

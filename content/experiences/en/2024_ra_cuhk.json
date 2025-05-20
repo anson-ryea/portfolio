@@ -11,7 +11,7 @@
         "Leading a team to develop a Python simulator to replicate wireless communication in multi-hop networks with BATS Codes as transmission method.",
         "Employing the simulator to measure maximum packet reception rates over time at the destination node in Line network scenarios with packet-loss."
     ],
-    "pathToLogo": "cuhk.svg",
+    "pathToLogo": "content/experiences/cuhk.svg",
     "tags": [
         "Python",
         "Network"

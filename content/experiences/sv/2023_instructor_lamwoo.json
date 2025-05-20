@@ -11,7 +11,7 @@
         "Utvecklade lektionsmaterial och kodningsövningar, vilket fördjupade elevernas behärskning av objektorienterad programmering och algoritmiska koncept, samtidigt som de använde Git för att lämna in sina kursarbeten.",
         "Mentorerade elever för Hongkongs olympiad i informatik genom riktad coachning, vilket resulterade i att 3 elever avancerade till finalstadiet."
     ],
-    "pathToLogo": "lamwoo.png",
+    "pathToLogo": "content/experiences/lamwoo.png",
     "tags": [
         "Python",
         "Kotlin"
