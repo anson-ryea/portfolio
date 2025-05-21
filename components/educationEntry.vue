@@ -1,15 +1,25 @@
 <template>
-    <div class="max-md:space-y-2 md:flex md:divide-x md:divide-gray-300 md:divide-dashed">
-        <div class="flex flex-col max-md:space-y-2 md:justify-between md:w-36 lg:w-48 xl:w-64 md:pr-4">
+    <div
+        class="max-md:space-y-2 md:flex md:divide-x md:divide-gray-300 md:divide-dashed"
+    >
+        <div
+            class="flex flex-col max-md:space-y-2 md:justify-between md:w-36 lg:w-48 xl:w-64 md:pr-4"
+        >
             <div class="max-md:flex text-balance">
-                <span class="font-mono text-xs text-gray-600">{{ startDateString }} ~ {{ endDateString }}</span>
-                <span class="font-mono text-xs text-gray-600 md:hidden">&nbsp·&nbsp</span>
+                <span class="font-mono text-xs text-gray-600"
+                    >{{ startDateString }} ~ {{ endDateString }}</span
+                >
+                <span class="font-mono text-xs text-gray-600 md:hidden"
+                    >&nbsp·&nbsp</span
+                >
                 <h6 class="max-md:text-xs font-mono">
                     {{ education.location }}
                 </h6>
             </div>
             <div class="flex flex-wrap gap-1">
-                <Tag v-show="isPresent" class="bg-blue-100! text-blue-950!">Present</Tag>
+                <Tag v-if="isPresent" class="bg-blue-100! text-blue-950!">{{
+                    $t("dictionary.present")
+                }}</Tag>
                 <Tag v-for="tag in education.tags" :key="tag">{{ tag }}</Tag>
             </div>
         </div>
@@ -26,38 +36,61 @@
                     {{ education.description }}
                 </p>
                 <ul class="text-gray-600 list-disc list-inside font-serif">
-                    <li v-for="highlight in education.highlights" :key="highlight">
+                    <li
+                        v-for="highlight in education.highlights"
+                        :key="highlight"
+                    >
                         {{ highlight }}
                     </li>
                 </ul>
             </div>
             <div class="relative group" v-if="education.scholarships">
                 <div
-                    class="absolute w-full h-full bg-stone-100 rounded group-hover:-translate-x-2 group-hover:-translate-y-2 transition invisible group-hover:visible" />
+                    class="absolute w-full h-full bg-stone-100 rounded group-hover:-translate-x-2 group-hover:-translate-y-2 transition invisible group-hover:visible"
+                />
                 <div
-                    class="absolute w-full h-full bg-stone-100 rounded group-hover:translate-x-2 group-hover:translate-y-2 transition invisible group-hover:visible" />
+                    class="absolute w-full h-full bg-stone-100 rounded group-hover:translate-x-2 group-hover:translate-y-2 transition invisible group-hover:visible"
+                />
                 <div
-                    class="relative bg-stone-50 rounded border border-gray-300 from-blue-100/20 bg-linear-to-b overflow-hidden group-hover:shadow-lg transition group-hover:border-yellow-700">
+                    class="relative bg-stone-50 rounded border border-gray-300 from-blue-100/20 bg-linear-to-b overflow-hidden group-hover:shadow-lg transition group-hover:border-yellow-700"
+                >
                     <div
-                        class="absolute bg-[url('/bg/geometric.svg')] mask-b-to-20% w-full h-full top-0 left-0 group-hover:scale-102 transition" />
+                        class="absolute bg-[url('/bg/geometric.svg')] mask-b-to-20% w-full h-full top-0 left-0 group-hover:scale-102 transition"
+                    />
                     <div class="relative space-y-2 p-4 z-10">
-                        <h5 class="font-sans text-yellow-900 capitalize font-medium">
+                        <h5
+                            class="font-sans text-yellow-900 capitalize font-medium"
+                        >
                             {{ $t("about.education.scholarships") }}
-                            <em class="text-gray-400 font-serif font-light tracking-wide">
+                            <em
+                                class="text-gray-400 font-serif font-light tracking-wide"
+                            >
                                 {{ scholarshipsCountString }}
                             </em>
                         </h5>
                         <ul
-                            class="text-gray-600 list-inside font-serif divide-y divide-gray-300 group-hover:divide-yellow-700 transition">
-                            <li v-for="year in scholarshipsGroupByYear?.keys()" :key="year"
-                                class="flex divide-x divide-dashed divide-gray-300 group-hover:divide-yellow-700 transition">
-                                <span class="pr-4 py-2 font-mono text-gray-400 group-hover:text-yellow-700 transition">
+                            class="text-gray-600 list-inside font-serif divide-y divide-gray-300 group-hover:divide-yellow-700 transition"
+                        >
+                            <li
+                                v-for="year in scholarshipsGroupByYear?.keys()"
+                                :key="year"
+                                class="flex divide-x divide-dashed divide-gray-300 group-hover:divide-yellow-700 transition"
+                            >
+                                <span
+                                    class="pr-4 py-2 font-mono text-gray-400 group-hover:text-yellow-700 transition"
+                                >
                                     {{ year }}
                                 </span>
-                                <ul class="flex-1 divide-y divide-gray-300 pl-4">
-                                    <li v-for="scholarship in scholarshipsGroupByYear?.get(
-                                        year,
-                                    )" :key="scholarship.name" class="py-2">
+                                <ul
+                                    class="flex-1 divide-y divide-gray-300 pl-4"
+                                >
+                                    <li
+                                        v-for="scholarship in scholarshipsGroupByYear?.get(
+                                            year,
+                                        )"
+                                        :key="scholarship.name"
+                                        class="py-2"
+                                    >
                                         {{ scholarship.name }}
                                     </li>
                                 </ul>
@@ -120,12 +153,12 @@ const scholarshipsCountString = computed(() => {
 const scholarshipsGroupByYear = computed(() => {
     return education.value.scholarships
         ? new Map(
-            Array.from(
-                Map.groupBy(education.value.scholarships, (scholarship) => {
-                    return new Date(scholarship.date).getFullYear();
-                }).entries(),
-            ).sort((a, b) => b[0] - a[0]),
-        )
+              Array.from(
+                  Map.groupBy(education.value.scholarships, (scholarship) => {
+                      return new Date(scholarship.date).getFullYear();
+                  }).entries(),
+              ).sort((a, b) => b[0] - a[0]),
+          )
         : null;
 });
 </script>

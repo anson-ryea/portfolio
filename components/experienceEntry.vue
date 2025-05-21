@@ -17,9 +17,9 @@
                 </h6>
             </div>
             <div class="flex flex-wrap gap-1">
-                <Tag v-show="isPresent" class="bg-blue-100! text-blue-950!"
-                    >Present</Tag
-                >
+                <Tag v-if="isPresent" class="bg-blue-100! text-blue-950!">{{
+                    $t("dictionary.present")
+                }}</Tag>
                 <Tag v-for="tag in experience.tags" :key="tag">{{ tag }}</Tag>
             </div>
         </div>
