@@ -1,7 +1,7 @@
 <template>
     <div>
         <transition name="slide-up">
-            <component :is="currentExpandedComponent" v-if="currentExpandedComponent" />
+            <component :is="currentExpandedComponent" v-show="currentExpandedComponent" />
         </transition>
         <div class="flex items-center max-md:justify-between md:space-x-8 border border-gray-300 rounded bg-gray-100/60 backdrop-blur-sm shadow px-4 font-medium text-sm font-mono text-gray-600 py-1 h-8"
             :class="{ 'border-t-0! rounded-t-none!': isExpanded.contact || isExpanded.locale }">
