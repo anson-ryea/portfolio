@@ -5,9 +5,9 @@
         </transition>
         <div class="flex items-center max-md:justify-between md:space-x-8 border border-gray-300 rounded bg-gray-100/60 backdrop-blur-sm shadow px-4 font-medium text-sm font-mono text-gray-600 py-1 h-8"
             :class="{ 'border-t-0! rounded-t-none!': isExpanded.contact || isExpanded.locale }">
-            <NuxtLink to="/" class="max-md:min-w-fit">
+            <NuxtLinkLocale to="/" class="max-md:min-w-fit">
                 <NuxtImg src="/favicon.svg" alt="Logo" class="h-10 w-10 items-center hover:invert transition" />
-            </NuxtLink>
+            </NuxtLinkLocale>
             <div class="flex flex-col items-center">
                 <NuxtLinkLocale to="/" class="capitalize"> {{ $t("nav.home") }}</NuxtLinkLocale>
                 <transition name="slide-up">
