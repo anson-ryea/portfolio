@@ -1,19 +1,16 @@
 {
-  "locale": "sv",
-  "startDate": "2023-07-01",
-  "endDate": "2023-12-01",
-  "location": "Hongkong",
-  "company": "SKH Lam Woo Memorial Secondary School",
-  "title": "Instruktör",
-  "description": "Instruktör",
-  "highlights": [
-    "Undervisade 15 elever i årskurs 3 till 5 i två fördjupningskurser: Avancerad programmering (Python) och Datastrukturer och algoritmer (Kotlin), vilket förbättrade deras kodningsförmåga.",
-    "Utvecklade lektionsmaterial och kodningsövningar, vilket fördjupade elevernas behärskning av objektorienterad programmering och algoritmiska koncept, samtidigt som de använde Git för att lämna in sina kursarbeten.",
-    "Mentorerade elever för Hongkongs olympiad i informatik genom riktad coachning, vilket resulterade i att 3 elever avancerade till finalstadiet."
-  ],
-  "pathToLogo": "/content/experiences/lamwoo.png",
-  "tags": [
-    "Python",
-    "Kotlin"
-  ]
+    "locale": "sv",
+    "startDate": "2023-07-01",
+    "endDate": "2024-08-01",
+    "location": "Hongkong",
+    "company": "SKH Lam Woo Memorial Secondary School",
+    "title": "Instruktör",
+    "description": "Instruktör",
+    "highlights": [
+        "Undervisade 15 elever i årskurs 3 till 5 i två fördjupningskurser: Avancerad programmering (Python) och Datastrukturer och algoritmer (Kotlin), vilket förbättrade deras kodningsförmåga.",
+        "Utvecklade lektionsmaterial och kodningsövningar, vilket fördjupade elevernas behärskning av objektorienterad programmering och algoritmiska koncept, samtidigt som de använde Git för att lämna in sina kursarbeten.",
+        "Mentorerade elever för Hongkongs olympiad i informatik genom riktad coachning, vilket resulterade i att 3 elever avancerade till finalstadiet."
+    ],
+    "pathToLogo": "/content/experiences/lamwoo.png",
+    "tags": ["Python", "Kotlin"]
 }
