@@ -44,26 +44,11 @@
                 </IndexSection>
                 <IndexSection>
                     <ConsoleLikePane :paneName="$t('index.polaroids')">
-                        <div class="flex space-x-4 max-w-full md:max-xl:grid md:grid-cols-2 md:gap-8 justify-between
-                            justify-items-center
-                            overflow-x-auto md:overflow-visible">
-                            <Polaroid :src="'/index/polaroids/salford.png'" caption="Salford, UK"
-                                class="aspect-3/4 w-48 md:w-60 xl:max-w-88 xl:h-fit xl:w-full" />
-                            <!-- <Polaroid
-                                src=""
-                                description="This is me!"
-                                class="aspect-3/4 w-48 md:w-60 xl:max-w-88 xl:h-fit xl:w-full min-w-fit"
-                            />
-                            <Polaroid
-                                src=""
-                                description="This is me!"
-                                class="aspect-3/4 w-48 md:w-60 xl:max-w-88 xl:h-fit xl:w-full min-w-fit"
-                            />
-                            <Polaroid
-                                src=""
-                                description="This is me!"
-                                class="aspect-3/4 w-48 md:w-60 xl:max-w-88 xl:h-fit xl:w-full min-w-fit"
-                            /> -->
+                        <div class="xl:flex max-w-full grid grid-cols-2 gap-8 justify-between
+                            justify-items-center">
+                            <Polaroid v-for="polaroid in polaroids" :src="polaroid.pathToImage"
+                                :caption="polaroid.caption" :alt="polaroid.alt"
+                                class="aspect-3/4 w-42 md:w-60 xl:max-w-88 xl:h-fit xl:w-full" />
                         </div>
                     </ConsoleLikePane>
                 </IndexSection>
@@ -150,4 +135,10 @@ const { data: intro } = await useAsyncData(`biography-intro-${locale.value}`, ()
 })
 
 const introVars = ref({ fullName: t("info.fullName") });
+
+const { data: polaroids } = await useAsyncData(`polaroids-${locale.value}`, () => {
+    return queryCollection("polaroids").where("locale", "=", locale.value).all();
+}, {
+    watch: [locale]
+});
 </script>

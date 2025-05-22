@@ -43,6 +43,16 @@ export default defineContentConfig({
             type: "page",
             source: "biography/*/*.md",
             schema: z.object({})
-        })
+        }),
+        polaroids: defineCollection({
+            type: "data",
+            source: "polaroids/*/*.json",
+            schema: z.object({
+                locale: z.enum(["en", "sv"]),
+                caption: z.string(),
+                alt: z.string(),
+                pathToImage: z.string().editor({ input: "media" }),
+            }),
+        }),
     },
 });
