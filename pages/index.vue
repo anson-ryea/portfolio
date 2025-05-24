@@ -1,17 +1,17 @@
 <template>
     <div class="flex flex-col w-full justify-between">
         <div
-            class="relative h-screen w-full bg-[url(/index/hero.jpg)] bg-cover bg-center flex flex-col justify-center items-center space-y-4 xs:space-y-8 shadow-2xl select-none">
-            <div class="grid grid-cols-10 w-full h-full absolute top-0 left-0">
-                <motion.div class="bg-blue-600 border border-blue-900 rounded z-1" v-for="i in 100"
-                    :initial="{ opacity: 0.85, filter: `brightness(${(i % 7 * 15) / 100})` }"
-                    :animate="{ opacity: 0, filter: `brightness(1)`, transition: { delay: ((i - 1) % 10 - (i - 1) / 10 + 10) * 0.03 } }"
-                    :whileHover="{ opacity: 0.4 }" />
+            class="relative h-screen w-full bg-[url(/index/hero.jpg)] bg-cover bg-center shadow-2xl select-none grid grid-cols-10">
+            <motion.div class="bg-blue-600 border border-blue-900 rounded" v-for="i in 100"
+                :initial="{ opacity: 0.85, filter: `brightness(${(i % 7 * 5 + 30) / 100})` }"
+                :animate="{ opacity: 0, filter: `brightness(1)`, transition: { delay: ((i - 1) % 10 - (i - 1) / 10 + 10) * 0.03 } }"
+                :whileHover="{ opacity: 0.5 }" />
+            <div class="absolute bottom-16 right-8 z-10">
+                <h1 class="text-stone-200/50 font-pixel font-bold tracking-[-0.12em]! text-shadow-lg">
+                    AN5ON</h1>
+                <NuxtImg class="absolute h-16 md:h-24 lg:h-32 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+                    src="/info/signature.svg" />
             </div>
-            <NuxtImg class="relative h-80 mix-blend-difference" src="/info/signature.svg" />
-            <p class="text-white font-mono font-light text-center xs:text-sm text-base mix-blend-difference">
-                {{ $t("info.role") }}
-            </p>
         </div>
         <main class="flex w-full justify-around bg-side border-b border-gray-300">
             <div

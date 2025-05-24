@@ -6,7 +6,7 @@
     --font-serif: "Fraunces", serif;
     --font-mono: "Geist Mono", monospace;
     --font-handwritten: "Reenie Beanie", cursive;
-
+    --font-pixel: "Array", sans-serif;
     --text-2xs: 0.625rem;
     --text-2xs--line-height: calc(0.625 / 0.625);
 }

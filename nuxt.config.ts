@@ -69,6 +69,10 @@ export default defineNuxtConfig({
                 name: "Reenie Beanie",
                 provider: "local",
             },
+            {
+                name: "Array",
+                provider: "local",
+            },
         ],
     },
     icon: {
