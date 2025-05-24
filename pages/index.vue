@@ -1,8 +1,14 @@
 <template>
     <div class="flex flex-col w-full justify-between">
         <div
-            class="h-screen w-full bg-[url(/index/hero.jpg)] bg-cover bg-center flex flex-col justify-center items-center space-y-4 xs:space-y-8 shadow-2xl select-none">
-            <NuxtImg class="h-80 mix-blend-difference" src="/info/signature.svg" />
+            class="relative h-screen w-full bg-[url(/index/hero.jpg)] bg-cover bg-center flex flex-col justify-center items-center space-y-4 xs:space-y-8 shadow-2xl select-none">
+            <div class="grid grid-cols-10 w-full h-full absolute top-0 left-0">
+                <motion.div class="bg-blue-600 border border-blue-900 rounded z-1" v-for="i in 100"
+                    :initial="{ opacity: 0.85, filter: `brightness(${(i % 7 * 15) / 100})` }"
+                    :animate="{ opacity: 0, filter: `brightness(1)`, transition: { delay: ((i - 1) % 10 - (i - 1) / 10 + 10) * 0.03 } }"
+                    :whileHover="{ opacity: 0.4 }" />
+            </div>
+            <NuxtImg class="relative h-80 mix-blend-difference" src="/info/signature.svg" />
             <p class="text-white font-mono font-light text-center xs:text-sm text-base mix-blend-difference">
                 {{ $t("info.role") }}
             </p>
@@ -76,6 +82,7 @@
 </template>
 
 <script setup lang="ts">
+import { delay, motion } from 'motion-v';
 const { t, locale } = useI18n();
 
 const currentDate = ref(Date.now());

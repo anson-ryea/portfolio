@@ -34,6 +34,7 @@ export default defineNuxtConfig({
         "@nuxt/content",
         "@nuxt/fonts",
         "@nuxtjs/i18n",
+        "motion-v/nuxt"
     ],
     vite: {
         plugins: [tailwindcss()],
