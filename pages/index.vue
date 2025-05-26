@@ -6,12 +6,13 @@
                 :initial="{ opacity: 0.85, filter: `brightness(${(i % 7 * 5 + 30) / 100})` }"
                 :animate="{ opacity: 0, filter: `brightness(1)`, transition: { delay: ((i - 1) % 10 - (i - 1) / 10 + 10) * 0.03 } }"
                 :whileHover="{ opacity: 0.5 }" />
-            <div class="absolute bottom-16 right-8 z-10">
+            <motion.div class="absolute bottom-16 right-8 z-10" :initial="{ opacity: 0, scale: 0 }"
+                :animate="{ opacity: 1, scale: 1 }">
                 <h1 class="text-stone-200/50 font-pixel font-bold tracking-[-0.12em]! text-shadow-lg">
                     AN5ON</h1>
                 <NuxtImg class="absolute h-16 md:h-24 lg:h-32 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
                     src="/info/signature.svg" />
-            </div>
+            </motion.div>
         </div>
         <main class="flex w-full justify-around bg-side border-b border-gray-300">
             <div
@@ -82,7 +83,7 @@
 </template>
 
 <script setup lang="ts">
-import { delay, motion } from 'motion-v';
+import { motion } from 'motion-v';
 const { t, locale } = useI18n();
 
 const currentDate = ref(Date.now());

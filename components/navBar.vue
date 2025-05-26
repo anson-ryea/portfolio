@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <motion.div :initial="{ opacity: 0, scale: 0 }" :animate="{ opacity: 1, scale: 1 }">
         <transition name="slide-up">
             <component :is="currentExpandedComponent" v-show="currentExpandedComponent" />
         </transition>
@@ -41,10 +41,11 @@
                 </transition>
             </button>
         </div>
-    </div>
+    </motion.div>
 </template>
 
 <script setup lang="ts">
+import { motion } from 'motion-v';
 const route = useRoute();
 const currentRouteName = computed(() => route.name);
 
