@@ -4,7 +4,8 @@
       <SwitchLocalePathLink v-for="locale in locales" :key="locale.code" :locale="locale.code"
         :class="{ 'border-blue-600!': locale.code === currentLocale }"
         class="flex-1 flex items-center gap-2 col-span-3 w-full justify-center btn-light px-2 py-1 capitalize">
-        {{ locale.name }} <span class="text-gray-400"> / {{ $t(`locales.${locale.code}`) }}</span>
+        <span class="pointer-events-none">{{ locale.name }}<span class="text-gray-400"> / {{
+          $t(`locales.${locale.code}`) }}</span></span>
       </SwitchLocalePathLink>
     </div>
   </div>

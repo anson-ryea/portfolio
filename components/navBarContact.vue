@@ -4,22 +4,23 @@
       <NuxtLink :to="`mailto:${$t('info.emailAddress')}`" external
         class="flex items-center gap-2 col-span-3 w-full justify-center btn-light px-2 py-1" key="email">
         {{ $t('info.emailAddress') }}
-        <Icon name="solar:plain-2-broken" class="h-4 w-4 bg-gray-600" />
+        <Icon name="solar:plain-2-broken" class="h-4 w-4 bg-gray-600 pointer-events-none" />
       </NuxtLink>
       <NuxtLink :to="$t('info.githubUrl')" external
         class="flex items-center col-span-1 w-full btn-light justify-center px-2 py-1">
-        <Icon name="simple-icons:github" class="h-4 w-4 bg-gray-600" />
+        <Icon name="simple-icons:github" class="h-4 w-4 bg-gray-600 pointer-events-none" />
       </NuxtLink>
       <NuxtLink :to="$t('info.instagramUrl')" external
         class="flex items-center col-span-1 w-full btn-light justify-center px-2 py-1">
-        <Icon name="simple-icons:instagram" class="h-4 w-4 bg-gray-600" />
+        <Icon name="simple-icons:instagram" class="h-4 w-4 bg-gray-600 pointer-events-none" />
       </NuxtLink>
       <NuxtLink :to="$t('info.linkedinUrl')" external
         class="flex items-center col-span-1 w-full btn-light justify-center px-2 py-1">
-        <Icon name="simple-icons:linkedin" class="h-4 w-4 bg-gray-600 group-hover:bg-white transition" />
+        <Icon name="simple-icons:linkedin" class="h-4 w-4 bg-gray-600 pointer-events-none" />
       </NuxtLink>
     </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+</script>

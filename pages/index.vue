@@ -2,7 +2,7 @@
     <div class="flex flex-col w-full justify-between">
         <div class="relative h-screen w-full bg-[url(/index/hero.jpg)] bg-cover bg-center shadow-2xl select-none">
             <HeroGridsAnimation />
-            <motion.div class="absolute bottom-16 right-8 z-10" :initial="{ opacity: 0, scale: 0 }"
+            <motion.div class="absolute bottom-16 right-8 z-10 pointer-events-none" :initial="{ opacity: 0, scale: 0 }"
                 :animate="{ opacity: 1, scale: 1 }">
                 <h1 class="text-stone-200/50 font-pixel font-bold tracking-[-0.12em]! text-shadow-lg">
                     AN5ON</h1>

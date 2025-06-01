@@ -51,7 +51,7 @@
 
 @layer base {
     html {
-        scroll-behavior: smooth;
+        @apply scroll-smooth cursor-none;
     }
 
     h1 {
@@ -82,8 +82,12 @@
         @apply text-gray-600;
     }
 
+    a {
+        @apply cursor-none;
+    }
+
     button {
-        @apply cursor-pointer;
+        @apply cursor-none;
     }
 }
 
@@ -111,4 +115,6 @@
     .btn-light {
         @apply w-fit rounded border border-gray-100 bg-white px-4 py-2 text-sm font-medium text-gray-600 transition hover:brightness-97 active:scale-95;
     }
+
+
 }
