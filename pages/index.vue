@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col w-full justify-between">
-        <div class="relative h-screen w-full bg-[url(/index/hero.jpg)] bg-cover bg-center shadow-2xl select-none">
+        <div class="relative h-dvh w-full bg-[url(/index/hero.jpg)] bg-cover bg-center shadow-2xl select-none">
             <HeroGridsAnimation />
             <motion.div class="absolute bottom-16 right-8 z-10 pointer-events-none" :initial="{ opacity: 0, scale: 0 }"
                 :animate="{ opacity: 1, scale: 1 }">
