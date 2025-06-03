@@ -29,12 +29,13 @@ export default defineNuxtConfig({
     },
     css: ["~/assets/css/main.css"],
     modules: [
-        "@nuxt/icon",
-        "@nuxt/image",
-        "@nuxt/content",
-        "@nuxt/fonts",
-        "@nuxtjs/i18n",
-        "motion-v/nuxt"
+      "@nuxt/icon",
+      "@nuxt/image",
+      "@nuxt/content",
+      "@nuxt/fonts",
+      "@nuxtjs/i18n",
+      "motion-v/nuxt",
+      "@pinia/nuxt",
     ],
     vite: {
         plugins: [tailwindcss()],
@@ -67,6 +68,10 @@ export default defineNuxtConfig({
             },
             {
                 name: "Reenie Beanie",
+                provider: "local",
+            },
+            {
+                name: "Array",
                 provider: "local",
             },
         ],
