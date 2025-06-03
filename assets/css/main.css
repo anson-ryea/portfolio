@@ -93,6 +93,17 @@
 
 @layer components {
 
+    .page-enter-active,
+    .page-leave-active {
+        transition: all 0.4s;
+    }
+
+    .page-enter-from,
+    .page-leave-to {
+        opacity: 0;
+        filter: blur(1rem);
+    }
+
     .slide-up-enter-active,
     .slide-up-leave-active {
         @apply transition duration-200 ease-out;
@@ -115,6 +126,4 @@
     .btn-light {
         @apply w-fit rounded border border-gray-100 bg-white px-4 py-2 text-sm font-medium text-gray-600 transition hover:brightness-97 active:scale-95;
     }
-
-
 }
