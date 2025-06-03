@@ -1,7 +1,7 @@
 <template>
   <motion.div class="pointer-events-none" v-if="isMouseActive" :initial="{ scale: 0 }" :animate="{ scale: 1 }"
     :exit="{ scale: 0 }">
-    <motion.div class="h-2 w-2 bg-blue-600 border border-gray-300 -top-1 -left-1 shadow-lg shadow-blue-300"
+    <motion.div class="h-2 w-2 bg-blue-700 border border-gray-300 -top-1 -left-1 shadow-lg shadow-blue-300"
       :animate="{ scaleX: isHoveringTextElement ? 0.5 : 1, scaleY: isHoveringTextElement ? 2 : 1, borderRadius: isHoveringTextElement ? '2px' : 'calc(infinity * 1px)', x: positionX + 'px', y: positionY + 'px' }"
       :transition="{ x: { type: 'tween', duration: 0 }, y: { type: 'tween', duration: 0 } }" />
     <motion.div
