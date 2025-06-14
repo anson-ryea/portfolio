@@ -51,6 +51,9 @@ export default defineNuxtConfig({
             { code: "en", name: "english", file: "en.json" },
             { code: "sv", name: "svenska", file: "sv.json" },
         ],
+        bundle: {
+            optimizeTranslationDirective: false,
+        },
     },
     fonts: {
         families: [
