@@ -29,13 +29,13 @@ export default defineNuxtConfig({
     },
     css: ["~/assets/css/main.css"],
     modules: [
-      "@nuxt/icon",
-      "@nuxt/image",
-      "@nuxt/content",
-      "@nuxt/fonts",
-      "@nuxtjs/i18n",
-      "motion-v/nuxt",
-      "@pinia/nuxt",
+        "@nuxt/icon",
+        "@nuxt/image",
+        "@nuxt/content",
+        "@nuxt/fonts",
+        "@nuxtjs/i18n",
+        "motion-v/nuxt",
+        "@pinia/nuxt",
     ],
     vite: {
         plugins: [tailwindcss()],
@@ -51,6 +51,9 @@ export default defineNuxtConfig({
             { code: "en", name: "english", file: "en.json" },
             { code: "sv", name: "svenska", file: "sv.json" },
         ],
+        bundle: {
+            optimizeTranslationDirective: false,
+        },
     },
     fonts: {
         families: [
@@ -86,4 +89,7 @@ export default defineNuxtConfig({
             api: "https://api.nuxt.studio",
         },
     },
+    future: {
+        compatibilityVersion: 4,
+    }
 });
