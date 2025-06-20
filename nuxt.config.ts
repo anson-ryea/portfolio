@@ -31,8 +31,9 @@ export default defineNuxtConfig({
     modules: [
         "@nuxt/icon",
         "@nuxt/image",
-        "@nuxt/content",
         "@nuxt/fonts",
+        "@nuxtjs/seo",
+        "@nuxt/content",
         "@nuxtjs/i18n",
         "motion-v/nuxt",
         "@pinia/nuxt",
