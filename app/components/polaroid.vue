@@ -6,7 +6,7 @@
                 transform: `rotateZ(${rotateDegree}deg)`,
             }">
             <NuxtImg :src="src" :alt="alt" class="transition-all object-cover w-full max-h-full row-span-4"
-                :class="imgClass" />
+                :class="imgClass" format="webp" />
             <span
                 class="text-center font-handwritten text-gray-600 text-3xl my-auto hidden group-hover:block [@media(hover:none)]:block">{{
                     caption }}</span>

@@ -1,13 +1,16 @@
 <template>
     <div class="flex flex-col w-full justify-between">
-        <div class="relative h-dvh w-full bg-[url(/index/hero.jpg)] bg-cover bg-center shadow-2xl select-none">
+        <div class="relative h-dvh w-full shadow-2xl select-none">
+            <NuxtImg class="absolute z-0 w-full h-full object-cover object-center" src="/index/hero.jpg" format="webp"
+                quality="80" fit="cover" :preload="{ fetchPriority: 'high' }" width="2666px"
+                :placeholder="[266, 199, 75, 10]" />
             <HeroGridsAnimation />
             <motion.div class="absolute bottom-16 right-8 z-10 pointer-events-none" :initial="{ opacity: 0, scale: 0 }"
                 :animate="{ opacity: 1, scale: 1 }">
                 <h1 class="text-stone-200/50 font-pixel font-bold tracking-[-0.12em]! text-shadow-lg">
                     AN5ON</h1>
                 <NuxtImg class="absolute h-16 md:h-24 lg:h-32 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
-                    src="/info/signature.svg" />
+                    src="/info/signature.svg" :preload="{ fetchPriority: 'high' }" />
             </motion.div>
         </div>
         <main class="flex w-full justify-around bg-side border-b border-gray-300">
@@ -82,20 +85,6 @@
 import { motion } from 'motion-v';
 const { t, locale } = useI18n();
 
-const currentDate = ref(Date.now());
-let intervalId: number;
-
-onMounted(() => {
-    currentDate.value = Date.now();
-    intervalId = window.setInterval(() => {
-        currentDate.value = Date.now();
-    }, 1000);
-});
-
-onUnmounted(() => {
-    clearInterval(intervalId);
-});
-
 const { data: presentExperiences } = await useAsyncData(
     `presentExperiences-${locale.value}`,
     () => {
@@ -144,5 +133,19 @@ const { data: polaroids } = await useAsyncData(`polaroids-${locale.value}`, () =
     return queryCollection("polaroids").where("locale", "=", locale.value).all();
 }, {
     watch: [locale]
+});
+
+const currentDate = ref(Date.now());
+let intervalId: number;
+
+onMounted(() => {
+    currentDate.value = Date.now();
+    intervalId = window.setInterval(() => {
+        currentDate.value = Date.now();
+    }, 1000);
+});
+
+onUnmounted(() => {
+    clearInterval(intervalId);
 });
 </script>

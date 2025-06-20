@@ -11,14 +11,14 @@
             <div class="flex flex-wrap gap-1">
                 <Tag v-if="isPresent" class="bg-blue-100! text-blue-950!">{{
                     $t("dictionary.present")
-                    }}</Tag>
+                }}</Tag>
                 <Tag v-for="tag in education.tags" :key="tag">{{ tag }}</Tag>
             </div>
         </div>
         <div class="md:pl-4 space-y-4 flex-1">
             <div class="space-y-2">
                 <div class="rounded-full bg-gray-100 p-2 w-fit">
-                    <NuxtImg :src="education.pathToLogo" class="h-12 w-12" />
+                    <NuxtImg :src="education.pathToLogo" class="h-12 w-12" width="48" />
                 </div>
                 <div>
                     <h6 class="font-medium">{{ education.degree }}</h6>
