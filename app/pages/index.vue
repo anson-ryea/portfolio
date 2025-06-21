@@ -85,6 +85,11 @@
 import { motion } from 'motion-v';
 const { t, locale } = useI18n();
 
+defineOgImageComponent('NuxtSeo')
+useHead({
+    title: capitalizeFirstLetter(t("nav.home")),
+});
+
 const { data: presentExperiences } = await useAsyncData(
     `presentExperiences-${locale.value}`,
     () => {

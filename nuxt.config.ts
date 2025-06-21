@@ -4,6 +4,19 @@ import pkg from "./package.json";
 
 export default defineNuxtConfig({
     compatibilityDate: "2024-11-01",
+    modules: [
+        "@nuxt/icon",
+        "@nuxt/image",
+        "@nuxt/fonts",
+        "@nuxtjs/seo",
+        "@nuxt/content",
+        "@nuxtjs/i18n",
+        "motion-v/nuxt",
+        "@pinia/nuxt",
+    ],
+    vite: {
+        plugins: [tailwindcss()],
+    },
     devtools: { enabled: true },
     app: {
         head: {
@@ -27,20 +40,11 @@ export default defineNuxtConfig({
         },
         pageTransition: { name: "page", mode: "out-in" },
     },
-    css: ["~/assets/css/main.css"],
-    modules: [
-        "@nuxt/icon",
-        "@nuxt/image",
-        "@nuxt/fonts",
-        "@nuxtjs/seo",
-        "@nuxt/content",
-        "@nuxtjs/i18n",
-        "motion-v/nuxt",
-        "@pinia/nuxt",
-    ],
-    vite: {
-        plugins: [tailwindcss()],
+    site: {
+        url: "https://www.an5on.com",
+        name: "Anson Ng",
     },
+    css: ["~/assets/css/main.css"],
     runtimeConfig: {
         public: {
             __APP_VERSION__: pkg.version,
