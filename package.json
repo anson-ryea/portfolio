@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@nuxt/content": "^3.5.1",
+        "@nuxt/eslint": "^1.4.1",
         "@nuxt/fonts": "^0.11.2",
         "@nuxt/icon": "^1.12.0",
         "@nuxt/image": "^1.10.0",
@@ -22,6 +23,7 @@
         "@vercel/analytics": "^1.5.0",
         "@vercel/speed-insights": "^1.2.0",
         "better-sqlite3": "^11.10.0",
+        "eslint": "^9.30.0",
         "motion-v": "^1.1.1",
         "nuxt": "^3.17.5",
         "pinia": "^3.0.2",
@@ -32,6 +34,7 @@
     "devDependencies": {
         "@iconify-json/simple-icons": "^1.2.34",
         "@iconify-json/solar": "^1.2.2",
-        "nuxi": "^3.25.0"
+        "nuxi": "^3.25.0",
+        "typescript": "^5.8.3"
     }
 }
