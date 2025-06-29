@@ -4,6 +4,7 @@
       <NuxtImg
         class="absolute z-0 w-full h-full object-cover object-center"
         src="/index/hero.jpg"
+        :alt="$t('index.hero.alt')"
         format="webp"
         quality="80"
         fit="cover"
@@ -23,6 +24,7 @@
         <NuxtImg
           class="absolute h-16 md:h-24 lg:h-32 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
           src="/info/signature.svg"
+          :alt="$t('info.firstName') + $t('dictionary.logoAlt')"
           :preload="{ fetchPriority: 'high' }"
         />
       </motion.div>

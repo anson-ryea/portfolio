@@ -29,6 +29,7 @@
       <div class="rounded-full bg-gray-100 p-2 w-fit">
         <NuxtImg
           :src="experience.pathToLogo"
+          :alt="experience.company + $t('dictionary.logoAlt')"
           class="h-12 w-12"
           width="48"
         />
@@ -58,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ExperiencesCollectionItem } from '@nuxt/content'
+import type { ExperiencesCollectionItem } from '@nuxt/content';
 
 const { t, locale } = useI18n()
 

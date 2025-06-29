@@ -31,6 +31,7 @@
           <NuxtImg
             class="mx-auto h-24 sm:h-36 md:h-56 invert brightness-10 mix-blend-multiply"
             src="info/signature.svg"
+            :alt="$t('info.firstName') + $t('dictionary.logoAlt')"
           />
         </FooterSection>
         <FooterSection

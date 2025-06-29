@@ -23,6 +23,9 @@
         "sv": "swedish"
     },
     "index": {
+        "hero": {
+            "alt": "Jag själv promenerar i en bambuskog i Kyoto, Japan."
+        },
         "greeting": {
             "title": "Hello, I'm @:info.firstName{'.'}",
             "description": "Nothing more than an ordinary human.",
@@ -70,6 +73,7 @@
     "dictionary": {
         "and": "and",
         "expected": "expected",
-        "present": "present"
+        "present": "present",
+        "logoAlt": " Logo"
     }
 }

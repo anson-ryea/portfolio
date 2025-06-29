@@ -81,6 +81,7 @@
       <button
         class="flex flex-col items-center gap-0.5"
         :aria-expanded="isExpanded.locale"
+        title="Change language"
         @click="toggleLocale"
       >
         <Icon
