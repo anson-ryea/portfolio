@@ -1,101 +1,108 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
-import pkg from "./package.json";
+import tailwindcss from '@tailwindcss/vite'
+import pkg from './package.json'
 
 export default defineNuxtConfig({
-    compatibilityDate: "2024-11-01",
     modules: [
-        "@nuxt/icon",
-        "@nuxt/image",
-        "@nuxt/fonts",
-        "@nuxt/eslint",
-        "@nuxtjs/seo",
-        "@nuxt/content",
-        "@nuxtjs/i18n",
-        "motion-v/nuxt",
-        "@pinia/nuxt",
+        '@nuxt/icon',
+        '@nuxt/image',
+        '@nuxt/fonts',
+        '@nuxt/eslint',
+        '@nuxtjs/seo',
+        '@nuxt/content',
+        '@nuxtjs/i18n',
+        'motion-v/nuxt',
+        '@pinia/nuxt',
     ],
-    vite: {
-        plugins: [tailwindcss()],
-    },
     devtools: { enabled: true },
     app: {
         head: {
-            title: "Anson Ng",
+            title: 'Anson Ng',
             link: [
                 {
-                    rel: "icon",
-                    type: "image/png",
-                    href: "/favicon-96x96.png",
-                    sizes: "96x96",
+                    rel: 'icon',
+                    type: 'image/png',
+                    href: '/favicon-96x96.png',
+                    sizes: '96x96',
                 },
-                { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-                { rel: "shortcut icon", href: "/favicon.ico" },
+                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+                { rel: 'shortcut icon', href: '/favicon.ico' },
                 {
-                    rel: "apple-touch-icon",
-                    sizes: "180x180",
-                    href: "/apple-touch-icon.png",
+                    rel: 'apple-touch-icon',
+                    sizes: '180x180',
+                    href: '/apple-touch-icon.png',
                 },
-                { rel: "manifest", href: "/site.webmanifest" },
+                { rel: 'manifest', href: '/site.webmanifest' },
             ],
         },
-        pageTransition: { name: "page", mode: "out-in" },
+        pageTransition: { name: 'page', mode: 'out-in' },
     },
+    css: ['~/assets/css/main.css'],
     site: {
-        url: "https://www.an5on.com",
-        name: "Anson Ng",
+        url: 'https://www.an5on.com',
+        name: 'Anson Ng',
     },
-    css: ["~/assets/css/main.css"],
+    // enable preview causes parse error on Nuxt Studio
+    content: {
+        preview: {
+            api: 'https://api.nuxt.studio',
+        },
+    },
     runtimeConfig: {
         public: {
             __APP_VERSION__: pkg.version,
         },
     },
-    i18n: {
-        defaultLocale: "en",
-        locales: [
-            { code: "en", name: "english", file: "en.json" },
-            { code: "sv", name: "svenska", file: "sv.json" },
-        ],
-        bundle: {
-            optimizeTranslationDirective: false,
+    future: {
+        compatibilityVersion: 4,
+    },
+    compatibilityDate: '2024-11-01',
+    vite: {
+        plugins: [tailwindcss()],
+    },
+    eslint: {
+        config: {
+            stylistic: {
+                indent: 4,
+            },
         },
     },
     fonts: {
         families: [
             {
-                name: "DM Sans",
-                provider: "local",
+                name: 'DM Sans',
+                provider: 'local',
             },
             {
-                name: "Fraunces",
-                provider: "local",
+                name: 'Fraunces',
+                provider: 'local',
             },
             {
-                name: "Geist Mono",
-                provider: "local",
+                name: 'Geist Mono',
+                provider: 'local',
             },
             {
-                name: "Reenie Beanie",
-                provider: "local",
+                name: 'Reenie Beanie',
+                provider: 'local',
             },
             {
-                name: "Array",
-                provider: "local",
+                name: 'Array',
+                provider: 'local',
             },
         ],
     },
-    icon: {
-        mode: "css",
-        cssLayer: "base",
-    },
-    // enable preview causes parse error on Nuxt Studio
-    content: {
-        preview: {
-            api: "https://api.nuxt.studio",
+    i18n: {
+        defaultLocale: 'en',
+        locales: [
+            { code: 'en', name: 'english', file: 'en.json' },
+            { code: 'sv', name: 'svenska', file: 'sv.json' },
+        ],
+        bundle: {
+            optimizeTranslationDirective: false,
         },
     },
-    future: {
-        compatibilityVersion: 4,
-    }
-});
+    icon: {
+        mode: 'css',
+        cssLayer: 'base',
+    },
+})
