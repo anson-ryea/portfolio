@@ -42,7 +42,6 @@ export default defineNuxtConfig({
         url: 'https://www.an5on.com',
         name: 'Anson Ng',
     },
-    // enable preview causes parse error on Nuxt Studio
     content: {
         preview: {
             api: 'https://api.nuxt.studio',

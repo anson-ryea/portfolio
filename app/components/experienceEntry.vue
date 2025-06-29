@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ExperiencesCollectionItem } from '@nuxt/content';
+import type { ExperiencesCollectionItem } from '@nuxt/content'
 
 const { t, locale } = useI18n()
 

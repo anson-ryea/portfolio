@@ -1,4 +1,8 @@
 {
+    "nuxtSiteConfig": {
+        "name": "@:info.name",
+        "description": "Anson är en engagerad student i kandidatexamen i datavetenskap vid Chinese University of Hong Kong, med en passion för att leverera enastående användarupplevelse (UX)-design. Drivs av ett starkt intresse för mjukvaruutveckling och UX-design, är han engagerad i att skapa innovativa och användarcentrerade lösningar. För närvarande är han öppen för nya möjligheter att tillämpa sina färdigheter och bidra till betydelsefulla projekt."
+    },
     "info": {
         "role": "Datavetenskapsstudent / UI-designer",
         "firstName": "Anson",

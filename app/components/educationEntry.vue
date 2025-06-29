@@ -110,7 +110,7 @@
 </template>
 
 <script setup lang="ts">
-import type { EducationCollectionItem } from '@nuxt/content';
+import type { EducationCollectionItem } from '@nuxt/content'
 
 const { t, locale } = useI18n()
 
