@@ -1,4 +1,8 @@
 {
+    "nuxtSiteConfig": {
+        "name": "@:info.name",
+        "description": "Anson is a dedicated BSc Computer Science student at the Chinese University of Hong Kong, with a passion for delivering exceptional user experience (UX) design. Driven by a strong interest in software engineering and UX design, he is committed to creating innovative and user-centric solutions. Currently, he is open to new opportunities to apply his skills and contribute to impactful projects."
+    },
     "info": {
         "role": "Computer Science Student / UI Designer",
         "firstName": "Anson",
@@ -23,6 +27,9 @@
         "sv": "swedish"
     },
     "index": {
+        "hero": {
+            "alt": "A photo of myself walking in a bamboo forest in Kyoto, Japan."
+        },
         "greeting": {
             "title": "Hello, I'm @:info.firstName{'.'}",
             "description": "Nothing more than an ordinary human.",
@@ -70,6 +77,7 @@
     "dictionary": {
         "and": "and",
         "expected": "expected",
-        "present": "present"
+        "present": "present",
+        "logoAlt": " Logo"
     }
 }

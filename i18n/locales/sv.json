@@ -1,4 +1,8 @@
 {
+    "nuxtSiteConfig": {
+        "name": "@:info.name",
+        "description": "Anson är en engagerad student i kandidatexamen i datavetenskap vid Chinese University of Hong Kong, med en passion för att leverera enastående användarupplevelse (UX)-design. Drivs av ett starkt intresse för mjukvaruutveckling och UX-design, är han engagerad i att skapa innovativa och användarcentrerade lösningar. För närvarande är han öppen för nya möjligheter att tillämpa sina färdigheter och bidra till betydelsefulla projekt."
+    },
     "info": {
         "role": "Datavetenskapsstudent / UI-designer",
         "firstName": "Anson",
@@ -23,6 +27,9 @@
         "sv": "svenska"
     },
     "index": {
+        "hero": {
+            "alt": "Jag själv promenerar i en bambuskog i Kyoto, Japan."
+        },
         "greeting": {
             "title": "Hej, jag heter @:info.firstName{'.'}",
             "description": "Inget mer än en vanlig människa.",
@@ -70,6 +77,7 @@
     "dictionary": {
         "and": "och",
         "expected": "förväntad",
-        "present": "nutid"
+        "present": "nutid",
+        "logoAlt": "s Logotyp"
     }
 }
