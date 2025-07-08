@@ -19,6 +19,7 @@
     "nav": {
         "home": "home",
         "about": "about",
+        "projects": "projects",
         "contact": "contact",
         "cv": "cv"
     },
