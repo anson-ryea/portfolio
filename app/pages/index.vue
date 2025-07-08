@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full justify-between">
+  <div class="flex flex-col w-full">
     <div class="relative h-dvh w-full shadow-2xl select-none">
       <NuxtImg
         class="absolute z-0 w-full h-full object-cover object-center"

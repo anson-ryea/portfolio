@@ -1,5 +1,5 @@
 <template>
-  <motion.div
+  <motion.nav
     :initial="{ opacity: 0, scale: 0 }"
     :animate="{ opacity: 1, scale: 1 }"
   >
@@ -96,7 +96,7 @@
         </transition>
       </button>
     </div>
-  </motion.div>
+  </motion.nav>
 </template>
 
 <script setup lang="ts">
