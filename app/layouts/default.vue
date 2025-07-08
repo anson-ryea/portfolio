@@ -22,7 +22,7 @@
           >
             {{ $t("info.emailAddress") }}
             <Icon
-              name="solar:plain-2-broken"
+              name="solar:plain-2-line-duotone"
               class="h-4 w-4 bg-gray-600"
             />
           </NuxtLink>

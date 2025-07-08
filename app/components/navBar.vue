@@ -10,7 +10,7 @@
       />
     </transition>
     <div
-      class="flex items-center max-md:justify-between md:space-x-8 border border-gray-300 rounded bg-gray-100/60 backdrop-blur-sm shadow px-4 font-medium text-sm font-mono text-gray-600 py-1 h-8"
+      class="flex items-center max-md:justify-between md:space-x-8 border border-gray-300 rounded bg-gray-100/60 backdrop-blur-sm shadow px-4 font-medium text-sm font-mono text-gray-600 py-1 h-fit"
       :class="{ 'border-t-0! rounded-t-none!': isExpanded.contact || isExpanded.locale }"
     >
       <NuxtLinkLocale
@@ -20,7 +20,7 @@
         <NuxtImg
           src="/favicon.svg"
           alt="Logo"
-          class="h-10 w-10 items-center hover:invert transition"
+          class="h-4 w-4 items-center hover:invert transition scale-250 min-w-4"
           :preload="{ fetchPriority: 'high' }"
         />
       </NuxtLinkLocale>
@@ -52,19 +52,20 @@
           />
         </transition>
       </div>
-      <button
-        class="flex flex-col items-center"
-        :aria-expanded="isExpanded.contact"
-        @click="toggleContact"
-      >
-        <span class="capitalize">{{ $t("nav.contact") }}</span>
+      <div class="flex flex-col items-center">
+        <NuxtLinkLocale
+          to="/projects"
+          class="capitalize"
+        >
+          {{ $t("nav.projects") }}
+        </NuxtLinkLocale>
         <transition name="slide-up">
           <div
-            v-show="isExpanded.contact"
+            v-show="currentRouteName?.toString().startsWith('projects')"
             class="h-0.5 w-4 bg-blue-600 rounded"
           />
         </transition>
-      </button>
+      </div>
       <div class="flex flex-col items-center">
         <NuxtLink
           to="/cv/resume.pdf"
@@ -79,7 +80,24 @@
         </NuxtLink>
       </div>
       <button
-        class="flex flex-col items-center gap-0.5"
+        class="flex flex-col items-center gap-0.25"
+        :aria-expanded="isExpanded.contact"
+        title="Contact me"
+        @click="toggleContact"
+      >
+        <Icon
+          name="solar:user-hand-up-line-duotone"
+          class="h-4 w-4 bg-gray-600"
+        />
+        <transition name="slide-up">
+          <div
+            v-show="isExpanded.contact"
+            class="h-0.5 w-4 bg-blue-600 rounded"
+          />
+        </transition>
+      </button>
+      <button
+        class="flex flex-col items-center gap-0.25"
         :aria-expanded="isExpanded.locale"
         title="Change language"
         @click="toggleLocale"
