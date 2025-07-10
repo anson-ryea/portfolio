@@ -55,7 +55,8 @@
         "biography": "biografi",
         "education": {
             "label": "utbildning",
-            "scholarships": "stipendier"
+            "scholarships": "stipendier",
+            "gpa": "gpa"
         },
         "experiences": "erfarenheter"
     },
