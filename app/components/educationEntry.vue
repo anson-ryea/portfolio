@@ -27,13 +27,27 @@
     </div>
     <div class="md:pl-4 space-y-4 flex-1">
       <div class="space-y-2">
-        <div class="rounded-full bg-gray-100 p-2 w-fit">
-          <NuxtImg
-            :src="education.pathToLogo"
-            :alt="education.school + $t('dictionary.logoAlt')"
-            class="h-12 w-12"
-            width="48"
-          />
+        <div class="flex items-center gap-2">
+          <div class="rounded-full bg-gray-100 p-2 w-fit">
+            <NuxtImg
+              :src="education.pathToLogo"
+              :alt="education.school + $t('dictionary.logoAlt')"
+              class="h-12 w-12"
+              width="48"
+            />
+          </div>
+          <div
+            v-if="education.gpa"
+            class="rounded-lg bg-gray-100 p-2 overflow-hidden h-16 w-24 space-y-1"
+          >
+            <div class="flex justify-between items-start">
+              <div class="h-1 w-1 bg-blue-600 rounded-full" />
+              <span class="text-center text-2xs font-mono text-blue-600 uppercase">{{ $t('about.education.gpa') }}</span>
+            </div>
+            <span class="block text-center font-serif text-2xl">
+              {{ education.gpa }}<span class="text-xs text-gray-600">/{{ education.maxGpa.toFixed(1) }}</span>
+            </span>
+          </div>
         </div>
         <div>
           <h6 class="font-medium">
@@ -41,7 +55,10 @@
           </h6>
           <p>{{ education.school }}</p>
         </div>
-        <p class="text-gray-600 font-serif">
+        <p
+          v-if="education.description"
+          class="text-gray-600 font-serif"
+        >
           {{ education.description }}
         </p>
         <ul class="text-gray-600 list-disc list-inside font-serif">
@@ -110,7 +127,7 @@
 </template>
 
 <script setup lang="ts">
-import type { EducationCollectionItem } from '@nuxt/content'
+import type { EducationCollectionItem } from '@nuxt/content';
 
 const { t, locale } = useI18n()
 

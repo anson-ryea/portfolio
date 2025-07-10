@@ -1,4 +1,4 @@
-import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 export default defineContentConfig({
     collections: {
@@ -29,6 +29,7 @@ export default defineContentConfig({
                 school: z.string(),
                 degree: z.string(),
                 gpa: z.number(),
+                maxGpa: z.number(),
                 description: z.string(),
                 highlights: z.array(z.string()),
                 tags: z.array(z.string()),

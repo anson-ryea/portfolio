@@ -5,10 +5,11 @@
   "location": "Hong Kong",
   "school": "The Chinese University of Hong Kong",
   "degree": "Bachelor of Science in Computer Science",
-  "gpa": 3.88,
-  "description": "Bachelor of Science in Computer Science",
+  "gpa": 3.83,
+  "maxGpa": 4.0,
   "highlights": [
-    "Dean's List Recipient | 2023 - 2024 | GPA: 3.88"
+    "Dean's List Recipient | 2023 - 2024",
+    "Dean's List Recipient | 2024 - 2025"
   ],
   "pathToLogo": "/content/education/cuhk.svg",
   "tags": [
