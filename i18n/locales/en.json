@@ -55,7 +55,8 @@
         "biography": "biography",
         "education": {
             "label": "education",
-            "scholarships": "scholarships"
+            "scholarships": "scholarships",
+            "gpa": "gpa"
         },
         "experiences": "experiences"
     },
