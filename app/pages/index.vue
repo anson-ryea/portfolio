@@ -88,10 +88,10 @@
             </ConsoleLikePane>
           </div>
         </IndexSection>
-        <IndexSection>
+        <IndexSection class="bg-[url('/bg/grid.svg')] before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:from-blue-100/40 before:bg-linear-to-b before:to-blue-100/0">
           <ConsoleLikePane :pane-name="$t('index.polaroids')">
             <div
-              class="xl:flex max-w-full grid grid-cols-2 gap-8 justify-between
+              class="lg:flex max-w-full grid grid-cols-2 gap-8 justify-between
                             justify-items-center"
             >
               <ImagePolaroid
@@ -100,7 +100,7 @@
                 :src="polaroid.pathToImage"
                 :caption="polaroid.caption"
                 :alt="polaroid.alt"
-                class="aspect-3/4 w-42 md:w-60 xl:max-w-88 xl:h-fit xl:w-full"
+                class="aspect-3/4 w-42 md:w-56 xl:max-w-88 xl:h-fit xl:w-full"
               />
             </div>
           </ConsoleLikePane>
