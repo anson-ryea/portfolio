@@ -18,11 +18,11 @@
         format="webp"
       />
       <span
-        class="text-center font-handwritten text-gray-600 text-3xl my-auto hidden group-hover:block [@media(hover:none)]:block"
+        class="text-center font-handwritten text-gray-600 text-xl lg:text-2xl xl:text-3xl my-auto hidden group-hover:block [@media(hover:none)]:block"
       >{{
         caption }}</span>
     </div>
-    <p class="max-w-4/5 text-center font-handwritten text-gray-600 text-2xl">
+    <p class="max-w-4/5 text-center font-handwritten text-gray-600 md:text-lg lg:text-xl xl:text-2xl">
       {{ alt }}
     </p>
   </div>
