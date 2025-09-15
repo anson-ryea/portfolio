@@ -5,10 +5,11 @@
   "location": "Hongkong",
   "school": "The Chinese University of Hong Kong",
   "degree": "Kandidatexamen i datavetenskap",
-  "gpa": 3.88,
-  "description": "Kandidatexamen i datavetenskap",
+  "gpa": 3.83,
+  "maxGpa": 4.0,
   "highlights": [
-    "Mottagare av dekanens lista | 2023 - 2024 | GPA: 3.88"
+    "Mottagare av Dean's List | 2023 - 2024",
+    "Mottagare av Dean's List | 2024 - 2025"
   ],
   "pathToLogo": "/content/education/cuhk.svg",
   "tags": [
