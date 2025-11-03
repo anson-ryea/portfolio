@@ -2,8 +2,8 @@
   <div class="flex flex-col w-full justify-between">
     <div class="relative h-dvh w-full shadow-2xl select-none">
       <NuxtImg
-        class="absolute z-0 w-full h-full object-cover object-center"
-        src="/index/hero.jpg"
+        class="absolute z-0 w-full h-full object-cover object-right"
+        src="/index/hero.webp"
         :alt="$t('index.hero.alt')"
         format="webp"
         quality="80"
@@ -14,11 +14,13 @@
       />
       <HeroGridsAnimation />
       <motion.div
-        class="absolute bottom-16 right-8 z-10 pointer-events-none"
+        class="absolute bottom-16 left-8 z-10 pointer-events-none"
         :initial="{ opacity: 0, scale: 0 }"
         :animate="{ opacity: 1, scale: 1 }"
       >
-        <h1 class="text-stone-200/50 font-pixel font-bold tracking-[-0.12em]! text-shadow-lg">
+        <h1
+          class="text-stone-200/50 font-pixel font-bold tracking-[-0.12em]! text-shadow-lg"
+        >
           AN5ON
         </h1>
         <NuxtImg
@@ -35,7 +37,9 @@
       >
         <div class="h-16 w-full bg-linear-to-t from-blue-100/20" />
         <IndexSection class="bg-linear-to-b from-blue-100/20">
-          <div class="flex flex-col space-y-12 lg:flex-row lg:space-x-12 lg:space-y-0">
+          <div
+            class="flex flex-col space-y-12 lg:flex-row lg:space-x-12 lg:space-y-0"
+          >
             <ConsoleLikePane
               :pane-name="`${$t('index.greeting.intro.label')}.md`"
               class="flex-1"
@@ -88,11 +92,12 @@
             </ConsoleLikePane>
           </div>
         </IndexSection>
-        <IndexSection class="bg-[url('/bg/grid.svg')] before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:from-blue-100/40 before:bg-linear-to-b before:to-blue-100/0">
+        <IndexSection
+          class="bg-[url('/bg/grid.svg')] before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:from-blue-100/40 before:bg-linear-to-b before:to-blue-100/0"
+        >
           <ConsoleLikePane :pane-name="$t('index.polaroids')">
             <div
-              class="lg:flex max-w-full grid grid-cols-2 gap-8 justify-between
-                            justify-items-center"
+              class="lg:flex max-w-full grid grid-cols-2 gap-8 justify-between justify-items-center"
             >
               <ImagePolaroid
                 v-for="polaroid in polaroids"
@@ -137,76 +142,88 @@
 </template>
 
 <script setup lang="ts">
-import { motion } from 'motion-v'
+import { motion } from "motion-v";
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n();
 
-defineOgImageComponent('NuxtSeo')
+defineOgImageComponent("NuxtSeo");
 useHead({
-    title: capitalizeFirstLetter(t('nav.home')),
-})
+  title: capitalizeFirstLetter(t("nav.home")),
+});
 
 const { data: presentExperiences } = await useAsyncData(
-    `presentExperiences-${locale.value}`,
-    () => {
-        return queryCollection('experiences')
-            .where('locale', '=', locale.value)
-            .andWhere(query =>
-                query
-                    .where('endDate', '>', new Date().toISOString())
-                    .where('startDate', '<', new Date().toISOString()),
-            )
-            .order('endDate', 'DESC')
-            .all()
-    },
-    {
-        watch: [locale],
-    },
-)
+  `presentExperiences-${locale.value}`,
+  () => {
+    return queryCollection("experiences")
+      .where("locale", "=", locale.value)
+      .andWhere((query) =>
+        query
+          .where("endDate", ">", new Date().toISOString())
+          .where("startDate", "<", new Date().toISOString()),
+      )
+      .order("endDate", "DESC")
+      .all();
+  },
+  {
+    watch: [locale],
+  },
+);
 
 const { data: presentEducation } = await useAsyncData(
-    `presentEducation-${locale.value}`,
-    () => {
-        return queryCollection('education')
-            .where('locale', '=', locale.value)
-            .andWhere(query =>
-                query
-                    .where('endDate', '>', new Date().toISOString())
-                    .where('startDate', '<', new Date().toISOString()),
-            )
-            .order('endDate', 'DESC')
-            .all()
-    },
-    {
-        watch: [locale],
-    },
-)
-
-const { data: intro } = await useAsyncData(`biography-intro-${locale.value}`, () => {
-    return queryCollection('biography').path(`/biography/${locale.value}/intro`).first()
-}, {
+  `presentEducation-${locale.value}`,
+  () => {
+    return queryCollection("education")
+      .where("locale", "=", locale.value)
+      .andWhere((query) =>
+        query
+          .where("endDate", ">", new Date().toISOString())
+          .where("startDate", "<", new Date().toISOString()),
+      )
+      .order("endDate", "DESC")
+      .all();
+  },
+  {
     watch: [locale],
-})
+  },
+);
 
-const introVars = ref({ fullName: t('info.fullName') })
-
-const { data: polaroids } = await useAsyncData(`polaroids-${locale.value}`, () => {
-    return queryCollection('polaroids').where('locale', '=', locale.value).all()
-}, {
+const { data: intro } = await useAsyncData(
+  `biography-intro-${locale.value}`,
+  () => {
+    return queryCollection("biography")
+      .path(`/biography/${locale.value}/intro`)
+      .first();
+  },
+  {
     watch: [locale],
-})
+  },
+);
 
-const currentDate = ref(Date.now())
-let intervalId: number
+const introVars = ref({ fullName: t("info.fullName") });
+
+const { data: polaroids } = await useAsyncData(
+  `polaroids-${locale.value}`,
+  () => {
+    return queryCollection("polaroids")
+      .where("locale", "=", locale.value)
+      .all();
+  },
+  {
+    watch: [locale],
+  },
+);
+
+const currentDate = ref(Date.now());
+let intervalId: number;
 
 onMounted(() => {
-    currentDate.value = Date.now()
-    intervalId = window.setInterval(() => {
-        currentDate.value = Date.now()
-    }, 1000)
-})
+  currentDate.value = Date.now();
+  intervalId = window.setInterval(() => {
+    currentDate.value = Date.now();
+  }, 1000);
+});
 
 onUnmounted(() => {
-    clearInterval(intervalId)
-})
+  clearInterval(intervalId);
+});
 </script>
