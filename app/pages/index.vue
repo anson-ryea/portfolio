@@ -142,88 +142,88 @@
 </template>
 
 <script setup lang="ts">
-import { motion } from "motion-v";
+import { motion } from 'motion-v'
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n()
 
-defineOgImageComponent("NuxtSeo");
+defineOgImageComponent('NuxtSeo')
 useHead({
-  title: capitalizeFirstLetter(t("nav.home")),
-});
+    title: capitalizeFirstLetter(t('nav.home')),
+})
 
 const { data: presentExperiences } = await useAsyncData(
-  `presentExperiences-${locale.value}`,
-  () => {
-    return queryCollection("experiences")
-      .where("locale", "=", locale.value)
-      .andWhere((query) =>
-        query
-          .where("endDate", ">", new Date().toISOString())
-          .where("startDate", "<", new Date().toISOString()),
-      )
-      .order("endDate", "DESC")
-      .all();
-  },
-  {
-    watch: [locale],
-  },
-);
+    `presentExperiences-${locale.value}`,
+    () => {
+        return queryCollection('experiences')
+            .where('locale', '=', locale.value)
+            .andWhere(query =>
+                query
+                    .where('endDate', '>', new Date().toISOString())
+                    .where('startDate', '<', new Date().toISOString()),
+            )
+            .order('endDate', 'DESC')
+            .all()
+    },
+    {
+        watch: [locale],
+    },
+)
 
 const { data: presentEducation } = await useAsyncData(
-  `presentEducation-${locale.value}`,
-  () => {
-    return queryCollection("education")
-      .where("locale", "=", locale.value)
-      .andWhere((query) =>
-        query
-          .where("endDate", ">", new Date().toISOString())
-          .where("startDate", "<", new Date().toISOString()),
-      )
-      .order("endDate", "DESC")
-      .all();
-  },
-  {
-    watch: [locale],
-  },
-);
+    `presentEducation-${locale.value}`,
+    () => {
+        return queryCollection('education')
+            .where('locale', '=', locale.value)
+            .andWhere(query =>
+                query
+                    .where('endDate', '>', new Date().toISOString())
+                    .where('startDate', '<', new Date().toISOString()),
+            )
+            .order('endDate', 'DESC')
+            .all()
+    },
+    {
+        watch: [locale],
+    },
+)
 
 const { data: intro } = await useAsyncData(
-  `biography-intro-${locale.value}`,
-  () => {
-    return queryCollection("biography")
-      .path(`/biography/${locale.value}/intro`)
-      .first();
-  },
-  {
-    watch: [locale],
-  },
-);
+    `biography-intro-${locale.value}`,
+    () => {
+        return queryCollection('biography')
+            .path(`/biography/${locale.value}/intro`)
+            .first()
+    },
+    {
+        watch: [locale],
+    },
+)
 
-const introVars = ref({ fullName: t("info.fullName") });
+const introVars = ref({ fullName: t('info.fullName') })
 
 const { data: polaroids } = await useAsyncData(
-  `polaroids-${locale.value}`,
-  () => {
-    return queryCollection("polaroids")
-      .where("locale", "=", locale.value)
-      .all();
-  },
-  {
-    watch: [locale],
-  },
-);
+    `polaroids-${locale.value}`,
+    () => {
+        return queryCollection('polaroids')
+            .where('locale', '=', locale.value)
+            .all()
+    },
+    {
+        watch: [locale],
+    },
+)
 
-const currentDate = ref(Date.now());
-let intervalId: number;
+const currentDate = ref(Date.now())
+let intervalId: number
 
 onMounted(() => {
-  currentDate.value = Date.now();
-  intervalId = window.setInterval(() => {
-    currentDate.value = Date.now();
-  }, 1000);
-});
+    currentDate.value = Date.now()
+    intervalId = window.setInterval(() => {
+        currentDate.value = Date.now()
+    }, 1000)
+})
 
 onUnmounted(() => {
-  clearInterval(intervalId);
-});
+    clearInterval(intervalId)
+})
 </script>
