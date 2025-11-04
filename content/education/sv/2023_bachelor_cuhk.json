@@ -12,9 +12,7 @@
     "Mottagare av Dean's List | 2024 - 2025"
   ],
   "pathToLogo": "/content/education/cuhk.svg",
-  "tags": [
-    "Kandidat"
-  ],
+  "tags": ["Kandidat"],
   "scholarships": [
     {
       "name": "CUHK Admission Scholarship",
@@ -51,6 +49,10 @@
     {
       "name": "Chiang Chen Overseas Exchange Scholarship",
       "date": "2025-07-31T00:00:00.000Z"
+    },
+    {
+      "name": "Yu To Sang Memorial Scholarship",
+      "date": "2026-05-07"
     }
   ]
 }
