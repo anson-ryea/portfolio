@@ -42,12 +42,6 @@ export default defineNuxtConfig({
         url: 'https://www.an5on.com',
         name: 'Anson Ng',
     },
-    content: {
-        database: {
-            type: 'sqlite',
-            filename: ':memory:',
-        },
-    },
     runtimeConfig: {
         public: {
             __APP_VERSION__: pkg.version,
