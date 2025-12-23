@@ -42,11 +42,6 @@ export default defineNuxtConfig({
         url: 'https://www.an5on.com',
         name: 'Anson Ng',
     },
-    content: {
-        preview: {
-            api: 'https://api.nuxt.studio',
-        },
-    },
     runtimeConfig: {
         public: {
             __APP_VERSION__: pkg.version,

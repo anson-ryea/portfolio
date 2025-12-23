@@ -176,12 +176,12 @@ const scholarshipsCountString = computed(() => {
 const scholarshipsGroupByYear = computed(() => {
     return education.value.scholarships
         ? new Map(
-            Array.from(
-                Map.groupBy(education.value.scholarships, (scholarship) => {
-                    return new Date(scholarship.date).getFullYear()
-                }).entries(),
-            ).sort((a, b) => b[0] - a[0]),
-        )
+                Array.from(
+                    Map.groupBy(education.value.scholarships, (scholarship) => {
+                        return new Date(scholarship.date).getFullYear()
+                    }).entries(),
+                ).sort((a, b) => b[0] - a[0]),
+            )
         : null
 })
 </script>
