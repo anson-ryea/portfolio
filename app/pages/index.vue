@@ -161,7 +161,7 @@ const { data: presentExperiences } = await useAsyncData(
                     .where('endDate', '>', new Date().toISOString())
                     .where('startDate', '<', new Date().toISOString()),
             )
-            .order('endDate', 'DESC')
+            .order('startDate', 'DESC')
             .all()
     },
     {
@@ -179,7 +179,7 @@ const { data: presentEducation } = await useAsyncData(
                     .where('endDate', '>', new Date().toISOString())
                     .where('startDate', '<', new Date().toISOString()),
             )
-            .order('endDate', 'DESC')
+            .order('startDate', 'DESC')
             .all()
     },
     {

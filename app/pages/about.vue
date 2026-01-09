@@ -70,7 +70,7 @@ const { data: experiences } = await useAsyncData(
     () => {
         return queryCollection('experiences')
             .where('locale', '=', locale.value)
-            .order('endDate', 'DESC')
+            .order('startDate', 'DESC')
             .all()
     },
     {
@@ -83,7 +83,7 @@ const { data: education } = await useAsyncData(
     () => {
         return queryCollection('education')
             .where('locale', '=', locale.value)
-            .order('endDate', 'DESC')
+            .order('startDate', 'DESC')
             .all()
     },
     {
