@@ -13,6 +13,7 @@ export default defineNuxtConfig({
         '@nuxtjs/i18n',
         'motion-v/nuxt',
         '@pinia/nuxt',
+        'nuxt-studio',
     ],
     devtools: { enabled: true },
     app: {
@@ -98,5 +99,13 @@ export default defineNuxtConfig({
     icon: {
         mode: 'css',
         cssLayer: 'base',
+    },
+    studio: {
+        repository: {
+            provider: 'github',
+            owner: 'anson-ryea',
+            repo: 'portfolio',
+            branch: 'main',
+        },
     },
 })

@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "^24"
+    "node": "^22"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -12,7 +12,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "pnpm rebuild better-sqlite3 && nuxt prepare",
+    "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -32,6 +32,7 @@
     "eslint": "^9.0.0",
     "motion-v": "^2.0.0",
     "nuxt": "^4.3.1",
+    "nuxt-studio": "1.4.0",
     "pinia": "^3.0.4",
     "tailwindcss": "^4.2.1",
     "vue": "^3.5.29",
