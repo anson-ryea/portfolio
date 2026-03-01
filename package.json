@@ -12,7 +12,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "postinstall": "pnpm rebuild better-sqlite3 && nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
