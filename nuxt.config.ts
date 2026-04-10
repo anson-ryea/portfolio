@@ -51,12 +51,20 @@ export default defineNuxtConfig({
     future: {
         compatibilityVersion: 5,
     },
-    compatibilityDate: '2024-11-01',
+    compatibilityDate: '2026-04-01',
+    nitro: {
+        vercel: {
+            functions: {
+                runtime: 'nodejs24.x',
+            },
+        },
+    },
     vite: {
         plugins: [tailwindcss()],
         optimizeDeps: {
             include: [
                 '@vercel/analytics/nuxt',
+                '@vercel/speed-insights',
             ],
         },
     },
