@@ -62,10 +62,7 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
         optimizeDeps: {
-            include: [
-                '@vercel/analytics/nuxt',
-                '@vercel/speed-insights',
-            ],
+            include: ['@vercel/analytics/nuxt', '@vercel/speed-insights/vue'],
         },
     },
     eslint: {

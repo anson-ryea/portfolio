@@ -1,29 +1,19 @@
 {
   "languages": {
     "JavaScript": {
-      "prettier": {},
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
-      "formatter": [],
+      "formatter": { "code_action": "source.fixAll.eslint" },
     },
     "TypeScript": {
-      "prettier": {},
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
-      "formatter": [],
+      "formatter": { "code_action": "source.fixAll.eslint" },
     },
     "Vue.js": {
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
-      "formatter": [],
+      "formatter": { "code_action": "source.fixAll.eslint" },
     },
     "JSON": {
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-      },
+      "formatter": { "code_action": "source.fixAll.eslint" },
+    },
+    "JSONC": {
+      "formatter": { "code_action": "source.fixAll.eslint" },
     },
   },
 }
