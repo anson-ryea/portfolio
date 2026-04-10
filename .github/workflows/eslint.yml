@@ -31,15 +31,19 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5.0.0
+
       - name: Install ESLint
         run: |
-          npm install @nuxt/eslint eslint typescript @microsoft/eslint-formatter-sarif
-          npm run postinstall
+          pnpm install @nuxt/eslint eslint typescript @microsoft/eslint-formatter-sarif
+          pnpm postinstall
 
       - name: Run ESLint
         env:
           SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
-        run: npx eslint .
+        run: pnpm dlx eslint .
           --format @microsoft/eslint-formatter-sarif
           --output-file eslint-results.sarif
         continue-on-error: false
