@@ -14,6 +14,8 @@ export default defineNuxtConfig({
         'motion-v/nuxt',
         '@pinia/nuxt',
         'nuxt-studio',
+        '@vercel/analytics',
+        '@vercel/speed-insights',
     ],
     devtools: { enabled: true },
     app: {
@@ -61,9 +63,6 @@ export default defineNuxtConfig({
     },
     vite: {
         plugins: [tailwindcss()],
-        optimizeDeps: {
-            include: ['@vercel/analytics/nuxt', '@vercel/speed-insights/vue'],
-        },
     },
     eslint: {
         config: {
