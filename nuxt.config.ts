@@ -107,6 +107,9 @@ export default defineNuxtConfig({
         mode: 'css',
         cssLayer: 'base',
     },
+    sitemap: {
+        zeroRuntime: true,
+    },
     studio: {
         repository: {
             provider: 'github',
