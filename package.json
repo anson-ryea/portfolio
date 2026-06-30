@@ -31,7 +31,7 @@
     "better-sqlite3": "^12.8.0",
     "eslint": "^10.2.0",
     "motion-v": "^2.2.0",
-    "nuxt": "^4.4.2",
+    "nuxt": "^4.4.8",
     "nuxt-studio": "1.6.0",
     "pinia": "^3.0.4",
     "tailwindcss": "^4.2.2",
