@@ -5,6 +5,8 @@
   "location": "Stockholm, Sweden",
   "school": "KTH Royal Institute of Technology",
   "degree": "Exchange Program",
+  "gpa": 5.0,
+  "maxGpa": 5.0,
   "description": "Bachelor of Science in Computer Science",
   "highlights": [
     "Participated in the Exchange Program at KTH Royal Institute of Technology"

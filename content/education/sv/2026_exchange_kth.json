@@ -5,6 +5,8 @@
   "location": "Stockholm, Sverige",
   "school": "Kungliga Tekniska Högskolan",
   "degree": "Utbytesprogram",
+  "gpa": 5.0,
+  "maxGpa": 5.0,
   "description": "Kandidatexamen i datavetenskap",
   "highlights": [
     "Deltog i utbytesprogrammet vid KTH Kungliga Tekniska högskolan"
