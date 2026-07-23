@@ -53,7 +53,7 @@ export default defineNuxtConfig({
     future: {
         compatibilityVersion: 5,
     },
-    compatibilityDate: '2026-04-01',
+    compatibilityDate: '2026-07-01',
     nitro: {
         vercel: {
             functions: {
