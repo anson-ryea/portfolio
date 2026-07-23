@@ -26,6 +26,7 @@
     "@nuxtjs/seo": "^5.1.2",
     "@pinia/nuxt": "^0.11.3",
     "@tailwindcss/vite": "^4.2.2",
+    "@takumi-rs/core": "^2.4.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "better-sqlite3": "^12.8.0",
@@ -52,12 +53,5 @@
     "typescript": "^6.0.2",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.1.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3",
-      "sqlite3",
-      "vue-demi"
-    ]
   }
 }

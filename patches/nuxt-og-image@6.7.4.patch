@@ -1,0 +1,18 @@
+diff --git a/dist/runtime/app/plugins/og-image-canonical-urls.server.js b/dist/runtime/app/plugins/og-image-canonical-urls.server.js
+index fe77c4f101000dd886e9b3c4660fa5c5436345e1..11ab203a037f289505387e8f15cc2a9e881bea4a 100644
+--- a/dist/runtime/app/plugins/og-image-canonical-urls.server.js
++++ b/dist/runtime/app/plugins/og-image-canonical-urls.server.js
+@@ -1 +1,3 @@
+-export { ogImageCanonicalUrls as default } from "../utils/plugins.js";
++import { defineNuxtPlugin } from "#app";
++import { ogImageCanonicalUrls } from "../utils/plugins.js";
++export default defineNuxtPlugin((nuxtApp) => ogImageCanonicalUrls(nuxtApp));
+diff --git a/dist/runtime/app/plugins/route-rule-og-image.server.js b/dist/runtime/app/plugins/route-rule-og-image.server.js
+index 50ff8b0757344d3e0881b5a4d3b254185b580de5..6147a59b0c7b57969f011e92670f4fa4c8e6b842 100644
+--- a/dist/runtime/app/plugins/route-rule-og-image.server.js
++++ b/dist/runtime/app/plugins/route-rule-og-image.server.js
+@@ -1 +1,3 @@
+-export { routeRuleOgImage as default } from "../utils/plugins.js";
++import { defineNuxtPlugin } from "#app";
++import { routeRuleOgImage } from "../utils/plugins.js";
++export default defineNuxtPlugin((nuxtApp) => routeRuleOgImage(nuxtApp));
