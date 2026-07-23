@@ -13,20 +13,15 @@
 This is my personal portfolio, created to showcase my qualifications, experience, and projects. It is built using Nuxt, Tailwind CSS, and Motion.
 
 ## Initialise
-Dependencies can be automatically installed if you have Jetify Devbox installed:
-```
-devbox init
-```
-
 Alternatively, you may set up the environment manually by installing Node.js `>= 22` and running:
 ```
-npm install
+pnpm install
 ```
 
 ## Run
 To start a local development server, execute:
 ```
-npm run dev
+pnpm run dev
 ```
 
 ## Permissions
