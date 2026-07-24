@@ -22,16 +22,12 @@ const cells = Array.from({ length: GRID_COLUMNS ** 2 }, (_, index) => {
   return {
     id,
     brightness: ((id % 7) * 5 + 30) / 100,
-    delay:
-      (((id - 1) % GRID_COLUMNS) - (id - 1) / GRID_COLUMNS + GRID_COLUMNS) *
-      FADE_STAGGER,
+    delay: (((id - 1) % GRID_COLUMNS) - (id - 1) / GRID_COLUMNS + GRID_COLUMNS) * FADE_STAGGER,
   };
 });
 </script>
 
 <style scoped>
-
-
 .hero-grid-cell::before,
 .hero-grid-cell::after {
   content: "";

@@ -53,7 +53,7 @@
       </div>
     </footer>
     <NavBar class="fixed bottom-2 left-1/2 -translate-x-1/2 w-95/100 md:w-fit z-100" />
-    <CursorAnimated class="fixed top-0 z-9999 w-fit" v-if="hasFinePointer"/>
+    <CursorAnimated class="fixed top-0 z-9999 w-fit" v-if="hasFinePointer" />
   </div>
 </template>
 
@@ -69,8 +69,6 @@ const year = ref(new Date().getFullYear());
 const hasFinePointer = ref(false);
 
 onMounted(() => {
-  hasFinePointer.value = matchMedia(
-    "(hover: hover) and (pointer: fine)",
-  ).matches;
+  hasFinePointer.value = matchMedia("(hover: hover) and (pointer: fine)").matches;
 });
 </script>
