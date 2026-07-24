@@ -7,10 +7,7 @@
   "degree": "Bachelor of Science in Computer Science",
   "gpa": 3.83,
   "maxGpa": 4.0,
-  "highlights": [
-    "Dean's List Recipient | 2023 - 2024",
-    "Dean's List Recipient | 2024 - 2025"
-  ],
+  "highlights": ["Dean's List Recipient | 2023 - 2024", "Dean's List Recipient | 2024 - 2025"],
   "pathToLogo": "/content/education/cuhk.svg",
   "tags": ["Bachelor"],
   "scholarships": [

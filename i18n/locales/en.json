@@ -1,84 +1,84 @@
 {
-    "nuxtSiteConfig": {
-        "name": "@:info.name",
-        "description": "Anson is a dedicated BSc Computer Science student at the Chinese University of Hong Kong, with a passion for delivering exceptional user experience (UX) design. Driven by a strong interest in software engineering and UX design, he is committed to creating innovative and user-centric solutions. Currently, he is open to new opportunities to apply his skills and contribute to impactful projects."
+  "nuxtSiteConfig": {
+    "name": "@:info.name",
+    "description": "Anson is a dedicated BSc Computer Science student at the Chinese University of Hong Kong, with a passion for delivering exceptional user experience (UX) design. Driven by a strong interest in software engineering and UX design, he is committed to creating innovative and user-centric solutions. Currently, he is open to new opportunities to apply his skills and contribute to impactful projects."
+  },
+  "info": {
+    "role": "Computer Science Student / UI Designer",
+    "firstName": "Anson",
+    "middleName": "Cheuk-nam",
+    "lastName": "Ng",
+    "name": "@:info.firstName @:info.lastName",
+    "fullName": "@:info.firstName @:info.middleName @:info.lastName",
+    "emailAddress": "hej{'@'}an5on.com",
+    "url": "an5on.com",
+    "githubUrl": "https://github.com/anson-ryea",
+    "instagramUrl": "https://www.instagram.com/anson_ryea/",
+    "linkedinUrl": "https://www.linkedin.com/in/an5on/"
+  },
+  "nav": {
+    "home": "home",
+    "about": "about",
+    "contact": "contact",
+    "cv": "cv"
+  },
+  "locales": {
+    "en": "english",
+    "sv": "swedish"
+  },
+  "index": {
+    "hero": {
+      "alt": "A photo of myself walking in a bamboo forest in Kyoto, Japan."
     },
-    "info": {
-        "role": "Computer Science Student / UI Designer",
-        "firstName": "Anson",
-        "middleName": "Cheuk-nam",
-        "lastName": "Ng",
-        "name": "@:info.firstName @:info.lastName",
-        "fullName": "@:info.firstName @:info.middleName @:info.lastName",
-        "emailAddress": "hej{'@'}an5on.com",
-        "url": "an5on.com",
-        "githubUrl": "https://github.com/anson-ryea",
-        "instagramUrl": "https://www.instagram.com/anson_ryea/",
-        "linkedinUrl": "https://www.linkedin.com/in/an5on/"
+    "greeting": {
+      "title": "Hello, I'm @:info.firstName{'.'}",
+      "description": "Nothing more than an ordinary human.",
+      "intro": {
+        "label": "intro"
+      }
     },
-    "nav": {
-        "home": "home",
-        "about": "about",
-        "contact": "contact",
-        "cv": "cv"
+    "portrait": {
+      "label": "portrait",
+      "alt": "A recent random photo taken at gym.",
+      "caption": "This is Me!"
     },
-    "locales": {
-        "en": "english",
-        "sv": "swedish"
-    },
-    "index": {
-        "hero": {
-            "alt": "A photo of myself walking in a bamboo forest in Kyoto, Japan."
-        },
-        "greeting": {
-            "title": "Hello, I'm @:info.firstName{'.'}",
-            "description": "Nothing more than an ordinary human.",
-            "intro": {
-                "label": "intro"
-            }
-        },
-        "portrait": {
-            "label": "portrait",
-            "alt": "A recent random photo taken at gym.",
-            "caption": "This is Me!"
-        },
-        "polaroids": "polaroids",
-        "currentStatus": {
-            "label": "current-status",
-            "title": "Current Status",
-            "description": "What am I doing currently?"
-        }
-    },
-    "about": {
-        "title": "About me",
-        "description": "I am a computer science student with a fervent passion for software engineering and UI/UX design.",
-        "biography": "biography",
-        "education": {
-            "label": "education",
-            "scholarships": "scholarships",
-            "gpa": "gpa"
-        },
-        "experiences": "experiences"
-    },
-    "footer": {
-        "contact": {
-            "title": "Get in touch",
-            "description": "Send me an email."
-        },
-        "version": {
-            "majorLabel": "iteration",
-            "patchLabel": "patch"
-        },
-        "copyright": {
-            "description": "All rights reserved ©",
-            "madeWith": "Made with",
-            "credit": "Designed and engineered by @:info.name"
-        }
-    },
-    "dictionary": {
-        "and": "and",
-        "expected": "expected",
-        "present": "present",
-        "logoAlt": " Logo"
+    "polaroids": "polaroids",
+    "currentStatus": {
+      "label": "current-status",
+      "title": "Current Status",
+      "description": "What am I doing currently?"
     }
+  },
+  "about": {
+    "title": "About me",
+    "description": "I am a computer science student with a fervent passion for software engineering and UI/UX design.",
+    "biography": "biography",
+    "education": {
+      "label": "education",
+      "scholarships": "scholarships",
+      "gpa": "gpa"
+    },
+    "experiences": "experiences"
+  },
+  "footer": {
+    "contact": {
+      "title": "Get in touch",
+      "description": "Send me an email."
+    },
+    "version": {
+      "majorLabel": "iteration",
+      "patchLabel": "patch"
+    },
+    "copyright": {
+      "description": "All rights reserved ©",
+      "madeWith": "Made with",
+      "credit": "Designed and engineered by @:info.name"
+    }
+  },
+  "dictionary": {
+    "and": "and",
+    "expected": "expected",
+    "present": "present",
+    "logoAlt": " Logo"
+  }
 }

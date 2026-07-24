@@ -14,10 +14,7 @@
           </h1>
         </div>
         <ConsoleLikePane :pane-name="`${$t('about.biography')}.md`">
-          <ContentRenderer
-            :value="biography"
-            class="md:columns-2 space-y-8 font-serif"
-          />
+          <ContentRenderer :value="biography" class="md:columns-2 space-y-8 font-serif" />
         </ConsoleLikePane>
       </IndexSection>
       <IndexSection>
@@ -59,47 +56,45 @@
 </template>
 
 <script setup lang="ts">
-const { t, locale } = useI18n()
+const { t, locale } = useI18n();
 
 useHead({
-    title: capitalizeFirstLetter(t('nav.about')),
-})
+  title: capitalizeFirstLetter(t("nav.about")),
+});
 
 const { data: experiences } = await useAsyncData(
-    `experiences-${locale.value}`,
-    () => {
-        return queryCollection('experiences')
-            .where('locale', '=', locale.value)
-            .order('startDate', 'DESC')
-            .all()
-    },
-    {
-        watch: [locale],
-    },
-)
+  `experiences-${locale.value}`,
+  () => {
+    return queryCollection("experiences")
+      .where("locale", "=", locale.value)
+      .order("startDate", "DESC")
+      .all();
+  },
+  {
+    watch: [locale],
+  },
+);
 
 const { data: education } = await useAsyncData(
-    `education-${locale.value}`,
-    () => {
-        return queryCollection('education')
-            .where('locale', '=', locale.value)
-            .order('startDate', 'DESC')
-            .all()
-    },
-    {
-        watch: [locale],
-    },
-)
+  `education-${locale.value}`,
+  () => {
+    return queryCollection("education")
+      .where("locale", "=", locale.value)
+      .order("startDate", "DESC")
+      .all();
+  },
+  {
+    watch: [locale],
+  },
+);
 
 const { data: biography } = await useAsyncData(
-    `biography-about-${locale.value}`,
-    () => {
-        return queryCollection('biography')
-            .path(`/biography/${locale.value}/about`)
-            .first()
-    },
-    {
-        watch: [locale],
-    },
-)
+  `biography-about-${locale.value}`,
+  () => {
+    return queryCollection("biography").path(`/biography/${locale.value}/about`).first();
+  },
+  {
+    watch: [locale],
+  },
+);
 </script>

@@ -12,8 +12,5 @@
     "Employing the simulator to measure maximum packet reception rates over time at the destination node in Line network scenarios with packet-loss."
   ],
   "pathToLogo": "/content/experiences/cuhk.svg",
-  "tags": [
-    "Python",
-    "Network"
-  ]
+  "tags": ["Python", "Network"]
 }

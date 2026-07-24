@@ -19,10 +19,12 @@
       />
       <span
         class="text-center font-handwritten text-gray-600 text-xl lg:text-2xl xl:text-3xl my-auto hidden group-hover:block [@media(hover:none)]:block"
-      >{{
-        caption }}</span>
+        >{{ caption }}</span
+      >
     </div>
-    <p class="max-w-4/5 text-center font-handwritten text-gray-600 md:text-lg lg:text-xl xl:text-2xl">
+    <p
+      class="max-w-4/5 text-center font-handwritten text-gray-600 md:text-lg lg:text-xl xl:text-2xl"
+    >
       {{ alt }}
     </p>
   </div>
@@ -30,18 +32,18 @@
 
 <script setup lang="ts">
 const props = defineProps({
-    src: String,
-    alt: String,
-    caption: String,
-    imgClass: String,
-})
-const { src, alt, caption, imgClass } = props
+  src: String,
+  alt: String,
+  caption: String,
+  imgClass: String,
+});
+const { src, alt, caption, imgClass } = props;
 
-const isFlipped = ref(false)
+const isFlipped = ref(false);
 
-const rotateDegree = ref(0)
+const rotateDegree = ref(0);
 
 onMounted(() => {
-    rotateDegree.value = Math.ceil(Math.random() * 6 - 3)
-})
+  rotateDegree.value = Math.ceil(Math.random() * 6 - 3);
+});
 </script>

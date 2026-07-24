@@ -6,12 +6,12 @@ allowBuilds:
 
 peerDependencyRules:
   allowedVersions:
-    '@vercel/analytics>vue-router': '^5.2.0'
-    '@vercel/speed-insights>vue-router': '^5.2.0'
-    'unctx>oxc-parser': '^0.139.0'
-    'unctx>unplugin': '^2.3.11'
+    "@vercel/analytics>vue-router": "^5.2.0"
+    "@vercel/speed-insights>vue-router": "^5.2.0"
+    "unctx>oxc-parser": "^0.139.0"
+    "unctx>unplugin": "^2.3.11"
 onlyBuiltDependencies:
-  - '@parcel/watcher'
+  - "@parcel/watcher"
   - better-sqlite3
   - esbuild
   - sharp

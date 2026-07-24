@@ -8,11 +8,7 @@
   "gpa": 5.0,
   "maxGpa": 5.0,
   "description": "Kandidatexamen i datavetenskap",
-  "highlights": [
-    "Deltog i utbytesprogrammet vid KTH Kungliga Tekniska högskolan"
-  ],
+  "highlights": ["Deltog i utbytesprogrammet vid KTH Kungliga Tekniska högskolan"],
   "pathToLogo": "/content/education/kth.svg",
-  "tags": [
-    "Utbyte"
-  ]
+  "tags": ["Utbyte"]
 }

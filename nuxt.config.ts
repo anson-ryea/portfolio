@@ -1,120 +1,114 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from '@tailwindcss/vite'
-import pkg from './package.json'
+import tailwindcss from "@tailwindcss/vite";
+import pkg from "./package.json";
 
 export default defineNuxtConfig({
-    modules: [
-        '@nuxt/icon',
-        '@nuxt/image',
-        '@nuxt/fonts',
-        '@nuxt/eslint',
-        '@nuxtjs/seo',
-        '@nuxt/content',
-        '@nuxtjs/i18n',
-        'motion-v/nuxt',
-        '@pinia/nuxt',
-        'nuxt-studio',
-        '@vercel/analytics',
-        '@vercel/speed-insights',
+  modules: [
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/fonts",
+    "@nuxtjs/seo",
+    "@nuxt/content",
+    "@nuxtjs/i18n",
+    "motion-v/nuxt",
+    "@pinia/nuxt",
+    "nuxt-studio",
+    "@vercel/analytics",
+    "@vercel/speed-insights",
+    "oxc-nuxt",
+  ],
+  devtools: { enabled: true },
+  app: {
+    head: {
+      title: "Anson Ng",
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon-96x96.png",
+          sizes: "96x96",
+        },
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "shortcut icon", href: "/favicon.ico" },
+        {
+          rel: "apple-touch-icon",
+          sizes: "180x180",
+          href: "/apple-touch-icon.png",
+        },
+        { rel: "manifest", href: "/site.webmanifest" },
+      ],
+    },
+    pageTransition: { name: "page", mode: "out-in" },
+  },
+  css: ["~/assets/css/main.css"],
+  site: {
+    url: "https://www.an5on.com",
+    name: "Anson Ng",
+  },
+  runtimeConfig: {
+    public: {
+      __APP_VERSION__: pkg.version,
+    },
+  },
+  future: {
+    compatibilityVersion: 5,
+  },
+  compatibilityDate: "2026-07-01",
+  nitro: {
+    vercel: {
+      functions: {
+        runtime: "nodejs24.x",
+      },
+    },
+  },
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
+  fonts: {
+    families: [
+      {
+        name: "DM Sans",
+        provider: "local",
+      },
+      {
+        name: "Fraunces",
+        provider: "local",
+      },
+      {
+        name: "Geist Mono",
+        provider: "local",
+      },
+      {
+        name: "Reenie Beanie",
+        provider: "local",
+      },
+      {
+        name: "Array",
+        provider: "local",
+      },
     ],
-    devtools: { enabled: true },
-    app: {
-        head: {
-            title: 'Anson Ng',
-            link: [
-                {
-                    rel: 'icon',
-                    type: 'image/png',
-                    href: '/favicon-96x96.png',
-                    sizes: '96x96',
-                },
-                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-                { rel: 'shortcut icon', href: '/favicon.ico' },
-                {
-                    rel: 'apple-touch-icon',
-                    sizes: '180x180',
-                    href: '/apple-touch-icon.png',
-                },
-                { rel: 'manifest', href: '/site.webmanifest' },
-            ],
-        },
-        pageTransition: { name: 'page', mode: 'out-in' },
+  },
+  i18n: {
+    defaultLocale: "en",
+    locales: [
+      { code: "en", name: "english", file: "en.json" },
+      { code: "sv", name: "svenska", file: "sv.json" },
+    ],
+  },
+  icon: {
+    mode: "css",
+    cssLayer: "base",
+  },
+  sitemap: {
+    zeroRuntime: true,
+  },
+  studio: {
+    repository: {
+      provider: "github",
+      owner: "anson-ryea",
+      repo: "portfolio",
+      branch: "main",
     },
-    css: ['~/assets/css/main.css'],
-    site: {
-        url: 'https://www.an5on.com',
-        name: 'Anson Ng',
-    },
-    runtimeConfig: {
-        public: {
-            __APP_VERSION__: pkg.version,
-        },
-    },
-    future: {
-        compatibilityVersion: 5,
-    },
-    compatibilityDate: '2026-07-01',
-    nitro: {
-        vercel: {
-            functions: {
-                runtime: 'nodejs24.x',
-            },
-        },
-    },
-    vite: {
-        plugins: [tailwindcss()],
-    },
-    eslint: {
-        config: {
-            stylistic: {
-                indent: 4,
-            },
-        },
-    },
-    fonts: {
-        families: [
-            {
-                name: 'DM Sans',
-                provider: 'local',
-            },
-            {
-                name: 'Fraunces',
-                provider: 'local',
-            },
-            {
-                name: 'Geist Mono',
-                provider: 'local',
-            },
-            {
-                name: 'Reenie Beanie',
-                provider: 'local',
-            },
-            {
-                name: 'Array',
-                provider: 'local',
-            },
-        ],
-    },
-    i18n: {
-        defaultLocale: 'en',
-        locales: [
-            { code: 'en', name: 'english', file: 'en.json' },
-            { code: 'sv', name: 'svenska', file: 'sv.json' },
-        ],
-    },
-    icon: {
-        mode: 'css',
-        cssLayer: 'base',
-    },
-    sitemap: {
-        zeroRuntime: true,
-    },
-    studio: {
-        repository: {
-            provider: 'github',
-            owner: 'anson-ryea',
-            repo: 'portfolio',
-            branch: 'main',
-        },
-    },
-})
+  },
+});
