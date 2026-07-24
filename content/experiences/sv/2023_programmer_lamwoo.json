@@ -11,8 +11,5 @@
     "Utvecklade arbetsflöden med JavaScript-baserade Google Apps Script, integrerade med befintliga FoxPro-baserade administrativa system, för att hämta och uppdatera elevdata samt generera rapporter."
   ],
   "pathToLogo": "/content/experiences/lamwoo.png",
-  "tags": [
-    "JavaScript",
-    "Apps Script"
-  ]
+  "tags": ["JavaScript", "Apps Script"]
 }

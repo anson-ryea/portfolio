@@ -21,10 +21,7 @@
             class="flex btn-light items-center gap-2"
           >
             {{ $t("info.emailAddress") }}
-            <Icon
-              name="solar:plain-2-broken"
-              class="h-4 w-4 bg-gray-600"
-            />
+            <Icon name="solar:plain-2-broken" class="h-4 w-4 bg-gray-600" />
           </NuxtLink>
         </FooterSection>
         <FooterSection>
@@ -39,16 +36,15 @@
         >
           <div class="md:text-left">
             <p class="capitalize">
-              {{ $t("footer.version.majorLabel") }} {{ iteration }} {{ $t("footer.version.patchLabel") }} {{
-                minor
-              }}
+              {{ $t("footer.version.majorLabel") }} {{ iteration }}
+              {{ $t("footer.version.patchLabel") }} {{ minor }}
             </p>
             <p>{{ $t("footer.copyright.description") }} {{ year }} {{ $t("info.url") }}</p>
           </div>
           <div class="md:text-right">
             <p>
-              {{ $t("footer.copyright.madeWith") }} <span class="text-green-600">Nuxt</span> {{
-                $t("dictionary.and") }}
+              {{ $t("footer.copyright.madeWith") }} <span class="text-green-600">Nuxt</span>
+              {{ $t("dictionary.and") }}
               <span class="text-sky-400">Tailwind CSS</span>
             </p>
             <p>{{ $t("footer.copyright.credit") }}</p>
@@ -62,11 +58,11 @@
 </template>
 
 <script setup lang="ts">
-import { SpeedInsights } from '@vercel/speed-insights/vue'
+import { SpeedInsights } from "@vercel/speed-insights/vue";
 
-const runtimeConfig = useRuntimeConfig()
-const version = runtimeConfig.public.__APP_VERSION__.split('.')
-const iteration = version[0]
-const minor = version.slice(1, 3).join('.')
-const year = ref(new Date().getFullYear())
+const runtimeConfig = useRuntimeConfig();
+const version = runtimeConfig.public.__APP_VERSION__.split(".");
+const iteration = version[0];
+const minor = version.slice(1, 3).join(".");
+const year = ref(new Date().getFullYear());
 </script>

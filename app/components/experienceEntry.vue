@@ -2,25 +2,19 @@
   <div class="max-md:space-y-2 md:flex md:divide-x md:divide-gray-300 md:divide-dashed">
     <div class="flex flex-col max-md:space-y-2 md:justify-between md:w-36 lg:w-48 xl:w-64 md:pr-4">
       <div class="max-md:flex text-balance">
-        <span class="font-mono text-xs text-gray-600">{{ startDateString }} ~ {{ endDateString }}</span>
+        <span class="font-mono text-xs text-gray-600"
+          >{{ startDateString }} ~ {{ endDateString }}</span
+        >
         <span class="font-mono text-xs text-gray-600 md:hidden">&nbsp;·&nbsp;</span>
         <h6 class="max-md:text-xs font-mono">
           {{ experience.location }}
         </h6>
       </div>
       <div class="flex flex-wrap gap-1">
-        <TagText
-          v-if="isPresent"
-          class="bg-blue-100! text-blue-950!"
-        >
-          {{
-            $t("dictionary.present")
-          }}
+        <TagText v-if="isPresent" class="bg-blue-100! text-blue-950!">
+          {{ $t("dictionary.present") }}
         </TagText>
-        <TagText
-          v-for="tag in experience.tags"
-          :key="tag"
-        >
+        <TagText v-for="tag in experience.tags" :key="tag">
           {{ tag }}
         </TagText>
       </div>
@@ -43,14 +37,8 @@
       <p class="text-gray-600 font-serif">
         {{ experience.description }}
       </p>
-      <ul
-        v-if="experience.highlights"
-        class="text-gray-600 list-disc list-inside font-serif"
-      >
-        <li
-          v-for="highlight in experience.highlights"
-          :key="highlight"
-        >
+      <ul v-if="experience.highlights" class="text-gray-600 list-disc list-inside font-serif">
+        <li v-for="highlight in experience.highlights" :key="highlight">
           {{ highlight }}
         </li>
       </ul>
@@ -59,41 +47,37 @@
 </template>
 
 <script setup lang="ts">
-import type { ExperiencesCollectionItem } from '@nuxt/content'
+import type { ExperiencesCollectionItem } from "@nuxt/content";
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n();
 
 const props = defineProps<{
-    experience: ExperiencesCollectionItem
-}>()
+  experience: ExperiencesCollectionItem;
+}>();
 
-const { experience } = toRefs(props)
+const { experience } = toRefs(props);
 
 const isPresent = computed(() => {
-    const currentDate = new Date()
-    return (
-        new Date(experience.value.endDate) > currentDate
-            && new Date(experience.value.startDate) < currentDate
-    )
-})
+  const currentDate = new Date();
+  return (
+    new Date(experience.value.endDate) > currentDate &&
+    new Date(experience.value.startDate) < currentDate
+  );
+});
 
 const startDateString = computed(() => {
-    return new Date(experience.value.startDate).toLocaleDateString(
-        locale.value,
-        {
-            month: 'short',
-            year: 'numeric',
-        },
-    )
-})
+  return new Date(experience.value.startDate).toLocaleDateString(locale.value, {
+    month: "short",
+    year: "numeric",
+  });
+});
 
 const endDateString = computed(() => {
-    return new Date(experience.value.endDate).getFullYear()
-        === new Date('2100-01-01').getFullYear()
-        ? t('dictionary.present')
-        : new Date(experience.value.endDate).toLocaleDateString(locale.value, {
-                month: 'short',
-                year: 'numeric',
-            })
-})
+  return new Date(experience.value.endDate).getFullYear() === new Date("2100-01-01").getFullYear()
+    ? t("dictionary.present")
+    : new Date(experience.value.endDate).toLocaleDateString(locale.value, {
+        month: "short",
+        year: "numeric",
+      });
+});
 </script>

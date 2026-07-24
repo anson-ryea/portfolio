@@ -5,9 +5,7 @@
       class="flex justify-between border-b border-gray-300 font-mono text-xs sm:text-sm text-gray-400 pb-1"
     >
       <p>
-        @{{ $t("info.url") }}:~/<span
-          class="text-blue-400 font-medium"
-        >{{ paneName }}</span>
+        @{{ $t("info.url") }}:~/<span class="text-blue-400 font-medium">{{ paneName }}</span>
       </p>
       <div>
         <slot name="right-info" />
@@ -18,6 +16,6 @@
 
 <script setup lang="ts">
 defineProps({
-    paneName: String,
-})
+  paneName: String,
+});
 </script>

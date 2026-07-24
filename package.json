@@ -2,11 +2,7 @@
   "name": "portfolio",
   "version": "2.2.2",
   "private": true,
-  "packageManager": "pnpm@11.15.1",
   "type": "module",
-  "engines": {
-    "node": "^24"
-  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "nuxt build",
@@ -14,12 +10,13 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "oxlint --type-aware --type-check",
+    "lint:fix": "oxlint --type-aware --type-check --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check"
   },
   "dependencies": {
     "@nuxt/content": "^3.15.1",
-    "@nuxt/eslint": "^1.16.0",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.3.1",
     "@nuxt/image": "^2.0.0",
@@ -31,10 +28,10 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "better-sqlite3": "^12.11.1",
-    "eslint": "^10.7.0",
     "motion-v": "^2.3.0",
     "nuxt": "^4.5.0",
     "nuxt-studio": "^1.7.0",
+    "oxc-nuxt": "0.1.5",
     "pinia": "^4.0.2",
     "tailwindcss": "^4.3.3",
     "vue": "^3.5.40",
@@ -45,6 +42,9 @@
     "@iconify-json/solar": "^1.2.5",
     "debug": "^4.4.3",
     "nuxi": "^3.37.0",
+    "oxfmt": "^0.60.0",
+    "oxlint": "^1.75.0",
+    "oxlint-tsgolint": "^7.0.2001",
     "parse5": "^8.0.1",
     "rehype-raw": "^7.0.0",
     "remark-emoji": "^5.0.2",
@@ -54,5 +54,9 @@
     "typescript": "^7.0.2",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.1.0"
-  }
+  },
+  "engines": {
+    "node": "^24"
+  },
+  "packageManager": "pnpm@11.15.1"
 }
