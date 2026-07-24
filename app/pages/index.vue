@@ -37,16 +37,20 @@
           <div class="flex flex-col space-y-12 lg:flex-row lg:space-x-12 lg:space-y-0">
             <ConsoleLikePane :pane-name="`${$t('index.greeting.intro.label')}.md`" class="flex-1">
               <template #default>
-                <div class="space-y-4 sm:space-y-8 lg:space-y-12">
+                <div class="space-y-4 sm:space-y-4 lg:space-y-8">
                   <div class="space-y-2">
                     <h1>{{ $t("index.greeting.title") }}</h1>
                     <h3 class="text-gray-400 font-serif">
                       {{ $t("index.greeting.description") }}
                     </h3>
                   </div>
-                  <SeeThroughBox>
-                    <ContentRenderer :value="intro" class="font-serif" :data="introVars" />
-                  </SeeThroughBox>
+                  <div>
+                    <ContentRenderer
+                      :value="intro"
+                      class="font-serif max-w-none text-justify prose prose-em:text-blue-500"
+                      :data="introVars"
+                    />
+                  </div>
                 </div>
               </template>
               <template #right-info>

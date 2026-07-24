@@ -13,13 +13,6 @@
             {{ $t("about.description") }}
           </h1>
         </div>
-        <ConsoleLikePane :pane-name="`${$t('about.biography')}.md`">
-          <ContentRenderer
-            v-if="biography"
-            :value="biography"
-            class="md:columns-2 space-y-8 font-serif"
-          />
-        </ConsoleLikePane>
       </IndexSection>
       <IndexSection>
         <ConsoleLikePane :pane-name="`${$t('about.education.label')}.db`">
@@ -71,7 +64,7 @@ useHead({
   title: capitalizeFirstLetter(t("nav.about")),
 });
 
-const [{ data: experiences }, { data: education }, { data: biography }] = await Promise.all([
+const [{ data: experiences }, { data: education }] = await Promise.all([
   useAsyncData(
     `experiences-${locale.value}`,
     () => {
@@ -91,15 +84,6 @@ const [{ data: experiences }, { data: education }, { data: biography }] = await 
         .where("locale", "=", locale.value)
         .order("startDate", "DESC")
         .all();
-    },
-    {
-      watch: [locale],
-    },
-  ),
-  useAsyncData(
-    `biography-about-${locale.value}`,
-    () => {
-      return queryCollection("biography").path(`/biography/${locale.value}/about`).first();
     },
     {
       watch: [locale],

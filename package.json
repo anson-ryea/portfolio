@@ -39,6 +39,7 @@
   "devDependencies": {
     "@iconify-json/simple-icons": "^1.2.91",
     "@iconify-json/solar": "^1.2.5",
+    "@tailwindcss/typography": "^0.5.20",
     "@takumi-rs/core": "^2.4.0",
     "debug": "^4.4.3",
     "nuxi": "^3.37.0",
