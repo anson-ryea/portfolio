@@ -69,6 +69,7 @@ export default defineNuxtConfig({
       {
         name: "DM Sans",
         provider: "local",
+        global: true,
       },
       {
         name: "Fraunces",

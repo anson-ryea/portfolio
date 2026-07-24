@@ -132,7 +132,11 @@ import { motion } from "motion-v";
 
 const { t, locale } = useI18n();
 
-defineOgImageComponent("NuxtSeo");
+defineOgImage("NuxtSeo.takumi", {
+  title: "Anson Ng",
+  description:
+    "Anson is a dedicated BSc Computer Science student at the Chinese University of Hong Kong.",
+});
 useHead({
   title: capitalizeFirstLetter(t("nav.home")),
 });
