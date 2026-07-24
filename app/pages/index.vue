@@ -8,7 +8,7 @@
         format="webp"
         quality="80"
         fit="cover"
-        :preload="{ fetchPriority: 'high' }"
+        preload
         width="2666px"
         :placeholder="[266, 199, 75, 10]"
       />
@@ -25,7 +25,6 @@
           class="absolute h-16 md:h-24 lg:h-32 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
           src="/info/signature.svg"
           :alt="$t('info.firstName') + $t('dictionary.logoAlt')"
-          :preload="{ fetchPriority: 'high' }"
         />
       </motion.div>
     </div>
@@ -141,7 +140,7 @@ useHead({
   title: capitalizeFirstLetter(t("nav.home")),
 });
 
-const { data: presentExperiences } = await useAsyncData(
+const { data: presentExperiences } = await useLazyAsyncData(
   `presentExperiences-${locale.value}`,
   () => {
     return queryCollection("experiences")
@@ -159,7 +158,7 @@ const { data: presentExperiences } = await useAsyncData(
   },
 );
 
-const { data: presentEducation } = await useAsyncData(
+const { data: presentEducation } = await useLazyAsyncData(
   `presentEducation-${locale.value}`,
   () => {
     return queryCollection("education")
@@ -189,7 +188,7 @@ const { data: intro } = await useAsyncData(
 
 const introVars = ref({ fullName: t("info.fullName") });
 
-const { data: polaroids } = await useAsyncData(
+const { data: polaroids } = await useLazyAsyncData(
   `polaroids-${locale.value}`,
   () => {
     return queryCollection("polaroids").where("locale", "=", locale.value).all();

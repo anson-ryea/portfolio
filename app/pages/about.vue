@@ -14,7 +14,11 @@
           </h1>
         </div>
         <ConsoleLikePane :pane-name="`${$t('about.biography')}.md`">
-          <ContentRenderer :value="biography" class="md:columns-2 space-y-8 font-serif" />
+          <ContentRenderer
+            v-if="biography"
+            :value="biography"
+            class="md:columns-2 space-y-8 font-serif"
+          />
         </ConsoleLikePane>
       </IndexSection>
       <IndexSection>
@@ -67,39 +71,39 @@ useHead({
   title: capitalizeFirstLetter(t("nav.about")),
 });
 
-const { data: experiences } = await useAsyncData(
-  `experiences-${locale.value}`,
-  () => {
-    return queryCollection("experiences")
-      .where("locale", "=", locale.value)
-      .order("startDate", "DESC")
-      .all();
-  },
-  {
-    watch: [locale],
-  },
-);
-
-const { data: education } = await useAsyncData(
-  `education-${locale.value}`,
-  () => {
-    return queryCollection("education")
-      .where("locale", "=", locale.value)
-      .order("startDate", "DESC")
-      .all();
-  },
-  {
-    watch: [locale],
-  },
-);
-
-const { data: biography } = await useAsyncData(
-  `biography-about-${locale.value}`,
-  () => {
-    return queryCollection("biography").path(`/biography/${locale.value}/about`).first();
-  },
-  {
-    watch: [locale],
-  },
-);
+const [{ data: experiences }, { data: education }, { data: biography }] = await Promise.all([
+  useAsyncData(
+    `experiences-${locale.value}`,
+    () => {
+      return queryCollection("experiences")
+        .where("locale", "=", locale.value)
+        .order("startDate", "DESC")
+        .all();
+    },
+    {
+      watch: [locale],
+    },
+  ),
+  useAsyncData(
+    `education-${locale.value}`,
+    () => {
+      return queryCollection("education")
+        .where("locale", "=", locale.value)
+        .order("startDate", "DESC")
+        .all();
+    },
+    {
+      watch: [locale],
+    },
+  ),
+  useAsyncData(
+    `biography-about-${locale.value}`,
+    () => {
+      return queryCollection("biography").path(`/biography/${locale.value}/about`).first();
+    },
+    {
+      watch: [locale],
+    },
+  ),
+]);
 </script>
