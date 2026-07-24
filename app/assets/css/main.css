@@ -2,7 +2,7 @@
 @layer theme, base, components, utilities;
 
 @theme {
-  --font-sans: "DM Sans", sans;
+  --font-sans: "DM Sans", sans-serif;
   --font-serif: "Fraunces", serif;
   --font-mono: "Geist Mono", monospace;
   --font-handwritten: "Reenie Beanie", cursive;
