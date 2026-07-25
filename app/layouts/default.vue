@@ -1,6 +1,5 @@
 <template>
   <div>
-    <SpeedInsights />
     <slot />
     <footer class="flex justify-around">
       <div
@@ -58,7 +57,6 @@
 </template>
 
 <script setup lang="ts">
-import { SpeedInsights } from "@vercel/speed-insights/vue";
 
 const runtimeConfig = useRuntimeConfig();
 const version = runtimeConfig.public.__APP_VERSION__.split(".");

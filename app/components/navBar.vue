@@ -11,7 +11,7 @@
         <NuxtImg
           src="/favicon.svg"
           alt="Logo"
-          class="h-10 w-10 items-center hover:invert transition"
+          class="h-10 w-10 items-center invert hover:invert-0 transition"
         />
       </NuxtLinkLocale>
       <div class="flex flex-col items-center">
