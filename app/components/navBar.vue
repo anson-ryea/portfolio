@@ -47,7 +47,11 @@
         </transition>
       </button>
       <div class="flex flex-col items-center">
-        <NuxtLink to="/cv/resume.pdf" external class="flex items-center gap-1 uppercase">
+        <NuxtLink
+          to="https://2t0fcvq2h12wbdah.public.blob.vercel-storage.com/cv/resume.pdf"
+          external
+          class="flex items-center gap-1 uppercase"
+        >
           {{ $t("nav.cv") }}
           <Icon name="solar:import-broken" class="h-4 w-4 bg-gray-600" />
         </NuxtLink>
