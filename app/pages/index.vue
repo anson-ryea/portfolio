@@ -47,7 +47,7 @@
                   <div>
                     <ContentRenderer
                       :value="intro"
-                      class="font-serif max-w-none text-justify prose-sm sm:prose prose-em:text-blue-500"
+                      class="font-serif prose-sm sm:prose prose-em:text-blue-500 max-w-none! text-justify"
                       :data="introVars"
                     />
                   </div>
