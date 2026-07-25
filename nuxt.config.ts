@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "@vercel/speed-insights",
     "oxc-nuxt",
   ],
+  css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
   app: {
     head: {
@@ -37,13 +38,29 @@ export default defineNuxtConfig({
         },
         { rel: "manifest", href: "/site.webmanifest" },
       ],
+      meta: [{ name: "theme-color", content: "oklch(54.6% 0.245 262.881)" }],
     },
     pageTransition: { name: "page", mode: "out-in" },
   },
-  css: ["~/assets/css/main.css"],
   site: {
     url: "https://www.an5on.com",
     name: "Anson Ng",
+    indexable: true,
+    trailingSlash: false,
+  },
+  sitemap: {
+    zeroRuntime: true,
+  },
+  schemaOrg: {
+    identity: {
+      type: "Person",
+      name: "Anson Ng",
+      logo: "/favicon-96x96.png",
+      url: "https://www.an5on.com",
+      image: "/portrait.jpg",
+      sameAs: ["https://www.linkedin.com/in/an5on/"],
+      jobTitle: "Undergraduate Student studying Computer Science",
+    },
   },
   runtimeConfig: {
     public: {
@@ -99,9 +116,6 @@ export default defineNuxtConfig({
   icon: {
     mode: "css",
     cssLayer: "base",
-  },
-  sitemap: {
-    zeroRuntime: true,
   },
   studio: {
     repository: {
