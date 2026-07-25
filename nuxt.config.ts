@@ -77,11 +77,11 @@ export default defineNuxtConfig({
       },
       {
         name: "Geist Mono",
-        provider: "local",
+        provider: "fontsource",
       },
       {
         name: "Reenie Beanie",
-        provider: "local",
+        provider: "fontsource",
       },
       {
         name: "Array",

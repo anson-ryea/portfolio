@@ -1,3 +1,8 @@
+---
+title: Intro
+description: Jag är en kandidatelementärstudent i datavetenskap vid The Chinese University of Hong Kong, driven av ett djupt intresse för programmeringsspråk, särskilt typsystem och språkfunktioner.
+---
+
 Jag är en kandidatelementärstudent i datavetenskap vid [The Chinese University of Hong Kong](https://www.cuhk.edu.hk/), driven av ett djupt intresse för _programmeringsspråk_, särskilt _typsystem_ och _språkfunktioner_.
 
 För närvarande bedriver jag forskning under handledning av [Prof. Lauren Pick](https://lmpick.github.io/) om _automatisk formalisering av satser inom programmeringsspråk_ som mitt kandidatexamensarbete, samtidigt som jag samarbetar i ett projekt fokuserat på specifikationsgenerering för att stödja agentdriven kodsyntes.
