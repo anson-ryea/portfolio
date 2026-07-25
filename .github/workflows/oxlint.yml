@@ -23,8 +23,8 @@ jobs:
       security-events: write
       actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
 
@@ -39,8 +39,3 @@ jobs:
 
       - name: Check formatting
         run: pnpm format:check
-
-      - name: "notify vercel"
-        uses: "vercel/repository-dispatch/actions/status@v1"
-        with:
-          name: "Vercel - portfolio: Oxlint"
