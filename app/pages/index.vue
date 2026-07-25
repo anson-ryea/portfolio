@@ -172,7 +172,7 @@ const { data: presentEducation } = await useLazyAsyncData(
           .where("endDate", ">", new Date().toISOString())
           .where("startDate", "<", new Date().toISOString()),
       )
-      .order("startDate", "DESC")
+      .order("endDate", "DESC")
       .all();
   },
   {

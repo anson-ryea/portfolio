@@ -1,15 +1,14 @@
 {
   "locale": "sv",
   "startDate": "2024-04-01",
-  "endDate": "2024-10-01",
+  "endDate": "2025-12-01",
   "location": "Hongkong",
   "company": "The Chinese University of Hong Kong",
   "title": "Forskningsassistent",
-  "description": "Forskningsassistent",
+  "description": "Handledd av Dr. Hoover Yin",
   "highlights": [
-    "Optimerar batchstorlekar och buffertstorlekar för mellanliggande noder för att förbättra överföringseffektiviteten under schemat för batched sparse codes (BATS).",
-    "Ledde ett team för att utveckla en Python-simulator för att replikera trådlös kommunikation i multi-hop-nätverk med BATS-koder som överföringsmetod.",
-    "Använde simulatorn för att mäta maximala paketmottagningshastigheter över tid vid destinationsnoden i linjenätverksscenarier med paketförlust."
+    "1st Research: Ledde ett kandidatforskningsteam på sju personer som undersökte hur placering och färgkontrast påverkar nästlade halvtons-QR-koder för att uppnå högre informationstäthet med bibehållen skanningssäkerhet. Utvecklade en generator för nästlade halvtons-QR-koder i Kotlin/JVM, vilket möjliggjorde experiment med olika konfigurationer, storlekar och felkorrigeringsnivåer.",
+    "2nd Research: Optimerade batchstorlekar och buffertstorlekar för mellannoder för att förbättra överföringseffektiviteten under BATS-schemat (batched sparse codes). Utvecklade en Python-simulator för att replikera trådlös kommunikation i flerhoppsnätverk med BATS-koder som överföringsmetod."
   ],
   "pathToLogo": "/content/experiences/cuhk.svg",
   "tags": ["Python", "Nätverk"]

@@ -1,0 +1,15 @@
+{
+  "locale": "sv",
+  "startDate": "2026-05-01",
+  "endDate": "2100-01-01",
+  "location": "Stockholm, Sverige",
+  "company": "Kungliga Tekniska Högskolan",
+  "title": "Sommarpraktik",
+  "description": "Grupp HScala",
+  "highlights": [
+    "Utveckling av en kompilator för att översätta Scala till SPIR-V-assembler för nativ exekvering på hårdvarunivå för GPU:er.",
+    "Design av ett säkert och korrekt typsystem skräddarsytt för homogen programmering med hjälp av Capture Tracking, med Scala som en första testbädd."
+  ],
+  "pathToLogo": "/content/education/kth.svg",
+  "tags": ["Typsystem", "Scala", "Kompilator"]
+}

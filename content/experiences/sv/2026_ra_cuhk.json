@@ -1,0 +1,15 @@
+{
+  "locale": "sv",
+  "startDate": "2026-04-01",
+  "endDate": "2100-01-01",
+  "location": "Hongkong",
+  "company": "The Chinese University of Hong Kong",
+  "title": "Forskningsassistent",
+  "description": "Handledd av Dr. Lauren Pick",
+  "highlights": [
+    "Samarbete med ett forskningsteam för att utforska stora språkmodeller för modulärt resonerande och maximal specifikationssyntes i syfte att stödja agentdriven kodgenerering.",
+    "Utveckling av ett agentdrivet arbetsflöde med MiniSWEAgent i Python för att utvärdera effektiviteten hos LLM-genererad kod med uppmanade formella specifikationer gentemot datamängden DafnyBench."
+  ],
+  "pathToLogo": "/content/experiences/cuhk.svg",
+  "tags": ["Python", "Dafny", "Programspecifikation", "Agentutveckling"]
+}

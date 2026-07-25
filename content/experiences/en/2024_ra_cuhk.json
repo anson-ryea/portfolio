@@ -1,15 +1,14 @@
 {
   "locale": "en",
   "startDate": "2024-04-01",
-  "endDate": "2024-10-01",
+  "endDate": "2025-12-01",
   "location": "Hong Kong",
   "company": "The Chinese University of Hong Kong",
   "title": "Research Assistant",
-  "description": "Research Assistant",
+  "description": "Supervised by Dr. Hoover Yin",
   "highlights": [
-    "Optimizing batch sizes and intermediate node buffer sizes to enhance transmission efficiency under the batched sparse codes (BATS) scheme.",
-    "Leading a team to develop a Python simulator to replicate wireless communication in multi-hop networks with BATS Codes as transmission method.",
-    "Employing the simulator to measure maximum packet reception rates over time at the destination node in Line network scenarios with packet-loss."
+    "1st Research: Led a seven-member undergraduate team investigating the effects of placement and colour contrast on nested halftone QR codes to achieve higher information density while maintaining scan reliability. Developed a nested halftone QR code generator in Kotlin/JVM, enabling experiments with varied configurations, sizes, and error correction levels.",
+    "2nd Research: Optimised batch sizes and intermediate node buffer sizes to enhance transmission efficiency under the batched sparse codes (BATS) scheme. Developed a Python simulator to replicate wireless communication in multi-hop networks with BATS Codes as transmission method."
   ],
   "pathToLogo": "/content/experiences/cuhk.svg",
   "tags": ["Python", "Network"]

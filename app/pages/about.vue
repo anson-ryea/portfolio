@@ -82,7 +82,7 @@ const [{ data: experiences }, { data: education }] = await Promise.all([
     () => {
       return queryCollection("education")
         .where("locale", "=", locale.value)
-        .order("startDate", "DESC")
+        .order("endDate", "DESC")
         .all();
     },
     {
