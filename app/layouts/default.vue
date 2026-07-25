@@ -57,7 +57,6 @@
 </template>
 
 <script setup lang="ts">
-
 const runtimeConfig = useRuntimeConfig();
 const version = runtimeConfig.public.__APP_VERSION__.split(".");
 const iteration = version[0];
