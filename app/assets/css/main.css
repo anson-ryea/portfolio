@@ -84,8 +84,12 @@
   .bg-side {
     @apply bg-stone-50;
   }
+}
 
-  .btn-light {
-    @apply w-fit rounded border border-gray-100 bg-white px-4 py-2 text-sm font-medium text-gray-600 transition hover:brightness-97 active:scale-95;
-  }
+@utility btn-light {
+  @apply w-fit rounded border border-gray-100 bg-white px-4 py-2 text-sm font-medium text-gray-600 transition hover:brightness-97 active:scale-95;
+}
+
+@utility btn-dark {
+  @apply w-fit rounded border border-gray-800 bg-black px-4 py-2 text-sm font-medium text-white transition hover:brightness-110 active:scale-95;
 }
