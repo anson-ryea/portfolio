@@ -1,5 +1,5 @@
 <div style="text-align:center; width:100%">
-    <img alt="README Banner" src="https://raw.githubusercontent.com/anson-ryea/portfolio/refs/heads/main/public/readme/banner.jpg"/>
+    <img alt="README Banner" src="https://github.com/anson-ryea/anson-ryea/blob/6d15be49d5ee712de993e594cf0dfe3ee0f525fd/banner.jpg"/>
 </div>
 <br/>
 <div style="display:flex; justify-content:center; gap:0.5em">
