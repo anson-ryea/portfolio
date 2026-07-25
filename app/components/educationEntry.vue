@@ -75,7 +75,7 @@
             class="absolute bg-[url('/bg/geometric.svg')] mask-b-to-20% w-full h-full top-0 left-0 group-hover:scale-102 transition [@media(hover:none)]:scale-102"
           />
           <div class="relative space-y-2 p-4 z-10">
-            <h5 class="font-sans text-yellow-900 capitalize font-medium">
+            <h5 class="font-sans text-yellow-700 capitalize font-semibold">
               {{ $t("about.education.scholarships") }}
               <em class="text-gray-400 font-serif font-light tracking-wide">
                 {{ scholarshipsCountString }}
