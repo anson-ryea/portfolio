@@ -1,6 +1,12 @@
 <template>
   <main class="flex flex-col w-full justify-between">
-    <div class="relative h-dvh w-full shadow-2xl select-none">
+    <Grid
+      class="relative h-dvh w-full shadow-2xl select-none"
+      :corner-radius="2"
+      :tile-size="50"
+      :tint="[0.1451, 0.3882, 0.9216]"
+      :tint-strength="0.3"
+    >
       <NuxtImg
         class="absolute z-0 w-full h-full object-cover object-right"
         src="/index/hero.webp"
@@ -12,7 +18,6 @@
         width="2666px"
         :placeholder="[266, 199, 75, 10]"
       />
-      <HeroGridsAnimation />
       <motion.div
         class="absolute bottom-16 left-8 z-10 pointer-events-none"
         :initial="{ opacity: 0, scale: 0 }"
@@ -27,7 +32,7 @@
           :alt="$t('info.firstName') + $t('dictionary.logoAlt')"
         />
       </motion.div>
-    </div>
+    </Grid>
     <main class="flex w-full justify-around bg-side border-b border-gray-300">
       <div
         class="flex w-full flex-col md:mx-8 lg:mx-12 xl:mx-20 bg-white border-x border-gray-300 divide-y divide-gray-300"
@@ -81,24 +86,26 @@
             </ConsoleLikePane>
           </div>
         </IndexSection>
-        <IndexSection
-          class="bg-[url('/bg/grid.svg')] before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:from-blue-100/40 before:bg-linear-to-b before:to-blue-100/0"
-        >
-          <ConsoleLikePane :pane-name="$t('index.polaroids')">
-            <div
-              class="lg:flex max-w-full grid grid-cols-2 gap-8 justify-between justify-items-center"
-            >
-              <ImagePolaroid
-                v-for="polaroid in polaroids"
-                :key="polaroid.id"
-                :src="polaroid.pathToImage"
-                :caption="polaroid.caption"
-                :alt="polaroid.alt"
-                class="aspect-3/4 w-42 md:w-56 xl:max-w-88 xl:h-fit xl:w-full"
-              />
-            </div>
-          </ConsoleLikePane>
-        </IndexSection>
+        <Bubble>
+          <IndexSection
+            class="bg-[url('/bg/grid.svg')] before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:from-blue-100/40 before:bg-linear-to-b before:to-blue-100/0"
+          >
+            <ConsoleLikePane :pane-name="$t('index.polaroids')">
+              <div
+                class="lg:flex max-w-full grid grid-cols-2 gap-8 justify-between justify-items-center"
+              >
+                <ImagePolaroid
+                  v-for="polaroid in polaroids"
+                  :key="polaroid.id"
+                  :src="polaroid.pathToImage"
+                  :caption="polaroid.caption"
+                  :alt="polaroid.alt"
+                  class="aspect-3/4 w-42 md:w-56 xl:max-w-88 xl:h-fit xl:w-full"
+                />
+              </div>
+            </ConsoleLikePane>
+          </IndexSection>
+        </Bubble>
         <IndexSection>
           <ConsoleLikePane :pane-name="`${$t('index.currentStatus.label')}.md`">
             <div class="space-y-4">

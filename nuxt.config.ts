@@ -63,6 +63,7 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
+    originTrail: "",
     public: {
       __APP_VERSION__: pkg.version,
     },
