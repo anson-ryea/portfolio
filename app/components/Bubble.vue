@@ -502,10 +502,7 @@ export function createBubble(
       const currentY = trailY[i] ?? 0;
       const previousX = trailX[i - 1] ?? 0;
       const previousY = trailY[i - 1] ?? 0;
-      moved = Math.max(
-        moved,
-        Math.abs(currentX - previousX) + Math.abs(currentY - previousY),
-      );
+      moved = Math.max(moved, Math.abs(currentX - previousX) + Math.abs(currentY - previousY));
     }
     presence += (presenceTarget - presence) * kScale;
 
