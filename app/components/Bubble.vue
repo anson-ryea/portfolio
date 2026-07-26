@@ -665,7 +665,7 @@ watch(
     <div
       v-if="!native"
       ref="contentEl"
-      style="position: relative; width: 100%; height: 100%; overflow: auto"
+      style="position: relative; width: 100%; height: 100%; overflow: clip"
     >
       <slot />
     </div>

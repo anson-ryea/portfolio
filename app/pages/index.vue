@@ -86,10 +86,10 @@
             </ConsoleLikePane>
           </div>
         </IndexSection>
-        <Bubble
-          class="bg-[url('/bg/grid.svg')] before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:from-blue-100/40 before:bg-linear-to-b before:to-blue-100/0"
-        >
-          <IndexSection>
+        <Bubble>
+          <IndexSection
+            class="bg-[url('/bg/grid.svg')] before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:from-blue-100/40 before:bg-linear-to-b before:to-blue-100/0"
+          >
             <ConsoleLikePane :pane-name="$t('index.polaroids')">
               <div
                 class="lg:flex max-w-full grid grid-cols-2 gap-8 justify-between justify-items-center"
