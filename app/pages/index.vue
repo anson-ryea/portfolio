@@ -1,6 +1,6 @@
 <template>
   <main class="flex flex-col w-full justify-between">
-    <div class="relative h-dvh w-full shadow-2xl select-none">
+    <Grid class="relative h-dvh w-full shadow-2xl select-none" :tile-size="50">
       <NuxtImg
         class="absolute z-0 w-full h-full object-cover object-right"
         src="/index/hero.webp"
@@ -12,7 +12,6 @@
         width="2666px"
         :placeholder="[266, 199, 75, 10]"
       />
-      <HeroGridsAnimation />
       <motion.div
         class="absolute bottom-16 left-8 z-10 pointer-events-none"
         :initial="{ opacity: 0, scale: 0 }"
@@ -27,7 +26,7 @@
           :alt="$t('info.firstName') + $t('dictionary.logoAlt')"
         />
       </motion.div>
-    </div>
+    </Grid>
     <main class="flex w-full justify-around bg-side border-b border-gray-300">
       <div
         class="flex w-full flex-col md:mx-8 lg:mx-12 xl:mx-20 bg-white border-x border-gray-300 divide-y divide-gray-300"
