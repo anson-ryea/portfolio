@@ -304,12 +304,13 @@ export function createBubble(
   gl.attachShader(program, fragmentShader);
   gl.linkProgram(program);
 
-  const uniforms: Record<string, WebGLUniformLocation> = {};
+  const uniforms: Record<string, WebGLUniformLocation | null> = {};
   const uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS);
   for (let i = 0; i < uniformCount; i++) {
     const info = gl.getActiveUniform(program, i)!;
-    uniforms[info.name] = gl.getUniformLocation(program, info.name)!;
+    uniforms[info.name] = gl.getUniformLocation(program, info.name);
   }
+  const uniform = (name: string): WebGLUniformLocation | null => uniforms[name] ?? null;
 
   const quad = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, quad);
@@ -351,8 +352,8 @@ export function createBubble(
       Math.max(0.05, content.clientWidth / Math.max(output.clientWidth, 1)),
     );
     if (htmlInCanvas) {
-      const sourceWidth = Math.max(1, Math.round(source.clientWidth * dpr));
-      const sourceHeight = Math.max(1, Math.round(source.clientHeight * dpr));
+      const sourceWidth = Math.max(1, Math.round(source.clientWidth));
+      const sourceHeight = Math.max(1, Math.round(source.clientHeight));
       if (source.width !== sourceWidth || source.height !== sourceHeight) {
         source.width = sourceWidth;
         source.height = sourceHeight;
@@ -410,8 +411,8 @@ export function createBubble(
     let maxX = -Infinity;
     let maxY = -Infinity;
     for (let i = 0; i < count; i++) {
-      const dx = trailX[i] * dpr;
-      const dy = output.height - trailY[i] * dpr;
+      const dx = (trailX[i] ?? 0) * dpr;
+      const dy = output.height - (trailY[i] ?? 0) * dpr;
       trailData[i * 2] = (dx * 2 - output.width) / minRes;
       trailData[i * 2 + 1] = (dy * 2 - output.height) / minRes;
       minX = Math.min(minX, dx);
@@ -438,28 +439,28 @@ export function createBubble(
     gl!.useProgram(program);
     gl!.activeTexture(gl!.TEXTURE0);
     gl!.bindTexture(gl!.TEXTURE_2D, contentTexture);
-    gl!.uniform1i(uniforms.uContent, 0);
-    gl!.uniform2f(uniforms.uResolution, output.width, output.height);
-    gl!.uniform1f(uniforms.uMaxX, contentMaxX);
-    gl!.uniform1f(uniforms.uDpr, dpr);
-    gl!.uniform1f(uniforms.uTime, time);
-    gl!.uniform1f(uniforms.uHasContent, htmlInCanvas ? 1 : 0);
-    gl!.uniform1i(uniforms.uCount, count);
-    gl!.uniform2fv(uniforms["uTrail[0]"], trailData);
-    gl!.uniform1f(uniforms.uBaseRadius, baseRadius);
-    gl!.uniform1f(uniforms.uBlend, blend);
-    gl!.uniform1f(uniforms.uRefraction, config.refraction);
-    gl!.uniform1f(uniforms.uDispersion, Math.max(config.dispersion, 0));
-    gl!.uniform1f(uniforms.uFrost, Math.min(Math.max(config.frost, 0), 1));
-    gl!.uniform1f(uniforms.uShine, Math.max(config.shine, 0));
-    gl!.uniform1f(uniforms.uRim, Math.min(Math.max(config.rim, 0), 2));
-    gl!.uniform1f(uniforms.uIridescence, Math.max(config.iridescence, 0));
-    gl!.uniform1f(uniforms.uIntensity, Math.max(config.intensity, 0));
-    gl!.uniform3f(uniforms.uTint, config.tint[0], config.tint[1], config.tint[2]);
-    gl!.uniform1f(uniforms.uTintStrength, Math.min(Math.max(config.tintStrength, 0), 1));
-    gl!.uniform3f(uniforms.uColorA, config.colorA[0], config.colorA[1], config.colorA[2]);
-    gl!.uniform3f(uniforms.uColorB, config.colorB[0], config.colorB[1], config.colorB[2]);
-    gl!.uniform1f(uniforms.uFallbackAlpha, Math.min(Math.max(config.fallbackOpacity, 0), 1));
+    gl!.uniform1i(uniform("uContent"), 0);
+    gl!.uniform2f(uniform("uResolution"), output.width, output.height);
+    gl!.uniform1f(uniform("uMaxX"), contentMaxX);
+    gl!.uniform1f(uniform("uDpr"), dpr);
+    gl!.uniform1f(uniform("uTime"), time);
+    gl!.uniform1f(uniform("uHasContent"), htmlInCanvas ? 1 : 0);
+    gl!.uniform1i(uniform("uCount"), count);
+    gl!.uniform2fv(uniform("uTrail[0]"), trailData);
+    gl!.uniform1f(uniform("uBaseRadius"), baseRadius);
+    gl!.uniform1f(uniform("uBlend"), blend);
+    gl!.uniform1f(uniform("uRefraction"), config.refraction);
+    gl!.uniform1f(uniform("uDispersion"), Math.max(config.dispersion, 0));
+    gl!.uniform1f(uniform("uFrost"), Math.min(Math.max(config.frost, 0), 1));
+    gl!.uniform1f(uniform("uShine"), Math.max(config.shine, 0));
+    gl!.uniform1f(uniform("uRim"), Math.min(Math.max(config.rim, 0), 2));
+    gl!.uniform1f(uniform("uIridescence"), Math.max(config.iridescence, 0));
+    gl!.uniform1f(uniform("uIntensity"), Math.max(config.intensity, 0));
+    gl!.uniform3f(uniform("uTint"), config.tint[0], config.tint[1], config.tint[2]);
+    gl!.uniform1f(uniform("uTintStrength"), Math.min(Math.max(config.tintStrength, 0), 1));
+    gl!.uniform3f(uniform("uColorA"), config.colorA[0], config.colorA[1], config.colorA[2]);
+    gl!.uniform3f(uniform("uColorB"), config.colorB[0], config.colorB[1], config.colorB[2]);
+    gl!.uniform1f(uniform("uFallbackAlpha"), Math.min(Math.max(config.fallbackOpacity, 0), 1));
     gl!.drawArrays(gl!.TRIANGLE_STRIP, 0, 4);
     gl!.disable(gl!.SCISSOR_TEST);
   }
@@ -490,16 +491,20 @@ export function createBubble(
     headX += (targetX - headX) * kHead;
     headY += (targetY - headY) * kHead;
     for (let i = MAX_TRAIL - 1; i > 0; i--) {
-      trailX[i] = trailX[i - 1];
-      trailY[i] = trailY[i - 1];
+      trailX[i] = trailX[i - 1] ?? 0;
+      trailY[i] = trailY[i - 1] ?? 0;
     }
     trailX[0] = headX;
     trailY[0] = headY;
     let moved = Math.abs(targetX - headX) + Math.abs(targetY - headY);
     for (let i = 1; i < MAX_TRAIL; i++) {
+      const currentX = trailX[i] ?? 0;
+      const currentY = trailY[i] ?? 0;
+      const previousX = trailX[i - 1] ?? 0;
+      const previousY = trailY[i - 1] ?? 0;
       moved = Math.max(
         moved,
-        Math.abs(trailX[i] - trailX[i - 1]) + Math.abs(trailY[i] - trailY[i - 1]),
+        Math.abs(currentX - previousX) + Math.abs(currentY - previousY),
       );
     }
     presence += (presenceTarget - presence) * kScale;
