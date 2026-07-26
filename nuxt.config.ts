@@ -38,7 +38,14 @@ export default defineNuxtConfig({
         },
         { rel: "manifest", href: "/site.webmanifest" },
       ],
-      meta: [{ name: "theme-color", content: "oklch(54.6% 0.245 262.881)" }],
+      meta: [
+        { name: "theme-color", content: "oklch(54.6% 0.245 262.881)" },
+        {
+          "http-equiv": "origin-trial",
+          content:
+            "AiN4XsVqeaWOe9Hud1K93J6VX6Zp/QPho3eC+R5NyALOULW914qRnYlOI+KBzpan9cLxxWqDfd+kO393gqN5NwEAAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5hbjVvbi5jb206NDQzIiwiZmVhdHVyZSI6IkhUTUxJbkNhbnZhcyIsImV4cGlyeSI6MTc5MjQ1NDQwMCwiaXNTdWJkb21haW4iOnRydWV9",
+        },
+      ],
     },
     pageTransition: { name: "page", mode: "out-in" },
   },
@@ -63,7 +70,6 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    originTrail: "",
     public: {
       __APP_VERSION__: pkg.version,
     },

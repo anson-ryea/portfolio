@@ -13,10 +13,4 @@ useSeoMeta({
   ogDescription:
     "Anson Ng is a dedicated BSc Computer Science student at CUHK. Focuses on Programming Languages, particularly Type Systems and Language Features.",
 });
-
-if (import.meta.server) {
-  const runtimeConfig = useRuntimeConfig();
-  const originTrailHeader = useResponseHeader("Origin-Trail");
-  originTrailHeader.value = String(runtimeConfig.originTrail ?? "");
-}
 </script>
