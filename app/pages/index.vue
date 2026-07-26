@@ -1,6 +1,12 @@
 <template>
   <main class="flex flex-col w-full justify-between">
-    <Grid class="relative h-dvh w-full shadow-2xl select-none" :tile-size="50">
+    <Grid
+      class="relative h-dvh w-full shadow-2xl select-none"
+      :corner-radius="2"
+      :tile-size="50"
+      :tint="[0.1451, 0.3882, 0.9216]"
+      :tint-strength="0.3"
+    >
       <NuxtImg
         class="absolute z-0 w-full h-full object-cover object-right"
         src="/index/hero.webp"
@@ -80,24 +86,26 @@
             </ConsoleLikePane>
           </div>
         </IndexSection>
-        <IndexSection
+        <Bubble
           class="bg-[url('/bg/grid.svg')] before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:from-blue-100/40 before:bg-linear-to-b before:to-blue-100/0"
         >
-          <ConsoleLikePane :pane-name="$t('index.polaroids')">
-            <div
-              class="lg:flex max-w-full grid grid-cols-2 gap-8 justify-between justify-items-center"
-            >
-              <ImagePolaroid
-                v-for="polaroid in polaroids"
-                :key="polaroid.id"
-                :src="polaroid.pathToImage"
-                :caption="polaroid.caption"
-                :alt="polaroid.alt"
-                class="aspect-3/4 w-42 md:w-56 xl:max-w-88 xl:h-fit xl:w-full"
-              />
-            </div>
-          </ConsoleLikePane>
-        </IndexSection>
+          <IndexSection>
+            <ConsoleLikePane :pane-name="$t('index.polaroids')">
+              <div
+                class="lg:flex max-w-full grid grid-cols-2 gap-8 justify-between justify-items-center"
+              >
+                <ImagePolaroid
+                  v-for="polaroid in polaroids"
+                  :key="polaroid.id"
+                  :src="polaroid.pathToImage"
+                  :caption="polaroid.caption"
+                  :alt="polaroid.alt"
+                  class="aspect-3/4 w-42 md:w-56 xl:max-w-88 xl:h-fit xl:w-full"
+                />
+              </div>
+            </ConsoleLikePane>
+          </IndexSection>
+        </Bubble>
         <IndexSection>
           <ConsoleLikePane :pane-name="`${$t('index.currentStatus.label')}.md`">
             <div class="space-y-4">
