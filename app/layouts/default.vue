@@ -46,7 +46,7 @@
               {{ $t("dictionary.and") }}
               <span class="text-sky-400">Tailwind CSS</span>
             </p>
-            <NuxtLink external to="sitemap.xml" class="flex md:justify-end items-center underline">
+            <NuxtLink external to="sitemap.xml" class="flex justify-around md:justify-end items-center underline">
               <Icon name="solar:arrow-left-up-linear" class="h-4 w-4" />
               <span>Sitemap</span>
             </NuxtLink>
