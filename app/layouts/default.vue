@@ -3,7 +3,7 @@
     <slot />
     <footer class="flex justify-around">
       <div
-        class="flex flex-col md:mx-8 lg:mx-12 xl:mx-20 flex-1 bg-white border-x border-gray-300 border-dashed hover:border-solid divide-y divide-gray-300 divide-dashed"
+        class="flex flex-col md:mx-8 lg:mx-12 xl:mx-20 flex-1 bg-white border-x border-gray-300 border-dashed divide-y divide-gray-300 divide-dashed"
       >
         <FooterSection class="flex justify-between items-center">
           <div>
@@ -38,7 +38,7 @@
               {{ $t("footer.version.majorLabel") }} {{ iteration }}
               {{ $t("footer.version.patchLabel") }} {{ minor }}
             </p>
-            <p>{{ $t("footer.copyright.description") }} {{ year }} {{ $t("info.url") }}</p>
+            <p>{{ $t("footer.copyright.description") }} {{ year }} {{ $t("info.name") }}</p>
           </div>
           <div class="md:text-right">
             <p>
@@ -46,7 +46,10 @@
               {{ $t("dictionary.and") }}
               <span class="text-sky-400">Tailwind CSS</span>
             </p>
-            <p>{{ $t("footer.copyright.credit") }}</p>
+            <NuxtLink to="sitemap.xml" class="underline flex justify-end items-center">
+              <Icon name="solar:arrow-left-up-linear" class="h-4 w-4" />
+              <span>Sitemap</span>
+            </NuxtLink>
           </div>
         </FooterSection>
       </div>
