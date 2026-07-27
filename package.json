@@ -30,7 +30,6 @@
     "better-sqlite3": "^12.11.1",
     "motion-v": "^2.3.0",
     "nuxt": "^4.5.0",
-    "nuxt-studio": "^1.7.0",
     "oxc-nuxt": "0.1.5",
     "pinia": "^4.0.2",
     "tailwindcss": "^4.3.3",
