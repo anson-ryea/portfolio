@@ -1,6 +1,6 @@
 <template>
   <main class="flex flex-col w-full justify-between">
-    <Grid
+    <CanvasUiGrid
       class="relative h-dvh w-full shadow-2xl select-none"
       :corner-radius="2"
       :tile-size="50"
@@ -32,7 +32,7 @@
           :alt="$t('info.firstName') + $t('dictionary.logoAlt')"
         />
       </motion.div>
-    </Grid>
+    </CanvasUiGrid>
     <main class="flex w-full justify-around bg-side border-b border-gray-300">
       <div
         class="flex w-full flex-col md:mx-8 lg:mx-12 xl:mx-20 bg-white border-x border-gray-300 divide-y divide-gray-300"

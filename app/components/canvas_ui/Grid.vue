@@ -746,7 +746,7 @@ export function createGrid(elements: GridElements, options: GridOptions = {}): G
 </script>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 
 const props = defineProps<GridOptions>();
 
@@ -756,27 +756,41 @@ const outputEl = ref<HTMLCanvasElement | null>(null);
 const native = ref(false);
 
 let instance: GridInstance | null = null;
-let raf = 0;
+let disposed = false;
 
-onMounted(() => {
+onMounted(async () => {
   native.value = supportsHtmlInCanvas();
-  raf = requestAnimationFrame(() => {
-    if (sourceEl.value && contentEl.value && outputEl.value) {
-      instance = createGrid(
-        {
-          source: sourceEl.value,
-          content: contentEl.value,
-          output: outputEl.value,
-        },
-        props,
-      );
-      if (native.value && !instance) native.value = false;
+  await nextTick();
+  if (disposed) return;
+  if (sourceEl.value && contentEl.value && outputEl.value) {
+    instance = createGrid(
+      {
+        source: sourceEl.value,
+        content: contentEl.value,
+        output: outputEl.value,
+      },
+      props,
+    );
+    if (native.value && !instance) {
+      native.value = false;
+      await nextTick();
+      if (disposed) return;
+      if (sourceEl.value && contentEl.value && outputEl.value) {
+        instance = createGrid(
+          {
+            source: sourceEl.value,
+            content: contentEl.value,
+            output: outputEl.value,
+          },
+          props,
+        );
+      }
     }
-  });
+  }
 });
 
 onBeforeUnmount(() => {
-  cancelAnimationFrame(raf);
+  disposed = true;
   instance?.destroy();
   instance = null;
 });

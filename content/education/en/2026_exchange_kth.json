@@ -4,11 +4,11 @@
   "endDate": "2026-06-01",
   "location": "Stockholm, Sweden",
   "school": "KTH Royal Institute of Technology",
-  "degree": "Exchange Program",
+  "degree": "Exchange Programme",
   "gpa": 5.0,
   "maxGpa": 5.0,
   "description": "Bachelor of Science in Computer Science",
-  "highlights": ["Participated in the Exchange Program at KTH Royal Institute of Technology"],
+  "highlights": ["Participated in the Exchange Programme at KTH Royal Institute of Technology"],
   "pathToLogo": "/content/education/kth.svg",
   "tags": ["Exchange"]
 }
