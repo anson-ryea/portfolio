@@ -32,3 +32,6 @@ logs
 *.njsproj
 *.sln
 *.sw?
+
+# Vercel
+.vercel

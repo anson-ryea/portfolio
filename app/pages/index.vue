@@ -11,11 +11,13 @@
         class="absolute z-0 w-full h-full object-cover object-right"
         src="/index/hero.webp"
         :alt="$t('index.hero.alt')"
-        format="webp"
-        quality="80"
-        fit="cover"
+        width="6000"
+        height="4000"
+        sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+        quality="75"
         preload
-        :placeholder="[266, 199, 75, 10]"
+        fetchpriority="high"
+        :placeholder="[32, 21, 50, 10]"
       />
       <motion.div
         class="absolute bottom-16 left-8 z-10 pointer-events-none"
@@ -25,10 +27,12 @@
         <h1 class="text-stone-200/50 font-pixel font-bold tracking-[-0.12em]! text-shadow-lg">
           AN5ON
         </h1>
-        <NuxtImg
+        <img
           class="absolute h-16 md:h-24 lg:h-32 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
           src="/info/signature.svg"
           :alt="$t('info.firstName') + $t('dictionary.logoAlt')"
+          width="1366"
+          height="768"
         />
       </motion.div>
     </CanvasUiGrid>
@@ -76,9 +80,11 @@
             </ConsoleLikePane>
             <ConsoleLikePane :pane-name="`${$t('index.portrait.label')}.png`" class="">
               <ImagePolaroid
-                :src="'index/portrait.jpg'"
+                src="/index/portrait.jpg"
                 :caption="$t('index.portrait.caption')"
                 :alt="$t('index.portrait.alt')"
+                :width="352"
+                sizes="352px"
                 class="aspect-3/4 max-w-88"
                 img-class="object-top!"
               />
@@ -98,6 +104,8 @@
                 :src="polaroid.pathToImage"
                 :caption="polaroid.caption"
                 :alt="polaroid.alt"
+                :width="352"
+                sizes="168px md:224px xl:352px"
                 class="aspect-3/4 w-42 md:w-56 xl:max-w-88 xl:h-fit xl:w-full"
               />
             </div>

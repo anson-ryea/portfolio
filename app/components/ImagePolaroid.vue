@@ -13,9 +13,13 @@
       <NuxtImg
         :src="src"
         :alt="alt"
+        :width="width"
+        :sizes="sizes"
+        :quality="quality"
         class="transition-all object-cover w-full max-h-full row-span-4"
         :class="imgClass"
-        format="webp"
+        loading="lazy"
+        decoding="async"
       />
       <span
         class="text-center font-handwritten text-gray-600 text-xl lg:text-2xl xl:text-3xl my-auto hidden group-hover:block [@media(hover:none)]:block"
@@ -36,8 +40,14 @@ const props = defineProps({
   alt: String,
   caption: String,
   imgClass: String,
+  width: Number,
+  sizes: String,
+  quality: {
+    type: Number,
+    default: 75,
+  },
 });
-const { src, alt, caption, imgClass } = props;
+const { src, alt, caption, imgClass, width, sizes, quality } = props;
 
 const isFlipped = ref(false);
 
