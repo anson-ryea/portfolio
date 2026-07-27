@@ -18,5 +18,3 @@ onlyBuiltDependencies:
   - sharp
   - unrs-resolver
   - vue-demi
-patchedDependencies:
-  nuxt-og-image@6.7.4: patches/nuxt-og-image@6.7.4.patch
