@@ -132,4 +132,7 @@ export default defineNuxtConfig({
       branch: "main",
     },
   },
+  image: {
+    provider: "ipxStatic",
+  },
 });
