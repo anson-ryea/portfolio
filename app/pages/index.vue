@@ -15,7 +15,6 @@
         quality="80"
         fit="cover"
         preload
-        width="2666px"
         :placeholder="[266, 199, 75, 10]"
       />
       <motion.div
