@@ -48,7 +48,7 @@
             </p>
             <NuxtLink
               external
-              to="sitemap.xml"
+              to="/sitemap.xml"
               class="flex justify-center md:justify-end items-center underline"
             >
               <Icon name="solar:arrow-left-up-linear" class="h-4 w-4" />
