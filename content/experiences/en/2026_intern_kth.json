@@ -7,8 +7,8 @@
   "title": "Summer Internship",
   "description": "Group HScala",
   "highlights": [
-    "Developing a compiler to translate Scala into SPIR-V assembly for native, hardware-level GPU execution.",
-    "Designing a safe, sound type system tailored for homogeneous programming using Capture Tracking, with Scala as an initial test bed."
+    "Building a compiler that translates Scala into SPIR-V assembly for seamless switching between CPU and GPU processing.",
+    "Designing a safe, sound type system tailored for heterogeneous programming using Capture Tracking."
   ],
   "pathToLogo": "/content/education/kth.svg",
   "tags": ["Type System", "Scala", "Compiler"]

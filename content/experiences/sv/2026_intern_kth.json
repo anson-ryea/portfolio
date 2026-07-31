@@ -7,8 +7,8 @@
   "title": "Sommarpraktik",
   "description": "Grupp HScala",
   "highlights": [
-    "Utveckling av en kompilator för att översätta Scala till SPIR-V-assembler för nativ exekvering på hårdvarunivå för GPU:er.",
-    "Design av ett säkert och korrekt typsystem skräddarsytt för homogen programmering med hjälp av Capture Tracking, med Scala som en första testbädd."
+    "Utvecklar en kompilator som översätter Scala till SPIR-V-assembler för sömlös och automatisk växling mellan CPU- och GPU-exekvering.",
+    "Designar av ett säkert och korrekt typsystem skräddarsytt för heterogen programmering med hjälp av Capture Tracking."
   ],
   "pathToLogo": "/content/education/kth.svg",
   "tags": ["Typsystem", "Scala", "Kompilator"]
