@@ -19,7 +19,7 @@
     "@nuxt/content": "^3.15.1",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.3.1",
-    "@nuxt/image": "^2.0.0",
+    "@nuxt/image": "^2.1.0",
     "@nuxtjs/i18n": "^10.5.0",
     "@nuxtjs/seo": "^5.3.3",
     "@pinia/nuxt": "^1.0.1",
@@ -60,5 +60,5 @@
   "engines": {
     "node": "^24"
   },
-  "packageManager": "pnpm@11.17.0"
+  "packageManager": "pnpm@11.18.0"
 }
