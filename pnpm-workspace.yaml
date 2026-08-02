@@ -24,3 +24,6 @@ minimumReleaseAgeExclude:
   - "@nuxt/schema@4.5.1"
   - "@nuxt/vite-builder@4.5.1"
   - nuxt@4.5.1
+
+overrides:
+  "node-mock-http": "^1.0.5"
