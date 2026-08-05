@@ -11,6 +11,7 @@
     "name": "@:info.firstName @:info.lastName",
     "fullName": "@:info.firstName @:info.middleName @:info.lastName",
     "emailAddress": "hej{'@'}an5on.com",
+    "academicEmailAddress": "anson.c{'@'}link.cuhk.edu.hk",
     "url": "an5on.com",
     "githubUrl": "https://github.com/anson-ryea",
     "instagramUrl": "https://www.instagram.com/anson_ryea/",
