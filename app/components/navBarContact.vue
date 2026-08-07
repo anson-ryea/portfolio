@@ -26,18 +26,18 @@
     </NuxtLink>
     <div class="grid grid-cols-3 gap-1">
       <NuxtLink
+        :to="$t('info.orcidUrl')"
+        external
+        class="flex items-center col-span-1 w-full btn-light justify-center px-2 py-1"
+      >
+        <Icon name="simple-icons:orcid" class="h-4 w-4 bg-gray-600 pointer-events-none" />
+      </NuxtLink>
+      <NuxtLink
         :to="$t('info.githubUrl')"
         external
         class="flex items-center col-span-1 w-full btn-light justify-center px-2 py-1"
       >
         <Icon name="simple-icons:github" class="h-4 w-4 bg-gray-600 pointer-events-none" />
-      </NuxtLink>
-      <NuxtLink
-        :to="$t('info.instagramUrl')"
-        external
-        class="flex items-center col-span-1 w-full btn-light justify-center px-2 py-1"
-      >
-        <Icon name="simple-icons:instagram" class="h-4 w-4 bg-gray-600 pointer-events-none" />
       </NuxtLink>
       <NuxtLink
         :to="$t('info.linkedinUrl')"
