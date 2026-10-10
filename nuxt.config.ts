@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
-import pkg from "./package.json";
+import pkg from "./package.json" with { type: "json" };
 
 export default defineNuxtConfig({
   modules: [
