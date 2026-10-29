@@ -38,7 +38,7 @@
     </CanvasUiGrid>
     <main class="flex w-full justify-around bg-side border-b border-gray-300">
       <div
-        class="flex w-full flex-col md:mx-8 lg:mx-12 xl:mx-20 bg-white border-x border-gray-300 divide-y divide-gray-300"
+        class="flex min-w-0 w-full flex-col md:mx-8 lg:mx-12 xl:mx-20 bg-white border-x border-gray-300 divide-y divide-gray-300"
       >
         <div class="h-16 w-full bg-linear-to-t from-blue-100/20" />
         <IndexSection class="bg-linear-to-b from-blue-100/20">
@@ -96,7 +96,7 @@
         >
           <ConsoleLikePane :pane-name="$t('index.polaroids')">
             <div
-              class="lg:flex max-w-full grid grid-cols-2 gap-8 justify-between justify-items-center"
+              class="lg:flex min-w-0 max-w-full grid grid-cols-2 gap-8 justify-between justify-items-center"
             >
               <ImagePolaroid
                 v-for="polaroid in polaroids"
@@ -106,7 +106,7 @@
                 :alt="polaroid.alt"
                 :width="352"
                 sizes="168px md:224px xl:352px"
-                class="aspect-3/4 w-42 md:w-56 xl:max-w-88 xl:h-fit xl:w-full"
+                class="aspect-3/4 min-w-0 max-w-full w-42 md:w-56 xl:max-w-88 xl:h-fit xl:w-full"
               />
             </div>
           </ConsoleLikePane>

@@ -3,9 +3,11 @@
     <slot />
     <footer class="flex justify-around">
       <div
-        class="flex flex-col md:mx-8 lg:mx-12 xl:mx-20 flex-1 bg-white border-x border-gray-300 border-dashed divide-y divide-gray-300 divide-dashed"
+        class="flex min-w-0 flex-col md:mx-8 lg:mx-12 xl:mx-20 flex-1 bg-white border-x border-gray-300 border-dashed divide-y divide-gray-300 divide-dashed"
       >
-        <FooterSection class="flex justify-between items-center">
+        <FooterSection
+          class="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center"
+        >
           <div>
             <h6 class="font-medium">
               {{ $t("footer.contact.title") }}
@@ -17,7 +19,7 @@
           <NuxtLink
             :to="`mailto:${$t('info.emailAddress')}`"
             external
-            class="flex btn-light items-center gap-2"
+            class="flex shrink-0 btn-light items-center gap-2"
           >
             {{ $t("info.emailAddress") }}
             <Icon name="solar:plain-2-broken" class="h-4 w-4 bg-gray-600" />
