@@ -125,6 +125,7 @@ export default defineNuxtConfig({
     cssLayer: "base",
   },
   image: {
+    provider: "ipx",
     screens: {
       xs: 375,
       sm: 640,
