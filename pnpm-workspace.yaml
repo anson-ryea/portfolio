@@ -1,9 +1,11 @@
 allowBuilds:
+  "@vgpu/adapter-node": true
   better-sqlite3: true
   esbuild: true
   sharp: true
   unrs-resolver: true
   vue-demi: true
+  webgpu: true
 
 peerDependencyRules:
   allowedVersions:
@@ -11,10 +13,3 @@ peerDependencyRules:
     "@vercel/speed-insights>vue-router": "^5.2.0"
     "unctx>oxc-parser": "^0.139.0"
     "unctx>unplugin": "^2.3.11"
-onlyBuiltDependencies:
-  - "@parcel/watcher"
-  - better-sqlite3
-  - esbuild
-  - sharp
-  - unrs-resolver
-  - vue-demi

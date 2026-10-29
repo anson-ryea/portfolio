@@ -24,10 +24,15 @@
           </NuxtLink>
         </FooterSection>
         <FooterSection>
-          <NuxtImg
-            class="mx-auto h-24 sm:h-36 md:h-56 invert brightness-10 mix-blend-multiply"
-            src="info/signature.svg"
-            :alt="$t('info.firstName') + $t('dictionary.logoAlt')"
+          <CanvasUiGlassObject
+            class="mx-auto h-24 sm:h-36 md:h-56"
+            src="/info/signature.svg"
+            :y-offset="-0.5"
+            :scale="5"
+            :depth="0.05"
+            tint="#FDF0FF"
+            role="img"
+            :aria-label="$t('info.firstName') + $t('dictionary.logoAlt')"
           />
         </FooterSection>
         <FooterSection

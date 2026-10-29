@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
+import { wgslVitePlugin } from "vgpu/client";
 import pkg from "./package.json" with { type: "json" };
 
 export default defineNuxtConfig({
@@ -85,7 +86,7 @@ export default defineNuxtConfig({
     },
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), wgslVitePlugin()],
   },
   fonts: {
     families: [
@@ -124,7 +125,6 @@ export default defineNuxtConfig({
     cssLayer: "base",
   },
   image: {
-    provider: "ipxStatic",
     screens: {
       xs: 375,
       sm: 640,
