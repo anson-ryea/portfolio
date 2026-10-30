@@ -66,7 +66,7 @@
       </div>
     </footer>
     <NavBar class="fixed bottom-2 left-1/2 -translate-x-1/2 w-95/100 md:w-fit z-100" />
-    <CursorAnimated v-if="hasFinePointer" />
+    <CursorAnimated />
   </div>
 </template>
 
@@ -76,26 +76,4 @@ const version = runtimeConfig.public.__APP_VERSION__.split(".");
 const iteration = version[0];
 const minor = version.slice(1, 3).join(".");
 const year = ref(new Date().getFullYear());
-
-const hasFinePointer = ref(false);
-let finePointerQuery: MediaQueryList | null = null;
-let reducedMotionQuery: MediaQueryList | null = null;
-
-function updateCursorAvailability() {
-  hasFinePointer.value = finePointerQuery?.matches === true && reducedMotionQuery?.matches !== true;
-}
-
-onMounted(() => {
-  finePointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-  reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  updateCursorAvailability();
-  finePointerQuery.addEventListener("change", updateCursorAvailability);
-  reducedMotionQuery.addEventListener("change", updateCursorAvailability);
-});
-
-onUnmounted(() => {
-  finePointerQuery?.removeEventListener("change", updateCursorAvailability);
-  reducedMotionQuery?.removeEventListener("change", updateCursorAvailability);
-});
 </script>

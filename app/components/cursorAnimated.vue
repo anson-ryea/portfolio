@@ -6,12 +6,11 @@
   >
     <motion.div
       class="h-2 w-2 border border-gray-300 bg-blue-700 -top-1 -left-1 shadow-lg shadow-blue-300"
+      :style="{ x: positionX, y: positionY }"
       :initial="{
         scaleX: 0,
         scaleY: 0,
         borderRadius: isHoveringTextElement ? '2px' : '9999px',
-        x: positionX,
-        y: positionY,
       }"
       :animate="{
         scaleX: isHoveringTextElement ? 0.5 : 1,
@@ -21,16 +20,14 @@
         borderBottomWidth: isHoveringTextElement ? '0.5px' : '1px',
         borderLeftWidth: isHoveringTextElement ? '2px' : '1px',
         borderRightWidth: isHoveringTextElement ? '2px' : '1px',
-        x: positionX,
-        y: positionY,
       }"
-      :transition="{ x: { type: 'tween', duration: 0 }, y: { type: 'tween', duration: 0 } }"
     />
     <motion.div
       v-if="cursorText"
       class="ml-1 -mt-1 flex w-fit items-center rounded bg-black p-1 font-mono text-xs uppercase text-white shadow"
-      :initial="{ x: positionX, y: positionY, opacity: 0 }"
-      :animate="{ x: positionX, y: positionY, opacity: 1 }"
+      :style="{ x: labelPositionX, y: labelPositionY }"
+      :initial="{ opacity: 0 }"
+      :animate="{ opacity: 1 }"
       :transition="{ ease: 'easeOut', duration: 0.05 }"
     >
       <Icon v-if="isHoveringLink" name="solar:arrow-left-up-linear" class="h-4 w-4 bg-white" />
@@ -40,7 +37,7 @@
 </template>
 
 <script lang="ts" setup>
-import { motion } from "motion-v";
+import { animate, motion, useMotionValue } from "motion-v";
 
 const TEXT_TARGET_SELECTOR = [
   '[data-cursor="text"]',
@@ -54,13 +51,16 @@ const TEXT_TARGET_SELECTOR = [
   "h6",
 ].join(", ");
 
-const positionX = ref(0);
-const positionY = ref(0);
+const positionX = useMotionValue(0);
+const positionY = useMotionValue(0);
+const labelPositionX = useMotionValue(0);
+const labelPositionY = useMotionValue(0);
 const isPointerActive = ref(false);
 const isHoveringLink = ref(false);
 const isHoveringTextElement = ref(false);
 const cursorText = ref<string | null>(null);
 
+let cursorAvailabilityQuery: MediaQueryList | null = null;
 let animationFrame: number | null = null;
 let pendingPosition: { x: number; y: number } | null = null;
 
@@ -94,8 +94,18 @@ function trackPointerMove(event: PointerEvent) {
 
     if (!position) return;
 
-    positionX.value = position.x;
-    positionY.value = position.y;
+    positionX.set(position.x);
+    positionY.set(position.y);
+
+    if (isPointerActive.value && cursorText.value) {
+      animate(labelPositionX, position.x, { type: "tween", ease: "easeOut", duration: 0.05 });
+      animate(labelPositionY, position.y, { type: "tween", ease: "easeOut", duration: 0.05 });
+    } else {
+      // A newly visible label should start at the pointer, not trail from a stale position.
+      labelPositionX.jump(position.x);
+      labelPositionY.jump(position.y);
+    }
+
     isPointerActive.value = true;
   });
 }
@@ -107,6 +117,8 @@ function handlePointerOver(event: PointerEvent) {
 }
 
 function hideCursor() {
+  labelPositionX.stop();
+  labelPositionY.stop();
   isPointerActive.value = false;
   pendingPosition = null;
   clearHoverTarget();
@@ -129,20 +141,42 @@ function handleVisibilityChange() {
   }
 }
 
-onMounted(() => {
+function updateCursorAvailability() {
+  if (!cursorAvailabilityQuery?.matches) {
+    stopTrackingPointer();
+    return;
+  }
+
   window.addEventListener("pointermove", trackPointerMove, { passive: true });
   window.addEventListener("pointerover", handlePointerOver, { passive: true });
   window.addEventListener("pointerout", handlePointerOut, { passive: true });
   window.addEventListener("blur", hideCursor);
   document.addEventListener("visibilitychange", handleVisibilityChange);
-});
+}
 
-onUnmounted(() => {
+function stopTrackingPointer() {
   window.removeEventListener("pointermove", trackPointerMove);
   window.removeEventListener("pointerover", handlePointerOver);
   window.removeEventListener("pointerout", handlePointerOut);
   window.removeEventListener("blur", hideCursor);
   document.removeEventListener("visibilitychange", handleVisibilityChange);
   hideCursor();
+}
+
+onMounted(() => {
+  cursorAvailabilityQuery = window.matchMedia(
+    "(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)",
+  );
+  cursorAvailabilityQuery.addEventListener("change", updateCursorAvailability);
+  updateCursorAvailability();
+});
+
+onUnmounted(() => {
+  cursorAvailabilityQuery?.removeEventListener("change", updateCursorAvailability);
+  stopTrackingPointer();
+  positionX.destroy();
+  positionY.destroy();
+  labelPositionX.destroy();
+  labelPositionY.destroy();
 });
 </script>

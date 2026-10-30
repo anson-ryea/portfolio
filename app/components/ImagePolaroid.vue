@@ -4,7 +4,7 @@
     @click="isFlipped = !isFlipped"
   >
     <div
-      class="grid grid-rows-1 group-hover:grid-rows-5 group-hover:p-2 group-hover:shadow-xl [@media(hover:none)]:grid-rows-5 [@media(hover:none)]:p-2 [@media(hover:none)]:shadow-xl bg-gray-100 absolute rounded shadow-lg h-full w-full transition-all border border-gray-300 overflow-hidden"
+      class="grid grid-rows-1 group-hover:grid-rows-5 group-hover:p-2 group-hover:shadow-xl [@media(hover:none)]:grid-rows-5 [@media(hover:none)]:p-2 [@media(hover:none)]:shadow-xl bg-gray-100 absolute rounded shadow-lg h-full w-full transition-[padding,box-shadow,transform,opacity,grid-template-rows] border border-gray-300 overflow-hidden contain-[layout_paint]"
       :class="{ 'rotate-y-180! opacity-0': isFlipped }"
       :style="{
         transform: `rotateZ(${rotateDegree}deg)`,
@@ -16,7 +16,7 @@
         :width="width"
         :sizes="sizes"
         :quality="quality"
-        class="transition-all object-cover w-full max-h-full row-span-4"
+        class="object-cover w-full max-h-full row-span-4"
         :class="imgClass"
         loading="lazy"
         decoding="async"
