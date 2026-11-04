@@ -30,7 +30,7 @@
     "@vgpu/wgsl": "0.6.0",
     "better-sqlite3": "^12.11.1",
     "motion-v": "^2.10.0",
-    "nuxt": "^4.6.3",
+    "nuxt": "^4.6.4",
     "oxc-nuxt": "0.1.5",
     "pinia": "^4.1.0",
     "tailwindcss": "^4.3.3",
