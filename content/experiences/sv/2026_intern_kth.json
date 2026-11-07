@@ -5,10 +5,11 @@
   "location": "Stockholm, Sverige",
   "company": "Kungliga Tekniska Högskolan",
   "title": "Sommarpraktik",
-  "description": "Grupp HScala",
+  "description": "Heterogenous Scala, i Philipp Hallers grupp",
   "highlights": [
-    "Utvecklar en kompilator som översätter Scala till SPIR-V-assembler för sömlös och automatisk växling mellan CPU- och GPU-exekvering.",
-    "Designar av ett säkert och korrekt typsystem skräddarsytt för heterogen programmering med hjälp av Capture Tracking."
+    "Utforskar en heterogen programmeringsmodell i Scala som gör det möjligt att fördela vanliga programs exekvering mellan värdsystem och GPU, samtidigt som en enhetlig och idiomatisk programmeringsabstraktion i Scala bevaras.",
+    "Utvecklar en utökning av Scalas Dotty-kompilator med ytterligare kompilatorfaser för att översätta annoterade Scala-funktioner till SPIR-V för GPU-exekvering, samt ett program som assemblerar Scala-klasser som representerar SPIR-V till binär form.",
+    "Undersöker möjligheten att använda capture tracking för tillstånd i det omgivande värdprogrammet och externa interaktioner mellan värdsystem och enhet, samt CPS-transformationer och trampolining för funktionsanrop."
   ],
   "pathToLogo": "/content/education/kth.svg",
   "tags": ["Typsystem", "Scala", "Kompilator"]

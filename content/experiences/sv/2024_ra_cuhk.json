@@ -1,14 +1,15 @@
 {
   "locale": "sv",
   "startDate": "2024-04-01",
-  "endDate": "2025-12-01",
+  "endDate": "2024-10-01",
   "location": "Hongkong",
   "company": "The Chinese University of Hong Kong",
   "title": "Forskningsassistent",
-  "description": "Handledd av Dr. Hoover Yin",
+  "description": "Batched Sparse Codes, under handledning av dr Hoover Yin",
   "highlights": [
-    "1st Research: Ledde ett kandidatforskningsteam på sju personer som undersökte hur placering och färgkontrast påverkar nästlade halvtons-QR-koder för att uppnå högre informationstäthet med bibehållen skanningssäkerhet. Utvecklade en generator för nästlade halvtons-QR-koder i Kotlin/JVM, vilket möjliggjorde experiment med olika konfigurationer, storlekar och felkorrigeringsnivåer.",
-    "2nd Research: Optimerade batchstorlekar och buffertstorlekar för mellannoder för att förbättra överföringseffektiviteten under BATS-schemat (batched sparse codes). Utvecklade en Python-simulator för att replikera trådlös kommunikation i flerhoppsnätverk med BATS-koder som överföringsmetod."
+    "Batched sparse codes bearbetar många glesa matriser, tensorer eller grafer parallellt genom att endast arbeta med aktiva element och används ofta i trådlösa nätverk för att effektivt representera paket för signalutbredning.",
+    "Utvecklade en Python-simulator för att simulera trådlös kommunikation i flerhoppsnätverk med BATS-koder för paketkodning.",
+    "Genomförde experiment för att optimera batchstorlekar och buffertkapaciteter i mellannoder, vilket förbättrade överföringseffektiviteten under instabila nätverksförhållanden med hög risk för paketförluster."
   ],
   "pathToLogo": "/content/experiences/cuhk.svg",
   "tags": ["Python", "Nätverk"]

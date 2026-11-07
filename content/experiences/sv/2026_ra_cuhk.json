@@ -5,11 +5,12 @@
   "location": "Hongkong",
   "company": "The Chinese University of Hong Kong",
   "title": "Forskningsassistent",
-  "description": "Handledd av Dr. Lauren Pick",
+  "description": "Modular Reasoning with Specifications for AI Code Agents, under handledning av dr Lauren Pick",
   "highlights": [
-    "Samarbete med ett forskningsteam för att utforska stora språkmodeller för modulärt resonerande och maximal specifikationssyntes i syfte att stödja agentdriven kodgenerering.",
-    "Utveckling av ett agentdrivet arbetsflöde med MiniSWEAgent i Python för att utvärdera effektiviteten hos LLM-genererad kod med uppmanade formella specifikationer gentemot datamängden DafnyBench."
+    "Samarbetar med ett forskningsteam för att undersöka hur stora språkmodeller (LLM:er) kan användas för modulärt resonemang och maximal specifikationssyntes som stöd för agentdriven kodgenerering.",
+    "Modifierade Dafnys kompilator så att funktionskontrakt och invarianter kan inkluderas i utdata vid korskompilering till andra språk.",
+    "Utformade och implementerade ett arbetsflöde för att utvärdera LLM-genererad kod på datamängden DafnyBench, med en extra agentloop för att generera formella specifikationer och använda dem för att vägleda efterföljande kodgenerering."
   ],
   "pathToLogo": "/content/experiences/cuhk.svg",
-  "tags": ["Python", "Dafny", "Programspecifikation", "Agentutveckling"]
+  "tags": ["Python", "Dafny", "Programspecifikation", "Agentutveckling", "Hoare-logik"]
 }

@@ -1,0 +1,16 @@
+{
+  "locale": "sv",
+  "startDate": "2025-05-01",
+  "endDate": "2025-12-01",
+  "location": "Hongkong",
+  "company": "The Chinese University of Hong Kong",
+  "title": "Forskningsassistent",
+  "description": "Nested Halftone QR Codes, under handledning av dr Hoover Yin",
+  "highlights": [
+    "Nästlade halvtons-QR-koder bäddar in flera lager av QR-information i en halvtonsbild med ett igenkännbart motiv, vilket gör att samma kod kan bära mer data samtidigt som den integreras mer estetiskt med grafiken.",
+    "Undersökte hur placering och färgkontrast påverkar nästlade halvtons-QR-koder för att uppnå högre informationstäthet med bibehållen skanningstillförlitlighet.",
+    "Utvecklade en generator för nästlade halvtons-QR-koder i Kotlin/JVM, vilket möjliggjorde experiment med olika storlekar, färger och placeringar av den nästlade QR-koden samt olika felkorrigeringsnivåer."
+  ],
+  "pathToLogo": "/content/experiences/cuhk.svg",
+  "tags": ["Kotlin/JVM", "Informationskodning"]
+}
