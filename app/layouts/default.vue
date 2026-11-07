@@ -5,9 +5,7 @@
       <div
         class="flex min-w-0 flex-col md:mx-8 lg:mx-12 xl:mx-20 flex-1 bg-white border-x border-gray-300 border-dashed divide-y divide-gray-300 divide-dashed"
       >
-        <FooterSection
-          class="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center"
-        >
+        <FooterSection class="flex justify-between gap-3 items-center">
           <div>
             <h6 class="font-medium">
               {{ $t("footer.contact.title") }}
