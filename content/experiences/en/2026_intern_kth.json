@@ -5,10 +5,11 @@
   "location": "Stockholm, Sweden",
   "company": "KTH Royal Institute of Technology",
   "title": "Summer Internship",
-  "description": "Group HScala",
+  "description": "Heterogenous Scala, Group Philipp Haller",
   "highlights": [
-    "Building a compiler that translates Scala into SPIR-V assembly for seamless switching between CPU and GPU processing.",
-    "Designing a safe, sound type system tailored for heterogeneous programming using Capture Tracking."
+    "Exploring a heterogeneous programming model in Scala that allows ordinary programs to span host and GPU execution while preserving a Scala-idiomatic and unified programming abstraction.",
+    "Building an extension with additional compiler phases for Scala’s Dotty compiler to lower annotated Scala functions to SPIR-V for GPU execution, and a program that assembles SPIR-V-as-Scala classes into binary form.",
+    "Exploring the feasibility of using capture tracking for enclosing host state and external host-device interactions, as well as CPS transformations and trampolining for function calls."
   ],
   "pathToLogo": "/content/education/kth.svg",
   "tags": ["Type System", "Scala", "Compiler"]

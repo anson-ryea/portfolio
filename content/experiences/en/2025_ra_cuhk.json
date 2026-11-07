@@ -1,0 +1,16 @@
+{
+  "locale": "en",
+  "startDate": "2025-05-01",
+  "endDate": "2025-12-01",
+  "location": "Hong Kong",
+  "company": "The Chinese University of Hong Kong",
+  "title": "Research Assistant",
+  "description": "Nested Halftone QR Codes, supervised by Dr. Hoover Yin",
+  "highlights": [
+    "Nested Halftone QR Codes embed multiple layers of QR information within a visually meaningful halftone image, allowing the same code to carry more data while remaining more aesthetically integrated with graphics.",
+    "Investigated the effects of placement and colour contrast on nested halftone QR codes to achieve higher information density while maintaining scan reliability.",
+    "Developed a nested halftone QR code generator in Kotlin/JVM, enabling experiments with varied sizes, colours, positions of the nested QR code and error correction levels."
+  ],
+  "pathToLogo": "/content/experiences/cuhk.svg",
+  "tags": ["Kotlin/JVM", "Information Encoding"]
+}
