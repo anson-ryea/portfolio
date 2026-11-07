@@ -5,7 +5,7 @@
   "location": "Hong Kong",
   "company": "The Chinese University of Hong Kong",
   "title": "Research Assistant",
-  "description": "Modular Reasoning with Specifications for AI Code Agents, supervised by Dr. Lauren Pick",
+  "description": "Modular Reasoning with Specifications for AI Code Agents, supervised by Prof. Lauren Pick",
   "highlights": [
     "Collaborating with a research team to explore large language models (LLMs) for modular reasoning and maximal specification synthesis to assist agentic code generation.",
     "Modified Dafny’s compiler to support outputting function contracts and invariants when cross-compiling to other languages.",

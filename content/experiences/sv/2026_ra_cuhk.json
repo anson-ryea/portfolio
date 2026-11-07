@@ -5,7 +5,7 @@
   "location": "Hongkong",
   "company": "The Chinese University of Hong Kong",
   "title": "Forskningsassistent",
-  "description": "Modular Reasoning with Specifications for AI Code Agents, under handledning av dr Lauren Pick",
+  "description": "Modular Reasoning with Specifications for AI Code Agents, under handledning av prof Lauren Pick",
   "highlights": [
     "Samarbetar med ett forskningsteam för att undersöka hur stora språkmodeller (LLM:er) kan användas för modulärt resonemang och maximal specifikationssyntes som stöd för agentdriven kodgenerering.",
     "Modifierade Dafnys kompilator så att funktionskontrakt och invarianter kan inkluderas i utdata vid korskompilering till andra språk.",

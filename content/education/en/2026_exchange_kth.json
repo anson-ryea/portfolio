@@ -7,7 +7,6 @@
   "degree": "Exchange Programme",
   "gpa": 5.0,
   "maxGpa": 5.0,
-  "description": "Bachelor of Science in Computer Science",
   "highlights": ["Participated in the Exchange Programme at KTH Royal Institute of Technology"],
   "pathToLogo": "/content/education/kth.svg",
   "tags": ["Exchange"]
