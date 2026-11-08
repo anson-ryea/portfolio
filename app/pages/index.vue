@@ -24,9 +24,12 @@
         :initial="{ opacity: 0, scale: 0 }"
         :animate="{ opacity: 1, scale: 1 }"
       >
-        <h1 class="text-stone-200/50 font-pixel font-bold tracking-[-0.12em]! text-shadow-lg">
+        <div
+          aria-hidden="true"
+          class="section-title text-stone-200/50 font-pixel font-bold tracking-[-0.12em]! text-shadow-lg"
+        >
           AN5ON
-        </h1>
+        </div>
         <img
           class="absolute h-16 md:h-24 lg:h-32 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
           src="/info/signature.svg"
@@ -36,7 +39,7 @@
         />
       </motion.div>
     </CanvasUiGrid>
-    <main class="flex w-full justify-around bg-side border-b border-gray-300">
+    <div class="flex w-full justify-around bg-side border-b border-gray-300">
       <div
         class="flex min-w-0 w-full flex-col md:mx-8 lg:mx-12 xl:mx-20 bg-white border-x border-gray-300 divide-y divide-gray-300"
       >
@@ -47,10 +50,10 @@
               <template #default>
                 <div class="space-y-4 lg:space-y-8">
                   <div class="space-y-2">
-                    <h1>{{ $t("index.greeting.title") }}</h1>
-                    <h3 class="text-gray-400 font-serif">
+                    <h1 class="section-title">{{ $t("index.greeting.title") }}</h1>
+                    <p class="section-description text-gray-400 font-serif">
                       {{ $t("index.greeting.description") }}
-                    </h3>
+                    </p>
                   </div>
                   <div>
                     <ContentRenderer
@@ -115,10 +118,10 @@
           <ConsoleLikePane :pane-name="`${$t('index.currentStatus.label')}.md`">
             <div class="space-y-4">
               <div>
-                <h2>{{ $t("index.currentStatus.title") }}</h2>
-                <h3 class="text-gray-400 font-serif">
+                <h2 class="section-subtitle">{{ $t("index.currentStatus.title") }}</h2>
+                <p class="section-description text-gray-400 font-serif">
                   {{ $t("index.currentStatus.description") }}
-                </h3>
+                </p>
               </div>
               <div class="divide-y divide-gray-300 flex-1 max-md:divide-dashed">
                 <EducationEntry
@@ -138,7 +141,7 @@
           </ConsoleLikePane>
         </IndexSection>
       </div>
-    </main>
+    </div>
   </main>
 </template>
 

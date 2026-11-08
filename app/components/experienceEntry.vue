@@ -6,9 +6,9 @@
           >{{ startDateString }} ~ {{ endDateString }}</span
         >
         <span class="font-mono text-xs text-gray-600 md:hidden">&nbsp;·&nbsp;</span>
-        <h6 class="max-md:text-xs font-mono">
+        <p class="max-md:text-xs font-mono text-black">
           {{ experience.location }}
-        </h6>
+        </p>
       </div>
       <div class="flex flex-wrap gap-1">
         <TagText v-if="isPresent" class="bg-blue-100! text-blue-950!">
@@ -29,9 +29,9 @@
         />
       </div>
       <div>
-        <h6 class="font-medium">
+        <h3 class="entry-title font-medium">
           {{ experience.title }}
-        </h6>
+        </h3>
         <p>{{ experience.company }}</p>
       </div>
       <p class="text-gray-600 font-serif">

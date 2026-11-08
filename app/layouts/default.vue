@@ -7,9 +7,9 @@
       >
         <FooterSection class="flex justify-between gap-3 items-center">
           <div>
-            <h6 class="font-medium">
+            <h2 class="entry-title font-medium">
               {{ $t("footer.contact.title") }}
-            </h6>
+            </h2>
             <p class="font-medium text-gray-500">
               {{ $t("footer.contact.description") }}
             </p>

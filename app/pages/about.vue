@@ -6,18 +6,18 @@
       <div class="h-16 w-full bg-linear-to-t from-blue-100/20" />
       <IndexSection class="bg-linear-to-b from-blue-100/20 space-y-8">
         <div>
-          <h3 class="text-gray-400">
+          <h1 class="section-description text-gray-400">
             {{ $t("about.title") }}
-          </h3>
-          <h1 class="font-serif">
-            {{ $t("about.description") }}
           </h1>
+          <p class="section-title font-serif text-black">
+            {{ $t("about.description") }}
+          </p>
         </div>
       </IndexSection>
       <IndexSection>
         <ConsoleLikePane :pane-name="`${$t('about.education.label')}.db`">
           <div class="space-y-4 lg:flex lg:justify-between lg:space-x-16">
-            <h2 class="capitalize">
+            <h2 class="section-subtitle capitalize">
               {{ $t("about.education.label") }}
             </h2>
             <div class="divide-y divide-gray-300 flex-1">
@@ -34,7 +34,7 @@
       <IndexSection>
         <ConsoleLikePane :pane-name="`${$t('about.experiences')}.db`">
           <div class="space-y-4 lg:flex lg:justify-between lg:space-x-16">
-            <h2 class="capitalize">
+            <h2 class="section-subtitle capitalize">
               {{ $t("about.experiences") }}
             </h2>
             <div class="divide-y divide-gray-300 flex-1 max-md:divide-dashed">

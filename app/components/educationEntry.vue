@@ -6,9 +6,9 @@
           >{{ startDateString }} ~ {{ endDateString }}</span
         >
         <span class="font-mono text-xs text-gray-600 md:hidden">&nbsp;·&nbsp;</span>
-        <h6 class="max-md:text-xs font-mono">
+        <p class="max-md:text-xs font-mono text-black">
           {{ education.location }}
-        </h6>
+        </p>
       </div>
       <div class="flex flex-wrap gap-1">
         <TagText v-if="isPresent" class="bg-blue-100! text-blue-950!">
@@ -47,9 +47,9 @@
           </div>
         </div>
         <div>
-          <h6 class="font-medium">
+          <h3 class="entry-title font-medium">
             {{ education.degree }}
-          </h6>
+          </h3>
           <p>{{ education.school }}</p>
         </div>
         <p v-if="education.description" class="text-gray-600 font-serif">
@@ -75,12 +75,12 @@
             class="absolute bg-[url('/bg/geometric.svg')] mask-b-to-20% w-full h-full top-0 left-0 group-hover:scale-102 transition [@media(hover:none)]:scale-102"
           />
           <div class="relative space-y-2 p-4 z-10">
-            <h5 class="font-sans text-yellow-700 capitalize font-medium">
+            <h4 class="group-title font-sans text-yellow-700 capitalize font-medium">
               {{ $t("about.education.scholarships") }}
               <em class="text-gray-400 font-serif font-light tracking-wide">
                 {{ scholarshipsCountString }}
               </em>
-            </h5>
+            </h4>
             <ul
               class="text-gray-600 list-inside font-serif divide-y divide-gray-300 group-hover:divide-yellow-700 transition [@media(hover:none)]:divide-yellow-700"
             >

@@ -17,30 +17,6 @@
     @apply scroll-smooth cursor-none;
   }
 
-  h1 {
-    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight;
-  }
-
-  h2 {
-    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-tight;
-  }
-
-  h3 {
-    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl tracking-tight;
-  }
-
-  h4 {
-    @apply text-xl sm:text-2xl lg:text-3xl xl:text-4xl tracking-tight;
-  }
-
-  h5 {
-    @apply text-lg sm:text-xl lg:text-2xl xl:text-3xl tracking-tight;
-  }
-
-  h6 {
-    @apply text-black;
-  }
-
   p {
     @apply text-gray-600;
   }
@@ -55,6 +31,31 @@
 }
 
 @layer components {
+  /* Typography roles preserve the existing scale independently of heading levels. */
+  .section-title {
+    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-tight;
+  }
+
+  .section-description {
+    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl tracking-tight;
+  }
+
+  .subsection-title {
+    @apply text-xl sm:text-2xl lg:text-3xl xl:text-4xl tracking-tight;
+  }
+
+  .group-title {
+    @apply text-lg sm:text-xl lg:text-2xl xl:text-3xl tracking-tight;
+  }
+
+  .entry-title {
+    @apply text-black;
+  }
+
   .page-enter-active,
   .page-leave-active {
     transition: all 0.4s;
