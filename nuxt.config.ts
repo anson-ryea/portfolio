@@ -4,6 +4,7 @@ import { wgslVitePlugin } from "vgpu/client";
 import pkg from "./package.json" with { type: "json" };
 
 export default defineNuxtConfig({
+  devServer: { host: "localhost" },
   modules: [
     "@nuxt/icon",
     "@nuxt/image",
